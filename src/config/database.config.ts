@@ -2,12 +2,11 @@ import { registerAs } from '@nestjs/config';
 import { DatabaseConfig } from './config.type';
 
 export default registerAs<DatabaseConfig>('database', () => ({
-  url: process.env.DATABASE_URL,
+  url:
+    process.env.DATABASE_URL || 'https://db.efmojralofibelylzrhe.supabase.co',
   type: process.env.DATABASE_TYPE,
   host: process.env.DATABASE_HOST,
-  port: process.env.DATABASE_PORT
-    ? parseInt(process.env.DATABASE_PORT, 10)
-    : 5432,
+  port: process.env.DATABASE_PORT ? Number(process.env.DATABASE_PORT) : 5432,
   password: process.env.DATABASE_PASSWORD,
   name: process.env.DATABASE_NAME,
   username: process.env.DATABASE_USERNAME,
