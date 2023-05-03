@@ -1,4 +1,5 @@
-import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+// import { HttpException, HttpStatus, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { ConfigService } from '@nestjs/config';
 import { InjectRepository } from '@nestjs/typeorm';
 import { FileEntity } from './entities/file.entity';
@@ -13,34 +14,37 @@ export class FilesService {
     private readonly fileRepository: Repository<FileEntity>,
   ) {}
 
-  async uploadFile(
-    file: Express.Multer.File | Express.MulterS3.File,
-  ): Promise<FileEntity> {
-    if (!file) {
-      throw new HttpException(
-        {
-          status: HttpStatus.UNPROCESSABLE_ENTITY,
-          errors: {
-            file: 'selectFile',
-          },
-        },
-        HttpStatus.UNPROCESSABLE_ENTITY,
-      );
-    }
+  // async uploadFile(
+  //   file: Express.Multer.File | Express.MulterS3.File,
+  // ): Promise<FileEntity> {
+  //   if (!file) {
+  //     throw new HttpException(
+  //       {
+  //         status: HttpStatus.UNPROCESSABLE_ENTITY,
+  //         errors: {
+  //           file: 'selectFile',
+  //         },
+  //       },
+  //       HttpStatus.UNPROCESSABLE_ENTITY,
+  //     );
+  //   }
 
-    const path = {
-      local: `/${this.configService.get('app.apiPrefix', { infer: true })}/v1/${
-        file.path
-      }`,
-      s3: (file as Express.MulterS3.File).location,
-    };
+  //   const path = {
+  //     local: `/${this.configService.get('app.apiPrefix', { infer: true })}/v1/${
+  //       file.path
+  //     }`,
+  //     s3: (file as Express.MulterS3.File).location,
+  //   };
 
-    return this.fileRepository.save(
-      this.fileRepository.create({
-        path: path[
-          this.configService.getOrThrow('file.driver', { infer: true })
-        ],
-      }),
-    );
-  }
+  //   return this.fileRepository.save(
+  //     this.fileRepository.create({
+  //       path: path[
+  //         this.configService.getOrThrow('file.driver', { infer: true })
+  //       ],
+  //     }),
+  //   );
+  // }
+
+  // eslint-disable-next-line @typescript-eslint/no-empty-function
+  async uploadFile() {}
 }

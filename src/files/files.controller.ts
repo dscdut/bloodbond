@@ -4,7 +4,7 @@ import {
   Param,
   Post,
   Response,
-  UploadedFile,
+  // UploadedFile,
   UseGuards,
   UseInterceptors,
 } from '@nestjs/common';
@@ -37,10 +37,9 @@ export class FilesController {
     },
   })
   @UseInterceptors(FileInterceptor('file'))
-  async uploadFile(
-    @UploadedFile() file: Express.Multer.File | Express.MulterS3.File,
-  ) {
-    return this.filesService.uploadFile(file);
+  async uploadFile() {
+    // @UploadedFile() file: Express.Multer.File | Express.MulterS3.File,
+    // return this.filesService.uploadFile(file);
   }
 
   @Get(':path')
