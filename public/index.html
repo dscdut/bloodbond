@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My NestJS App</title>
+  <!-- Add other head elements here, such as stylesheets -->
+</head>
+<body>
+  <!-- Add your app's content here -->
+  <div id="swagger-ui"></div>
+  <script src="/node_modules/swagger-ui-dist/swagger-ui-bundle.js"></script>
+  <script src="/node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+  <script src="/my-nest-app/node_modules/swagger-ui-dist/swagger-ui-bundle.js"></script>
+  <script src="/my-nest-app/node_modules/swagger-ui-dist/swagger-ui-standalone-preset.js"></script>
+
+  <script>
+    window.onload = function() {
+      // Load the Swagger UI bundle
+      const ui = SwaggerUIBundle({
+        url: "/api-json",
+        dom_id: "#swagger-ui",
+        deepLinking: true,
+        presets: [
+          SwaggerUIBundle.presets.apis,
+          SwaggerUIStandalonePreset
+        ],
+        plugins: [
+          SwaggerUIBundle.plugins.DownloadUrl
+        ],
+        layout: "StandaloneLayout"
+      });
+    }
+  </script>
+</body>
+</html>

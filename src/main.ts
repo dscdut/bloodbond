@@ -43,10 +43,7 @@ async function bootstrap() {
     .build();
 
   const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('docs', app, document, {
-    customCssUrl:
-      'https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/4.1.0/swagger-ui.min.css',
-  });
+  SwaggerModule.setup('docs', app, document, { swaggerUrl: '/api-json' });
 
   await app.listen(configService.getOrThrow('app.port', { infer: true }));
 }
