@@ -14,12 +14,13 @@ export class MailConfigService implements MailerOptionsFactory {
       transport: {
         host: this.configService.get('mail.host', { infer: true }),
         port: this.configService.get('mail.port', { infer: true }),
-        ignoreTLS: this.configService.get('mail.ignoreTLS', { infer: true }),
         secure: this.configService.get('mail.secure', { infer: true }),
-        requireTLS: this.configService.get('mail.requireTLS', { infer: true }),
         auth: {
           user: this.configService.get('mail.user', { infer: true }),
           pass: this.configService.get('mail.password', { infer: true }),
+        },
+        tls: {
+          ciphers: 'SSLv3',
         },
       },
       defaults: {

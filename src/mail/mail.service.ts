@@ -29,25 +29,27 @@ export class MailService {
       ]);
     }
 
-    await this.mailerService.sendMail({
-      to: mailData.to,
-      subject: emailConfirmTitle,
-      text: `${this.configService.get('app.frontendDomain', {
-        infer: true,
-      })}/confirm-email/${mailData.data.hash} ${emailConfirmTitle}`,
-      template: 'activation',
-      context: {
-        title: emailConfirmTitle,
-        url: `${this.configService.get('app.frontendDomain', {
+    await this.mailerService
+      .sendMail({
+        to: mailData.to,
+        subject: emailConfirmTitle,
+        text: `${this.configService.get('app.frontendDomain', {
           infer: true,
-        })}/confirm-email/${mailData.data.hash}`,
-        actionTitle: emailConfirmTitle,
-        app_name: this.configService.get('app.name', { infer: true }),
-        text1,
-        text2,
-        text3,
-      },
-    });
+        })}/confirm-email/${mailData.data.hash} ${emailConfirmTitle}`,
+        template: 'activation',
+        context: {
+          title: emailConfirmTitle,
+          url: `${this.configService.get('app.frontendDomain', {
+            infer: true,
+          })}/confirm-email/${mailData.data.hash}`,
+          actionTitle: emailConfirmTitle,
+          app_name: this.configService.get('app.name', { infer: true }),
+          text1,
+          text2,
+          text3,
+        },
+      })
+      .catch((e) => console.log(e));
   }
 
   async forgotPassword(mailData: MailData<{ hash: string }>): Promise<void> {
