@@ -1,7 +1,3 @@
-# NestJS Boilerplate Documentation
-
----
-
 ## Table of Contents
 
 - [Introduction](introduction.md)
