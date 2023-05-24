@@ -1,0 +1,31 @@
+{
+  "texts": {
+    "notification": "Notification",
+    "success": "Success",
+    "error_occur": "An error has occurred, please try again later",
+    "email_address": "Email Address",
+    "password": "Password"
+  },
+  "button": {
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "root": {
+    "home": "Home",
+    "profile": "Profile",
+    "management": "Management"
+  },
+  "auth": {
+    "welcome_back": "Nice to have you back!",
+    "sign_in": "Sign in"
+  },
+  "validator": {
+    "email_required": "Please enter your email",
+    "password_required": "Please enter your password",
+    "invalid_email": "Invalid email address",
+    "incorrect_email_password": "Incorrect email or password",
+    "invalid_password": "Password must be at least 8 characters",
+    "field_required": "This field is required",
+    "not_match_password": "Password and confirm password not match"
+  }
+}

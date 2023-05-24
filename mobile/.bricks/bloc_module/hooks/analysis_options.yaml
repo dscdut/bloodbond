@@ -1,0 +1,12 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - '**.config.dart'
+    - '**.g.dart'
+    - '**.gen.dart'
+    - .bricks/
+
+linter:
+  rules:
+    always_use_package_imports: false
