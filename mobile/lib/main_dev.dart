@@ -1,6 +1,12 @@
+import 'package:bloodbond/app/app.dart';
+import 'package:bloodbond/bootstrap.dart';
 import 'package:bloodbond/flavors.dart';
-import 'package:bloodbond/main_app.dart';
 
 Future<void> main() async {
-  await mainApp(Flavor.DEV);
+  await bootstrap(
+    () {
+      return const App();
+    },
+    Flavor.DEV,
+  );
 }

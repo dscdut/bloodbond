@@ -3,7 +3,7 @@ import 'package:bloodbond/features/auth/views/login.view.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
 import 'package:bloodbond/features/splash/splash.dart';
 
-abstract class AppRoutes {
+abstract class AppRouter {
   static const String splash = '/';
 
   // Auth
