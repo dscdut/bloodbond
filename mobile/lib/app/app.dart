@@ -48,6 +48,7 @@ class _AppState extends State<App> {
                   title: AppFlavor.title,
                   theme: ThemeData(
                     primarySwatch: Colors.blue,
+                    fontFamily: 'Mulish',
                   ),
                   // routerConfig: AppRoutes.router,
                   onGenerateRoute: AppRouter.onGenerateRoute,

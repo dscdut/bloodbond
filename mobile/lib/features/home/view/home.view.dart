@@ -1,4 +1,4 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/home/bloc/home.bloc.dart';
 
@@ -21,8 +21,11 @@ class _HomeView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeBloc, HomeState>(
       builder: (context, state) {
-        // TODO: return correct widget based on the state.
-        return const SizedBox();
+        return const Scaffold(
+          body: Center(
+            child: Text('Home page'),
+          ),
+        );
       },
     );
   }

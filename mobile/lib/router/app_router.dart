@@ -1,3 +1,5 @@
+import 'package:bloodbond/features/donation_request/view/donation_request.view.dart';
+import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/features/auth/views/login.view.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
@@ -12,6 +14,12 @@ abstract class AppRouter {
 
   // Root
   static const String root = '/root';
+
+  // donation request
+  static const String donationRequest = '/donation_request';
+
+  // find donors
+  static const String findDonors = '/find_donors';
 
   // static final router = GoRouter(
   //   routes: [
@@ -61,6 +69,18 @@ abstract class AppRouter {
         return MaterialPageRoute(
           builder: (_) {
             return const RootPage();
+          },
+        );
+      case donationRequest:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const DonationRequestPage();
+          },
+        );
+      case findDonors:
+        return MaterialPageRoute(
+          builder: (_) {
+            return const FindDonorsPage();
           },
         );
       default:
