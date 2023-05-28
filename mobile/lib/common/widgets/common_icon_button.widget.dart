@@ -7,20 +7,26 @@ class CommonIconButton extends StatelessWidget {
     required this.icon,
     this.iconColor = ColorStyles.zodiacBlue,
     required this.onPressed,
-  });
+  }) : assert(
+          icon != null && (icon is IconData || icon is Widget),
+          'Icon must not be null and must be a IconData or Widget',
+        );
+
   final Color iconColor;
-  final IconData icon;
+  final dynamic icon;
   final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
-      icon: Icon(
-        icon,
-        color: iconColor,
-        size: 28,
-      ),
+      icon: icon is IconData
+          ? Icon(
+              icon,
+              color: iconColor,
+              size: 28,
+            )
+          : icon,
       padding: EdgeInsets.zero,
       splashColor: Colors.transparent,
       focusColor: Colors.transparent,

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 abstract class TextStyles {
   // Regular
@@ -12,15 +13,15 @@ abstract class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 11,
   );
-  static const TextStyle s14RegularText = TextStyle(
+  static TextStyle s14RegularText = TextStyle(
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w400,
-    fontSize: 14,
+    fontSize: 14.sp,
   );
-  static const TextStyle s17RegularText = TextStyle(
+  static TextStyle s17RegularText = TextStyle(
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w400,
-    fontSize: 17,
+    fontSize: 17.sp,
   );
 
   // Medium
@@ -33,15 +34,15 @@ abstract class TextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 11,
   );
-  static const TextStyle s14MediumText = TextStyle(
+  static TextStyle s14MediumText = TextStyle(
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w500,
-    fontSize: 14,
+    fontSize: 14.sp,
   );
-  static const TextStyle s17MediumText = TextStyle(
+  static TextStyle s17MediumText = TextStyle(
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w500,
-    fontSize: 17,
+    fontSize: 17.sp,
   );
 
   // Bold
@@ -54,14 +55,14 @@ abstract class TextStyles {
     fontWeight: FontWeight.w700,
     fontSize: 11,
   );
-  static const TextStyle s14BoldText = TextStyle(
+  static TextStyle s14BoldText = TextStyle(
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w700,
-    fontSize: 14,
+    fontSize: 14.sp,
   );
-  static const TextStyle s17BoldText = TextStyle(
+  static TextStyle s17BoldText = TextStyle(
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w700,
-    fontSize: 17,
+    fontSize: 17.sp,
   );
 }

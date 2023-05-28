@@ -2,5 +2,5 @@
 
 FLUTTER_TARGET=lib/main_dev.dart
 ASSET_PREFIX=dev
-BUNDLE_NAME=Flutter Template DEV
-BUNDLE_DISPLAY_NAME=Flutter Template DEV
+BUNDLE_NAME=BloodChain DEV
+BUNDLE_DISPLAY_NAME=BloodChain DEV

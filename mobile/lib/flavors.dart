@@ -14,11 +14,11 @@ class AppFlavor {
   static String get title {
     switch (appFlavor) {
       case Flavor.DEV:
-        return 'Flutter Template DEV';
+        return 'BloodChain DEV';
       case Flavor.QA:
-        return 'Flutter Template QA';
+        return 'BloodChain QA';
       case Flavor.STAGING:
-        return 'Flutter Template';
+        return 'BloodChain';
       default:
         return 'title';
     }

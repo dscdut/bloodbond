@@ -1,3 +1,4 @@
+import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
@@ -8,7 +9,7 @@ class CommonRoundedButton extends StatelessWidget {
     Key? key,
     required this.onPressed,
     this.width,
-    this.height = 48,
+    this.height = AppSize.buttonAndTextFieldHeight,
     this.borderRadius = 7,
     this.elevation = 0,
     this.backgroundColor = ColorStyles.blue400,

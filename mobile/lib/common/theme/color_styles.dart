@@ -33,14 +33,11 @@ abstract class ColorStyles {
   static const Color gray600 = Color(0xFF666666);
   static const Color gray700 = Color(0xFF4D4D4D);
 
-  // New color
+  // Complementary colors
   static const Color zodiacBlue = Color(0xFF0F2D52);
-  static const Color primary = Color(0xFFEC714C);
+  static const Color primary = Color(0xFFFF2156);
   static const Color highlight = Color(0xFFE23E3E);
   static const Color limeGreen = Color(0xFF38E54D);
-  static const Color metallicViolet = Color(0xFF610094);
-  static const Color background = Color(0xFFF9F9F9);
-  static const Color antiFlashWhite = Color(0xFFEFF4F7);
-  static Color scaffoldBackgroundColor = Colors.grey[50]!;
-  // static const Color lavenderSilver = Color(0xFFFDEFEF);
+  static const Color gray = Color(0xFF7E7E7E);
+  static const Color cultured = Color(0xFFF5F5F5);
 }
