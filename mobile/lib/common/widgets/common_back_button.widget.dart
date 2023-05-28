@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
-import 'package:bloodbond/common/widgets/common_icon_button.widget.dart';
 
 class CommonBackButton extends StatelessWidget {
   const CommonBackButton({
@@ -9,12 +8,26 @@ class CommonBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CommonIconButton(
-      onPressed: () {
-        Navigator.of(context).pop();
-      },
-      icon: Icons.chevron_left_rounded,
-      iconColor: ColorStyles.primary,
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(16, 10, 0, 10),
+      child: GestureDetector(
+        onTap: () => Navigator.of(context).pop(),
+        child: Container(
+          constraints: const BoxConstraints(
+            maxWidth: 40,
+            maxHeight: 40,
+          ),
+          decoration: BoxDecoration(
+            color: ColorStyles.cultured,
+            borderRadius: BorderRadius.circular(5),
+          ),
+          child: const Icon(
+            Icons.chevron_left_outlined,
+            color: ColorStyles.zodiacBlue,
+            size: 28,
+          ),
+        ),
+      ),
     );
   }
 }

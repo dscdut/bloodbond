@@ -1,11 +1,9 @@
+import 'package:bloodbond/common/constants/constants.dart';
 import 'package:flutter/material.dart';
 
 abstract class AppTheme {
-  static final List<BoxShadow> primaryShadow = [
-    BoxShadow(
-      blurRadius: 12,
-      offset: const Offset(0, 2),
-      color: Colors.black.withOpacity(0.1),
-    )
-  ];
+  static final ThemeData defaultTheme = ThemeData(
+    fontFamily: appFont,
+    scaffoldBackgroundColor: Colors.white,
+  );
 }

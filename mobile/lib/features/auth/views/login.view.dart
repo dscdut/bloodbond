@@ -1,3 +1,5 @@
+import 'package:bloodbond/common/theme/color_styles.dart';
+import 'package:bloodbond/flavors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -68,11 +70,11 @@ class _LoginView extends StatelessWidget {
                 horizontal: AppSize.horizontalSpace,
               ),
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    LocaleKeys.auth_welcome_back.tr(),
-                    style: TextStyles.s17BoldText,
+                    AppFlavor.title,
+                    style: TextStyles.mediumText
+                        .copyWith(fontSize: 22, color: ColorStyles.primary),
                   ),
                   LoginForm(
                     formKey: _formKey,
@@ -88,6 +90,7 @@ class _LoginView extends StatelessWidget {
                         isLoading: state is LoginLoading,
                         content: LocaleKeys.auth_sign_in.tr(),
                         width: double.infinity,
+                        backgroundColor: ColorStyles.primary,
                       );
                     },
                   ),

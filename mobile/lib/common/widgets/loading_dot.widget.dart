@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 class LoadingDot extends StatefulWidget {
   const LoadingDot({
     Key? key,
-    this.size = 20,
+    this.size = 12,
     this.dotColor = Colors.white,
   }) : super(key: key);
 

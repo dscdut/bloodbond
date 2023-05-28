@@ -1,3 +1,4 @@
+import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
@@ -31,9 +32,15 @@ class AppTextFormField extends StatelessWidget {
     this.onFieldSubmitted,
     this.onTapPrefixIcon,
     this.onTapSuffixIcon,
-    this.labelStyle = TextStyles.s14MediumText,
+    this.labelStyle,
     this.focusNode,
-  }) : super(key: key);
+    this.maxLines = 1,
+    this.contentPadding = const EdgeInsets.symmetric(horizontal: 20),
+  })  : assert(
+          prefixIcon is Widget || prefixIcon is IconData || prefixIcon == null,
+          'prefixIcon must be a Widget or IconData',
+        ),
+        super(key: key);
 
   final TextEditingController? textController;
 
@@ -58,7 +65,7 @@ class AppTextFormField extends StatelessWidget {
   final Color? suffixIconColor;
 
   final IconData? suffixIcon;
-  final IconData? prefixIcon;
+  final dynamic prefixIcon;
 
   final TextInputType? keyboardType;
 
@@ -74,6 +81,10 @@ class AppTextFormField extends StatelessWidget {
 
   final FocusNode? focusNode;
 
+  final int maxLines;
+
+  final EdgeInsetsGeometry? contentPadding;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -82,7 +93,7 @@ class AppTextFormField extends StatelessWidget {
         if (labelText != null)
           Text(
             labelText!,
-            style: labelStyle,
+            style: labelStyle ?? TextStyles.s14MediumText,
           ),
         if (labelText != null)
           const SizedBox(
@@ -90,6 +101,7 @@ class AppTextFormField extends StatelessWidget {
           ),
         TextFormField(
           controller: textController,
+          maxLines: maxLines,
           focusNode: focusNode,
           textInputAction: TextInputAction.done,
           onChanged: onChanged,
@@ -101,8 +113,7 @@ class AppTextFormField extends StatelessWidget {
           enabled: enabled,
           keyboardType: keyboardType,
           initialValue: initialValue,
-          style:
-              TextStyles.s14RegularText.copyWith(color: ColorStyles.zodiacBlue),
+          style: TextStyles.s14RegularText,
           textAlign: isCenterText ? TextAlign.center : TextAlign.start,
           decoration: InputDecoration(
             hintText: hintText,
@@ -140,15 +151,23 @@ class AppTextFormField extends StatelessWidget {
             // isDense: true,
             filled: true,
             fillColor: fillColor,
-            contentPadding: const EdgeInsets.symmetric(horizontal: 20),
+            contentPadding: contentPadding,
+            prefixIconConstraints: const BoxConstraints(
+              maxHeight: AppSize.buttonAndTextFieldHeight,
+              maxWidth: AppSize.buttonAndTextFieldHeight,
+              minHeight: AppSize.buttonAndTextFieldHeight,
+              minWidth: AppSize.buttonAndTextFieldHeight,
+            ),
             prefixIcon: prefixIcon != null
                 ? GestureDetector(
                     onTap: onTapPrefixIcon,
                     behavior: HitTestBehavior.opaque,
-                    child: Icon(
-                      prefixIcon,
-                      color: prefixIconColor,
-                    ),
+                    child: prefixIcon is IconData
+                        ? Icon(
+                            prefixIcon,
+                            color: prefixIconColor,
+                          )
+                        : prefixIcon,
                   )
                 : null,
             suffixIcon: suffixIcon != null

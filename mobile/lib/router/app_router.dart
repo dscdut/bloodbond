@@ -1,5 +1,6 @@
-import 'package:bloodbond/features/donation_request/view/donation_request.view.dart';
+import 'package:bloodbond/features/donation_request/donation_request.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
+import 'package:bloodbond/features/report/view/report.view.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/features/auth/views/login.view.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
@@ -17,9 +18,13 @@ abstract class AppRouter {
 
   // donation request
   static const String donationRequest = '/donation_request';
+  static const String createRequest = '/create_request';
 
   // find donors
   static const String findDonors = '/find_donors';
+
+  // Feature menu
+  static const String report = '/report';
 
   // static final router = GoRouter(
   //   routes: [
@@ -55,32 +60,51 @@ abstract class AppRouter {
     switch (settings.name) {
       case splash:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) {
             return const SplashPage();
           },
         );
       case login:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) {
             return const LoginPage();
           },
         );
       case root:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) {
             return const RootPage();
           },
         );
       case donationRequest:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) {
             return const DonationRequestPage();
           },
         );
       case findDonors:
         return MaterialPageRoute(
+          settings: settings,
           builder: (_) {
             return const FindDonorsPage();
+          },
+        );
+      case report:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const ReportPage();
+          },
+        );
+      case createRequest:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const CreateRequestView();
           },
         );
       default:

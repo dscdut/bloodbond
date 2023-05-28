@@ -33,18 +33,18 @@ android {
     productFlavors {
         dev {
             dimension "flavor-type"
-            applicationId "com.bloodbond.dev"
-            resValue "string", "app_name", "Flutter Template DEV"
+            applicationId "com.bloodchain.dev"
+            resValue "string", "app_name", "BloodChain DEV"
         }
         qa {
             dimension "flavor-type"
-            applicationId "com.bloodbond.qa"
-            resValue "string", "app_name", "Flutter Template QA"
+            applicationId "com.bloodchain.qa"
+            resValue "string", "app_name", "BloodChain QA"
         }
         staging {
             dimension "flavor-type"
-            applicationId "com.gdscdut.bloodbond"
-            resValue "string", "app_name", "Flutter Template"
+            applicationId "com.gdscdut.bloodchain"
+            resValue "string", "app_name", "BloodChain"
         }
     }
 

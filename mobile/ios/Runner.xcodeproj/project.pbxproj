@@ -425,7 +425,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.bloodbond;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.bloodchain;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -489,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2CFC673E25FDB19EA99D6F05 /* Pods-Runner.debug-staging.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 47F26D25PZ;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Debug-staging";
@@ -497,6 +498,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A6D223C62BD1F866CC8A7043 /* Pods-Runner.profile-staging.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 47F26D25PZ;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Profile-staging";
@@ -505,6 +507,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7D9B75A8BEED99101E05A33B /* Pods-Runner.release-staging.xcconfig */;
 			buildSettings = {
+				DEVELOPMENT_TEAM = 47F26D25PZ;
 				PRODUCT_NAME = Runner;
 			};
 			name = "Release-staging";
@@ -567,7 +570,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.bloodbond;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.bloodchain;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -707,7 +710,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bloodbond.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bloodchain.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -775,7 +778,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bloodbond.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bloodchain.qa;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -852,7 +855,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.bloodbond;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.bloodchain;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1077,7 +1080,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bloodbond.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bloodchain.dev;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1150,7 +1153,7 @@
 				);
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bloodbond.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bloodchain.qa;
 				SDKROOT = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
@@ -1216,7 +1219,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bloodbond.qa;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bloodchain.qa;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
@@ -1284,7 +1287,7 @@
 					"$(PROJECT_DIR)/Flutter",
 				);
 				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bloodbond.dev;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bloodchain.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

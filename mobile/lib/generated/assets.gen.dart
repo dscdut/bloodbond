@@ -8,6 +8,8 @@
 // ignore_for_file: directives_ordering,unnecessary_import,implicit_dynamic_list_literal,deprecated_member_use
 
 import 'package:flutter/widgets.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter/services.dart';
 import 'package:lottie/lottie.dart';
 
 class $AssetsFontsGen {
@@ -29,13 +31,23 @@ class $AssetsFontsGen {
 class $AssetsIconsGen {
   const $AssetsIconsGen();
 
+  $AssetsIconsAppBarGen get appBar => const $AssetsIconsAppBarGen();
+  $AssetsIconsBottomNavigationGen get bottomNavigation =>
+      const $AssetsIconsBottomNavigationGen();
+  $AssetsIconsFeatureMenuGen get featureMenu =>
+      const $AssetsIconsFeatureMenuGen();
   $AssetsIconsLauncherGen get launcher => const $AssetsIconsLauncherGen();
+  $AssetsIconsProfileGen get profile => const $AssetsIconsProfileGen();
+  $AssetsIconsRequestGen get request => const $AssetsIconsRequestGen();
 }
 
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
+  $AssetsImagesDecorationGen get decoration =>
+      const $AssetsImagesDecorationGen();
   $AssetsImagesLottieGen get lottie => const $AssetsImagesLottieGen();
+  $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
 }
 
 class $AssetsLocalesGen {
@@ -51,6 +63,79 @@ class $AssetsLocalesGen {
   List<String> get values => [en, vi];
 }
 
+class $AssetsIconsAppBarGen {
+  const $AssetsIconsAppBarGen();
+
+  /// File path: assets/icons/app_bar/menu.svg
+  SvgGenImage get menu => const SvgGenImage('assets/icons/app_bar/menu.svg');
+
+  /// File path: assets/icons/app_bar/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/icons/app_bar/notification.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [menu, notification];
+}
+
+class $AssetsIconsBottomNavigationGen {
+  const $AssetsIconsBottomNavigationGen();
+
+  /// File path: assets/icons/bottom_navigation/blood.svg
+  SvgGenImage get blood =>
+      const SvgGenImage('assets/icons/bottom_navigation/blood.svg');
+
+  /// File path: assets/icons/bottom_navigation/chart.svg
+  SvgGenImage get chart =>
+      const SvgGenImage('assets/icons/bottom_navigation/chart.svg');
+
+  /// File path: assets/icons/bottom_navigation/home.svg
+  SvgGenImage get home =>
+      const SvgGenImage('assets/icons/bottom_navigation/home.svg');
+
+  /// File path: assets/icons/bottom_navigation/profile.svg
+  SvgGenImage get profile =>
+      const SvgGenImage('assets/icons/bottom_navigation/profile.svg');
+
+  /// File path: assets/icons/bottom_navigation/search.svg
+  SvgGenImage get search =>
+      const SvgGenImage('assets/icons/bottom_navigation/search.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [blood, chart, home, profile, search];
+}
+
+class $AssetsIconsFeatureMenuGen {
+  const $AssetsIconsFeatureMenuGen();
+
+  /// File path: assets/icons/feature_menu/assistant.svg
+  SvgGenImage get assistant =>
+      const SvgGenImage('assets/icons/feature_menu/assistant.svg');
+
+  /// File path: assets/icons/feature_menu/campaign.svg
+  SvgGenImage get campaign =>
+      const SvgGenImage('assets/icons/feature_menu/campaign.svg');
+
+  /// File path: assets/icons/feature_menu/donate.svg
+  SvgGenImage get donate =>
+      const SvgGenImage('assets/icons/feature_menu/donate.svg');
+
+  /// File path: assets/icons/feature_menu/order.svg
+  SvgGenImage get order =>
+      const SvgGenImage('assets/icons/feature_menu/order.svg');
+
+  /// File path: assets/icons/feature_menu/report.svg
+  SvgGenImage get report =>
+      const SvgGenImage('assets/icons/feature_menu/report.svg');
+
+  /// File path: assets/icons/feature_menu/search.svg
+  SvgGenImage get search =>
+      const SvgGenImage('assets/icons/feature_menu/search.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values =>
+      [assistant, campaign, donate, order, report, search];
+}
+
 class $AssetsIconsLauncherGen {
   const $AssetsIconsLauncherGen();
 
@@ -58,8 +143,78 @@ class $AssetsIconsLauncherGen {
   AssetGenImage get appIcon =>
       const AssetGenImage('assets/icons/launcher/app_icon.png');
 
+  /// File path: assets/icons/launcher/logo.png
+  AssetGenImage get logo =>
+      const AssetGenImage('assets/icons/launcher/logo.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [appIcon];
+  List<AssetGenImage> get values => [appIcon, logo];
+}
+
+class $AssetsIconsProfileGen {
+  const $AssetsIconsProfileGen();
+
+  /// File path: assets/icons/profile/available_time.svg
+  SvgGenImage get availableTime =>
+      const SvgGenImage('assets/icons/profile/available_time.svg');
+
+  /// File path: assets/icons/profile/edit.svg
+  SvgGenImage get edit => const SvgGenImage('assets/icons/profile/edit.svg');
+
+  /// File path: assets/icons/profile/get_help.svg
+  SvgGenImage get getHelp =>
+      const SvgGenImage('assets/icons/profile/get_help.svg');
+
+  /// File path: assets/icons/profile/invite_email.svg
+  SvgGenImage get inviteEmail =>
+      const SvgGenImage('assets/icons/profile/invite_email.svg');
+
+  /// File path: assets/icons/profile/sign_out.svg
+  SvgGenImage get signOut =>
+      const SvgGenImage('assets/icons/profile/sign_out.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values =>
+      [availableTime, edit, getHelp, inviteEmail, signOut];
+}
+
+class $AssetsIconsRequestGen {
+  const $AssetsIconsRequestGen();
+
+  /// File path: assets/icons/request/blood.svg
+  SvgGenImage get blood => const SvgGenImage('assets/icons/request/blood.svg');
+
+  /// File path: assets/icons/request/hospital.svg
+  SvgGenImage get hospital =>
+      const SvgGenImage('assets/icons/request/hospital.svg');
+
+  /// File path: assets/icons/request/note.svg
+  SvgGenImage get note => const SvgGenImage('assets/icons/request/note.svg');
+
+  /// File path: assets/icons/request/phone.svg
+  SvgGenImage get phone => const SvgGenImage('assets/icons/request/phone.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [blood, hospital, note, phone];
+}
+
+class $AssetsImagesDecorationGen {
+  const $AssetsImagesDecorationGen();
+
+  /// File path: assets/images/decoration/report.svg
+  SvgGenImage get report =>
+      const SvgGenImage('assets/images/decoration/report.svg');
+
+  /// File path: assets/images/decoration/request_success.svg
+  SvgGenImage get requestSuccess =>
+      const SvgGenImage('assets/images/decoration/request_success.svg');
+
+  /// File path: assets/images/decoration/splash_background.svg
+  SvgGenImage get splashBackground =>
+      const SvgGenImage('assets/images/decoration/splash_background.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [report, requestSuccess, splashBackground];
 }
 
 class $AssetsImagesLottieGen {
@@ -75,6 +230,16 @@ class $AssetsImagesLottieGen {
 
   /// List of all assets
   List<LottieGenImage> get values => [error, searchNotFound];
+}
+
+class $AssetsImagesSplashGen {
+  const $AssetsImagesSplashGen();
+
+  /// File path: assets/images/splash/wave.svg
+  SvgGenImage get wave => const SvgGenImage('assets/images/splash/wave.svg');
+
+  /// List of all assets
+  List<SvgGenImage> get values => [wave];
 }
 
 class Assets {
@@ -144,7 +309,69 @@ class AssetGenImage {
     );
   }
 
-  ImageProvider provider() => AssetImage(_assetName);
+  ImageProvider provider({
+    AssetBundle? bundle,
+    String? package,
+  }) {
+    return AssetImage(
+      _assetName,
+      bundle: bundle,
+      package: package,
+    );
+  }
+
+  String get path => _assetName;
+
+  String get keyName => _assetName;
+}
+
+class SvgGenImage {
+  const SvgGenImage(this._assetName);
+
+  final String _assetName;
+
+  SvgPicture svg({
+    Key? key,
+    bool matchTextDirection = false,
+    AssetBundle? bundle,
+    String? package,
+    double? width,
+    double? height,
+    BoxFit fit = BoxFit.contain,
+    AlignmentGeometry alignment = Alignment.center,
+    bool allowDrawingOutsideViewBox = false,
+    WidgetBuilder? placeholderBuilder,
+    String? semanticsLabel,
+    bool excludeFromSemantics = false,
+    SvgTheme theme = const SvgTheme(),
+    ColorFilter? colorFilter,
+    Clip clipBehavior = Clip.hardEdge,
+    @deprecated Color? color,
+    @deprecated BlendMode colorBlendMode = BlendMode.srcIn,
+    @deprecated bool cacheColorFilter = false,
+  }) {
+    return SvgPicture.asset(
+      _assetName,
+      key: key,
+      matchTextDirection: matchTextDirection,
+      bundle: bundle,
+      package: package,
+      width: width,
+      height: height,
+      fit: fit,
+      alignment: alignment,
+      allowDrawingOutsideViewBox: allowDrawingOutsideViewBox,
+      placeholderBuilder: placeholderBuilder,
+      semanticsLabel: semanticsLabel,
+      excludeFromSemantics: excludeFromSemantics,
+      theme: theme,
+      colorFilter: colorFilter,
+      color: color,
+      colorBlendMode: colorBlendMode,
+      clipBehavior: clipBehavior,
+      cacheColorFilter: cacheColorFilter,
+    );
+  }
 
   String get path => _assetName;
 

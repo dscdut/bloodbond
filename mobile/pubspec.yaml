@@ -48,6 +48,10 @@ dependencies:
   equatable: ^2.0.5
   lottie: ^2.3.2
   freezed_annotation: ^2.2.0
+  flutter_svg: ^2.0.5
+  carousel_slider: ^4.2.1
+  flutter_screenutil: 5.7.0
+  dropdown_button2: ^2.1.3
 
 dev_dependencies:
   flutter_test:
@@ -63,8 +67,8 @@ dev_dependencies:
   json_serializable: ^6.6.1
   build_runner: ^2.3.3
   flutter_flavorizr: ^2.1.5
-  flutter_gen_runner: ^5.2.0
   freezed: ^2.3.4
+  flutter_gen_runner: ^5.3.1
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -77,28 +81,28 @@ flavorizr:
   flavors:
     dev:
       app:
-        name: 'Flutter Template DEV'
-        icon: 'assets/icons/launcher/app_icon.png'
+        name: 'BloodChain DEV'
+        icon: 'assets/icons/launcher/logo.png'
       android:
-        applicationId: 'com.bloodbond.dev'
+        applicationId: 'com.bloodchain.dev'
       ios:
-        bundleId: 'com.bloodbond.dev'
+        bundleId: 'com.bloodchain.dev'
     qa:
       app:
-        name: 'Flutter Template QA'
-        icon: 'assets/icons/launcher/app_icon.png'
+        name: 'BloodChain QA'
+        icon: 'assets/icons/launcher/logo.png'
       android:
-        applicationId: 'com.bloodbond.qa'
+        applicationId: 'com.bloodchain.qa'
       ios:
-        bundleId: 'com.bloodbond.qa'
+        bundleId: 'com.bloodchain.qa'
     staging:
       app:
-        name: 'Flutter Template'
-        icon: 'assets/icons/launcher/app_icon.png'
+        name: 'BloodChain'
+        icon: 'assets/icons/launcher/logo.png'
       android:
-        applicationId: 'com.gdscdut.bloodbond'
+        applicationId: 'com.gdscdut.bloodchain'
       ios:
-        bundleId: 'com.gdscdut.bloodbond'
+        bundleId: 'com.gdscdut.bloodchain'
 
 # The following section is specific to Flutter packages.
 flutter:
@@ -112,10 +116,17 @@ flutter:
     - assets/
     - assets/fonts/
     - assets/icons/
+    - assets/icons/app_bar/
+    - assets/icons/bottom_navigation/
+    - assets/icons/feature_menu/
     - assets/icons/launcher/
+    - assets/icons/profile/
+    - assets/icons/request/
     - assets/locales/
     - assets/images/
     - assets/images/lottie/
+    - assets/images/splash/
+    - assets/images/decoration/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
