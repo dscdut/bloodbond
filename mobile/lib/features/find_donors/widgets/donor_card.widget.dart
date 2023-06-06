@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class CommonListItems extends StatelessWidget {
-  const CommonListItems({
+class DonorCard extends StatelessWidget {
+  const DonorCard({
     this.organisationName = 'Organisation Name',
     this.campaignName = 'Campaign Name',
     super.key,
