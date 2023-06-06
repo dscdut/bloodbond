@@ -24,24 +24,8 @@ class $AssetsFontsGen {
   /// File path: assets/fonts/Mulish-Regular.ttf
   String get mulishRegular => 'assets/fonts/Mulish-Regular.ttf';
 
-  /// File path: assets/fonts/Poppins-Bold.ttf
-  String get poppinsBold => 'assets/fonts/Poppins-Bold.ttf';
-
-  /// File path: assets/fonts/Poppins-Medium.ttf
-  String get poppinsMedium => 'assets/fonts/Poppins-Medium.ttf';
-
-  /// File path: assets/fonts/Poppins-Regular.ttf
-  String get poppinsRegular => 'assets/fonts/Poppins-Regular.ttf';
-
   /// List of all assets
-  List<String> get values => [
-        mulishBold,
-        mulishMedium,
-        mulishRegular,
-        poppinsBold,
-        poppinsMedium,
-        poppinsRegular
-      ];
+  List<String> get values => [mulishBold, mulishMedium, mulishRegular];
 }
 
 class $AssetsIconsGen {
@@ -60,17 +44,10 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Ellipse27.png
-  AssetGenImage get ellipse27 =>
-      const AssetGenImage('assets/images/Ellipse27.png');
-
   $AssetsImagesDecorationGen get decoration =>
       const $AssetsImagesDecorationGen();
   $AssetsImagesLottieGen get lottie => const $AssetsImagesLottieGen();
   $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
-
-  /// List of all assets
-  List<AssetGenImage> get values => [ellipse27];
 }
 
 class $AssetsLocalesGen {
@@ -89,10 +66,6 @@ class $AssetsLocalesGen {
 class $AssetsIconsAppBarGen {
   const $AssetsIconsAppBarGen();
 
-  /// File path: assets/icons/app_bar/location.svg
-  SvgGenImage get location =>
-      const SvgGenImage('assets/icons/app_bar/location.svg');
-
   /// File path: assets/icons/app_bar/menu.svg
   SvgGenImage get menu => const SvgGenImage('assets/icons/app_bar/menu.svg');
 
@@ -101,7 +74,7 @@ class $AssetsIconsAppBarGen {
       const SvgGenImage('assets/icons/app_bar/notification.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [location, menu, notification];
+  List<SvgGenImage> get values => [menu, notification];
 }
 
 class $AssetsIconsBottomNavigationGen {

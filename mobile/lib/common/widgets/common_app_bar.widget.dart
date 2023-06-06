@@ -10,7 +10,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
     super.key,
     this.isCenterTitle = true,
     this.automaticallyImplyLeading = true,
-    this.backgroundColor = const Color(0xFFE5E5E5), //replace Colors.white,
+    this.backgroundColor = Colors.white,
     this.titleColor = ColorStyles.zodiacBlue,
     this.toolbarHeight = AppSize.appBarHeight,
     this.titleSpacing = AppSize.titleSpacing,
