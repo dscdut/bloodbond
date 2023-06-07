@@ -2,7 +2,6 @@ import React, { useRef } from 'react';
 import OutsideClick from '../../utils/outsideClick';
 import Nav from './sidebar/Nav';
 import SettingButton from './sidebar/SettingButton';
-import Logo from './sidebar/logo';
 import Link from 'next/link';
 
 const Sidebar = ({mobileNavsidebar}) => {
