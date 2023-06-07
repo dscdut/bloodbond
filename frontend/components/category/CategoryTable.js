@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-html-link-for-pages */
 import Table from 'rc-table';
 import React, { useState } from 'react';
 import Pagination from "react-js-pagination";

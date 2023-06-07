@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { ChevronDownIcon, ChevronUpIcon } from '@heroicons/react/20/solid';
 import React, { useEffect, useRef, useState } from "react";
 import OutsideClick from '../../../utils/outsideClick';

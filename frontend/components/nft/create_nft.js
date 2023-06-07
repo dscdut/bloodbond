@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React, { useState } from "react";
 import axios from "axios";
 // import './resources/css/custom.css';
