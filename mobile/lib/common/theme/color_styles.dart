@@ -25,6 +25,7 @@ abstract class ColorStyles {
   static const Color green600 = Color(0xFF00CC00);
   static const Color green700 = Color(0xFF009900);
 
+  static const Color backgroundAppbar = Color(0xFFE5E5E5);
   static const Color gray100 = Color(0xFFE6E6E6);
   static const Color gray200 = Color(0xFFCCCCCC);
   static const Color gray300 = Color(0xFFB3B3B3);
