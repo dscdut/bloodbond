@@ -60,9 +60,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Ellipse27.png
-  AssetGenImage get ellipse27 =>
-      const AssetGenImage('assets/images/Ellipse27.png');
+  /// File path: assets/images/campaign.png
+  AssetGenImage get campaign =>
+      const AssetGenImage('assets/images/campaign.png');
 
   $AssetsImagesDecorationGen get decoration =>
       const $AssetsImagesDecorationGen();
@@ -70,7 +70,7 @@ class $AssetsImagesGen {
   $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
 
   /// List of all assets
-  List<AssetGenImage> get values => [ellipse27];
+  List<AssetGenImage> get values => [campaign];
 }
 
 class $AssetsLocalesGen {
@@ -134,6 +134,10 @@ class $AssetsIconsBottomNavigationGen {
 class $AssetsIconsFeatureMenuGen {
   const $AssetsIconsFeatureMenuGen();
 
+  /// File path: assets/icons/feature_menu/analytics.svg
+  SvgGenImage get analytics =>
+      const SvgGenImage('assets/icons/feature_menu/analytics.svg');
+
   /// File path: assets/icons/feature_menu/assistant.svg
   SvgGenImage get assistant =>
       const SvgGenImage('assets/icons/feature_menu/assistant.svg');
@@ -145,6 +149,10 @@ class $AssetsIconsFeatureMenuGen {
   /// File path: assets/icons/feature_menu/donate.svg
   SvgGenImage get donate =>
       const SvgGenImage('assets/icons/feature_menu/donate.svg');
+
+  /// File path: assets/icons/feature_menu/my_information.svg
+  SvgGenImage get myInformation =>
+      const SvgGenImage('assets/icons/feature_menu/my_information.svg');
 
   /// File path: assets/icons/feature_menu/order.svg
   SvgGenImage get order =>
@@ -159,8 +167,16 @@ class $AssetsIconsFeatureMenuGen {
       const SvgGenImage('assets/icons/feature_menu/search.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [assistant, campaign, donate, order, report, search];
+  List<SvgGenImage> get values => [
+        analytics,
+        assistant,
+        campaign,
+        donate,
+        myInformation,
+        order,
+        report,
+        search
+      ];
 }
 
 class $AssetsIconsLauncherGen {
@@ -185,6 +201,18 @@ class $AssetsIconsProfileGen {
   SvgGenImage get availableTime =>
       const SvgGenImage('assets/icons/profile/available_time.svg');
 
+  /// File path: assets/icons/profile/blood_report.svg
+  SvgGenImage get bloodReport =>
+      const SvgGenImage('assets/icons/profile/blood_report.svg');
+
+  /// File path: assets/icons/profile/blood_type.svg
+  SvgGenImage get bloodType =>
+      const SvgGenImage('assets/icons/profile/blood_type.svg');
+
+  /// File path: assets/icons/profile/certificate.svg
+  SvgGenImage get certificate =>
+      const SvgGenImage('assets/icons/profile/certificate.svg');
+
   /// File path: assets/icons/profile/edit.svg
   SvgGenImage get edit => const SvgGenImage('assets/icons/profile/edit.svg');
 
@@ -196,13 +224,30 @@ class $AssetsIconsProfileGen {
   SvgGenImage get inviteEmail =>
       const SvgGenImage('assets/icons/profile/invite_email.svg');
 
+  /// File path: assets/icons/profile/power.svg
+  SvgGenImage get power => const SvgGenImage('assets/icons/profile/power.svg');
+
   /// File path: assets/icons/profile/sign_out.svg
   SvgGenImage get signOut =>
       const SvgGenImage('assets/icons/profile/sign_out.svg');
 
+  /// File path: assets/icons/profile/test_form.svg
+  SvgGenImage get testForm =>
+      const SvgGenImage('assets/icons/profile/test_form.svg');
+
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [availableTime, edit, getHelp, inviteEmail, signOut];
+  List<SvgGenImage> get values => [
+        availableTime,
+        bloodReport,
+        bloodType,
+        certificate,
+        edit,
+        getHelp,
+        inviteEmail,
+        power,
+        signOut,
+        testForm
+      ];
 }
 
 class $AssetsIconsRequestGen {

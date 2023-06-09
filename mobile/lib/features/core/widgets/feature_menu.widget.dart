@@ -24,14 +24,16 @@ class FeatureMenu extends StatefulWidget {
 class _FeatureMenuState extends State<FeatureMenu> {
   final List<FeatureUIModel> _features = [
     FeatureUIModel(
-        icon: Assets.icons.featureMenu.search,
-        title: 'Find Donors',
-        route: AppRouter.findDonors),
+      icon: Assets.icons.featureMenu.search,
+      title: 'Find Donors',
+      route: AppRouter.findDonors,
+    ),
     FeatureUIModel(icon: Assets.icons.featureMenu.donate, title: 'Donates'),
     FeatureUIModel(icon: Assets.icons.featureMenu.order, title: 'Order Bloods'),
     FeatureUIModel(
       icon: Assets.icons.featureMenu.assistant,
       title: 'Assistant',
+      route: AppRouter.myInformation,
     ),
     FeatureUIModel(
       icon: Assets.icons.featureMenu.report,

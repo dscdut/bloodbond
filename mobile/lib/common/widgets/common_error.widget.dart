@@ -7,7 +7,9 @@ import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:bloodbond/generated/locale_keys.g.dart';
 
 class CommonError extends StatelessWidget {
-  const CommonError({super.key});
+  const CommonError({super.key, this.error});
+
+  final String? error;
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +21,7 @@ class CommonError extends StatelessWidget {
             width: context.width / 2,
           ),
           Text(
-            LocaleKeys.texts_error_occur.tr(),
+            error ?? LocaleKeys.texts_error_occur.tr(),
             style: TextStyles.mediumText
                 .copyWith(fontSize: 15, color: ColorStyles.red500),
             textAlign: TextAlign.center,

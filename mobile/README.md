@@ -113,7 +113,7 @@ Then you can use 'mason make' to generate bricks.
 Suppose you want to generate a clean module with getx, you should run
 
 ```bash
-$ mason make bloc_module -o lib/modules
+$ mason make bloc_module -o lib/features
 ```
 
 ## Flutter build
