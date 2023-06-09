@@ -26,7 +26,7 @@ class DonorCard extends StatelessWidget {
               width: 15,
             ),
             Image.asset(
-              'assets/images/Ellipse27.png',
+              'assets/images/campaign.png',
               width: 79,
               height: 79,
             ),
