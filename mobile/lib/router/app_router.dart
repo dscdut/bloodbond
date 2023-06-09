@@ -13,7 +13,7 @@ abstract class AppRouter {
   static const String login = '/login';
   static const String register = '/register';
   static const String homeScreen = '/home_screen';
-  static const String recovery = '/recovery';
+  static const String connectWallet = '/connectWallet';
 
   // Root
   static const String root = '/root';
@@ -71,14 +71,14 @@ abstract class AppRouter {
         return MaterialPageRoute(
           settings: settings,
           builder: (_) {
-            return const HomeScreenPage();
+            return const LoginScreenPage();
           },
         );
-      case recovery:
+      case connectWallet:
         return MaterialPageRoute(
           settings: settings,
           builder: (_) {
-            return const ConnectRecoveryPage();
+            return const ConnectWalletPage();
           },
         );
       case login:

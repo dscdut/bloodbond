@@ -29,23 +29,20 @@ class _NotificationView extends StatelessWidget {
           appBar: const CommonAppBar(
             title: 'Notification',
           ),
-          body: ListView.builder(
-            padding: const EdgeInsets.all(AppSize.horizontalSpace),
+          body: ListView.separated(
+            padding:
+                const EdgeInsets.symmetric(horizontal: AppSize.horizontalSpace),
             itemCount: 11, // Increase the item count to include the header
+            separatorBuilder: (context, index) => const SizedBox(height: 10),
             itemBuilder: (context, index) {
               if (index == 0) {
                 return const Padding(
-                  padding: EdgeInsets.only(
-                    top: 10,
-                    bottom: 5,
-                    left: 4,
-                  ),
+                  padding: EdgeInsets.only(top: 10, bottom: 5, left: 4),
                   child: Text(
                     'Today',
                     style: TextStyle(
                       fontSize: 16,
                       fontWeight: FontWeight.w600,
-                      // color black
                       color: Color(0xFF000000),
                     ),
                   ),
@@ -76,9 +73,7 @@ class _NotificationView extends StatelessWidget {
                               color: Color(0xFF7E7E7E),
                             ),
                           ),
-                          SizedBox(
-                            height: 2,
-                          ),
+                          SizedBox(height: 2),
                           Text(
                             'Head Line',
                             style: TextStyle(
@@ -87,9 +82,7 @@ class _NotificationView extends StatelessWidget {
                               color: Color(0xFF272A2F),
                             ),
                           ),
-                          SizedBox(
-                            height: 6,
-                          ),
+                          SizedBox(height: 6),
                           Text(
                             'Lorem ipsum dolor sit amet, '
                             'consectetur adipiscing elit. Sed ut justo at massa ultrices'
@@ -107,9 +100,6 @@ class _NotificationView extends StatelessWidget {
                       ),
                     ),
                     Container(
-                      // width: 50,
-                      // height: 50,
-                      // color: Colors.red,
                       child: Stack(
                         children: [
                           Assets.icons.notification.blood.image(),

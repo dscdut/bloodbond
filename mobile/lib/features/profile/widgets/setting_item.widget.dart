@@ -51,9 +51,13 @@ class _SettingItemState extends State<SettingItem> {
             child: widget.icon.svg(),
           ),
           Expanded(
-            child: Text(
-              widget.title,
-              style: TextStyles.s14MediumText.copyWith(color: ColorStyles.gray),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: Text(
+                widget.title,
+                style:
+                    TextStyles.s14MediumText.copyWith(color: ColorStyles.gray),
+              ),
             ),
           ),
           if (widget.hasSwitch)
@@ -67,10 +71,13 @@ class _SettingItemState extends State<SettingItem> {
               activeColor: ColorStyles.primary,
             )
           else if (widget.hasArrow)
-            SizedBox(
-              width: 30.w,
-              height: 22.h,
-              child: Center(child: Assets.icons.profile.leftArrow.svg()),
+            Padding(
+              padding: const EdgeInsets.only(left: 20),
+              child: SizedBox(
+                width: 30.w,
+                height: 22.h,
+                child: Center(child: Assets.icons.profile.leftArrow.svg()),
+              ),
             )
         ],
       ),

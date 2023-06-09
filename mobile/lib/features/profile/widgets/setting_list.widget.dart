@@ -21,7 +21,7 @@ class SettingList extends StatelessWidget {
           title: 'Display empty balances',
           hasSwitch: true,
         ),
-        AppSize.h16,
+        AppSize.h12,
         Row(
           // tạo 1 SizedBox cho nó thụt vào 1 khoảng
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -37,7 +37,7 @@ class SettingList extends StatelessWidget {
             ),
           ],
         ),
-        AppSize.h16,
+        AppSize.h12,
         SettingItem(
           icon: Assets.icons.profile.lock,
           title: 'Auto-Lock',
@@ -61,7 +61,9 @@ class SettingList extends StatelessWidget {
           title: 'Privacy policy',
           hasArrow: true,
         ),
-        AppSize.h40,
+        AppSize.h12,
+        AppSize.h12,
+        AppSize.h12,
         SizedBox(
           width: 309,
           height: 52,
