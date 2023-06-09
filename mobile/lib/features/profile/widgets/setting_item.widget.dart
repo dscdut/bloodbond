@@ -11,11 +11,13 @@ class SettingItem extends StatefulWidget {
     required this.icon,
     required this.title,
     this.hasSwitch = false,
+    this.hasArrow = false,
   });
 
   final SvgGenImage icon;
   final String title;
   final bool hasSwitch;
+  final bool hasArrow;
 
   @override
   State<SettingItem> createState() => _SettingItemState();
@@ -57,13 +59,19 @@ class _SettingItemState extends State<SettingItem> {
           if (widget.hasSwitch)
             CustomSwitch(
               value: true,
-              width: 46.w,
-              height: 22.h,
+              width: 36.75.w,
+              height: 21.h,
               toggleSize: 19.h,
               padding: 2.w,
               onToggle: (value) {},
               activeColor: ColorStyles.primary,
-            ),
+            )
+          else if (widget.hasArrow)
+            SizedBox(
+              width: 30.w,
+              height: 22.h,
+              child: Center(child: Assets.icons.profile.leftArrow.svg()),
+            )
         ],
       ),
     );

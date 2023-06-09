@@ -18,13 +18,12 @@ class CommonBackButton extends StatelessWidget {
             maxHeight: 40,
           ),
           decoration: BoxDecoration(
-            color: ColorStyles.backgroundAppbar,
             borderRadius: BorderRadius.circular(5),
           ),
           child: const Icon(
             Icons.chevron_left_outlined,
             color: ColorStyles.zodiacBlue,
-            size: 28,
+            size: 35,
           ),
         ),
       ),

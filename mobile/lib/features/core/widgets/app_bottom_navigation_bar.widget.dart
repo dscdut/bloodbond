@@ -19,7 +19,7 @@ class _AppBottomNavigationBarState extends State<AppBottomNavigationBar> {
     Assets.icons.bottomNavigation.home,
     Assets.icons.bottomNavigation.search,
     null,
-    Assets.icons.bottomNavigation.chart,
+    Assets.icons.bottomNavigation.notification,
     Assets.icons.bottomNavigation.profile,
   ];
 

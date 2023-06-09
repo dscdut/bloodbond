@@ -11,24 +11,79 @@ class SettingList extends StatelessWidget {
     return Column(
       children: [
         SettingItem(
+          icon: Assets.icons.profile.editProfile,
+          title: 'Edit profile',
+          hasArrow: true,
+        ),
+        AppSize.h12,
+        SettingItem(
           icon: Assets.icons.profile.availableTime,
-          title: 'Available for donate',
+          title: 'Display empty balances',
+          hasSwitch: true,
+        ),
+        AppSize.h16,
+        Row(
+          // tạo 1 SizedBox cho nó thụt vào 1 khoảng
+          crossAxisAlignment: CrossAxisAlignment.start,
+          // tạo 1 SizedBox cho nó thụt vào 1 khoảng
+          children: const [
+            SizedBox(width: AppSize.horizontalSpace),
+            Text(
+              'Security and Privacy',
+              style: TextStyle(
+                fontSize: 16,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ],
+        ),
+        AppSize.h16,
+        SettingItem(
+          icon: Assets.icons.profile.lock,
+          title: 'Auto-Lock',
           hasSwitch: true,
         ),
         AppSize.h12,
         SettingItem(
-          icon: Assets.icons.profile.inviteEmail,
-          title: 'Invite a friend',
+          icon: Assets.icons.profile.availableTime,
+          title: 'View secret recovery pharse',
+          hasArrow: true,
         ),
         AppSize.h12,
         SettingItem(
-          icon: Assets.icons.profile.getHelp,
-          title: 'Get help',
+          icon: Assets.icons.profile.info,
+          title: 'Terms of Use',
+          hasArrow: true,
         ),
         AppSize.h12,
         SettingItem(
-          icon: Assets.icons.profile.signOut,
-          title: 'Sign out',
+          icon: Assets.icons.profile.info,
+          title: 'Privacy policy',
+          hasArrow: true,
+        ),
+        AppSize.h40,
+        SizedBox(
+          width: 309,
+          height: 52,
+          child: ElevatedButton(
+            onPressed: () {
+              // Navigator.of(context).pushNamed(AppRouter.recovery);
+            },
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(10),
+              ),
+              backgroundColor: const Color(0xFFFF2156),
+            ),
+            child: const Text(
+              'Delete Wallet',
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 18,
+                fontWeight: FontWeight.w900,
+              ),
+            ),
+          ),
         ),
       ],
     );

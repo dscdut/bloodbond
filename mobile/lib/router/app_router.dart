@@ -1,8 +1,8 @@
+import 'package:bloodbond/features/auth/auth.dart';
 import 'package:bloodbond/features/donation_request/donation_request.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:bloodbond/features/report/view/report.view.dart';
 import 'package:flutter/material.dart';
-import 'package:bloodbond/features/auth/views/login.view.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
 import 'package:bloodbond/features/splash/splash.dart';
 
@@ -12,6 +12,8 @@ abstract class AppRouter {
   // Auth
   static const String login = '/login';
   static const String register = '/register';
+  static const String homeScreen = '/home_screen';
+  static const String recovery = '/recovery';
 
   // Root
   static const String root = '/root';
@@ -63,6 +65,20 @@ abstract class AppRouter {
           settings: settings,
           builder: (_) {
             return const SplashPage();
+          },
+        );
+      case homeScreen:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const HomeScreenPage();
+          },
+        );
+      case recovery:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const ConnectRecoveryPage();
           },
         );
       case login:

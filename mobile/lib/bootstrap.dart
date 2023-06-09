@@ -1,4 +1,3 @@
-
 import 'dart:async';
 import 'dart:developer';
 import 'package:bloodbond/app/app_bloc_observer.dart';

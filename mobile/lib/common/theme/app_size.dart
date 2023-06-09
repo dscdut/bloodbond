@@ -12,4 +12,8 @@ abstract class AppSize {
 
   // Spacing
   static const SizedBox h12 = SizedBox(height: 12);
+  static const SizedBox h16 = SizedBox(height: 16);
+  static const SizedBox h40 = SizedBox(height: 40);
+
+  static var verticalSpace;
 }
