@@ -11,5 +11,7 @@ abstract class AppSize {
   static const double buttonAndTextFieldHeight = 48;
 
   // Spacing
+  static const SizedBox h8 = SizedBox(height: 8);
   static const SizedBox h12 = SizedBox(height: 12);
+  static const SizedBox h28 = SizedBox(height: 28);
 }

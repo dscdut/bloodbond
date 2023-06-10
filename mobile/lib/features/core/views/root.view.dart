@@ -1,5 +1,6 @@
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/features/core/widgets/app_bottom_navigation_bar.widget.dart';
+import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:bloodbond/router/app_router.dart';
 import 'package:flutter/material.dart';
@@ -37,7 +38,7 @@ class _RootView extends StatelessWidget {
             index: state.currentIndex,
             children: const [
               HomePage(),
-              SizedBox(),
+              FindDonorsPage(),
               SizedBox(),
               NotificationPage(),
               ProfilePage()

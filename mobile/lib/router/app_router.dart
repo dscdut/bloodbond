@@ -1,6 +1,9 @@
+import 'package:bloodbond/data/models/nft.model.dart';
 import 'package:bloodbond/features/auth/auth.dart';
 import 'package:bloodbond/features/donation_request/donation_request.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
+import 'package:bloodbond/features/my_certificate/my_certificate.dart';
+import 'package:bloodbond/features/my_information/view/my_information.view.dart';
 import 'package:bloodbond/features/report/view/report.view.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
@@ -27,6 +30,11 @@ abstract class AppRouter {
 
   // Feature menu
   static const String report = '/report';
+  static const String myInformation = '/my_information';
+
+  //My Information
+  static const String myCertificate = '/my_certificate';
+  static const String certificateDetail = '/certificate_detail';
 
   // static final router = GoRouter(
   //   routes: [
@@ -114,6 +122,29 @@ abstract class AppRouter {
           settings: settings,
           builder: (_) {
             return const ReportPage();
+          },
+        );
+      case myInformation:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const MyInformationPage();
+          },
+        );
+      case myCertificate:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const MyCertificatePage();
+          },
+        );
+      case certificateDetail:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return CertificateDetail(
+              certificate: settings.arguments as NFTModel,
+            );
           },
         );
       case createRequest:

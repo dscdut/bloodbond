@@ -3,6 +3,7 @@ import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
+import 'package:bloodbond/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 class FeatureUIModel {
@@ -22,12 +23,20 @@ class FeatureMenu extends StatefulWidget {
 
 class _FeatureMenuState extends State<FeatureMenu> {
   final List<FeatureUIModel> _features = [
-    FeatureUIModel(icon: Assets.icons.featureMenu.search, title: 'Find Donors'),
-    FeatureUIModel(icon: Assets.icons.featureMenu.donate, title: 'Donates'),
-    FeatureUIModel(icon: Assets.icons.featureMenu.order, title: 'Order Bloods'),
     FeatureUIModel(
-      icon: Assets.icons.featureMenu.assistant,
-      title: 'Assistant',
+      icon: Assets.icons.featureMenu.search,
+      title: 'Find Donors',
+      route: AppRouter.findDonors,
+    ),
+    FeatureUIModel(
+      icon: Assets.icons.featureMenu.donate,
+      title: 'Register for Donation',
+    ),
+    FeatureUIModel(icon: Assets.icons.featureMenu.analytics, title: 'Analytics'),
+    FeatureUIModel(
+      icon: Assets.icons.featureMenu.myInformation,
+      title: 'My Information',
+      route: AppRouter.myInformation,
     ),
   ];
 

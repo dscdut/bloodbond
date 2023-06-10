@@ -1,3 +1,4 @@
+import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 
 class DonorCard extends StatelessWidget {
@@ -25,8 +26,7 @@ class DonorCard extends StatelessWidget {
             const SizedBox(
               width: 15,
             ),
-            Image.asset(
-              'assets/images/campaign.png',
+            Assets.images.campaign.image(
               width: 79,
               height: 79,
             ),

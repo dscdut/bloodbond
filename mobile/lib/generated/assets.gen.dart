@@ -15,6 +15,9 @@ import 'package:lottie/lottie.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
+  /// File path: assets/fonts/BeVietnamPro-Regular.ttf
+  String get beVietnamProRegular => 'assets/fonts/BeVietnamPro-Regular.ttf';
+
   /// File path: assets/fonts/Mulish-Bold.ttf
   String get mulishBold => 'assets/fonts/Mulish-Bold.ttf';
 
@@ -35,6 +38,7 @@ class $AssetsFontsGen {
 
   /// List of all assets
   List<String> get values => [
+        beVietnamProRegular,
         mulishBold,
         mulishMedium,
         mulishRegular,
@@ -55,8 +59,16 @@ class $AssetsIconsGen {
   $AssetsIconsLauncherGen get launcher => const $AssetsIconsLauncherGen();
   $AssetsIconsNotificationGen get notification =>
       const $AssetsIconsNotificationGen();
+
+  /// File path: assets/icons/person_call.png
+  AssetGenImage get personCall =>
+      const AssetGenImage('assets/icons/person_call.png');
+
   $AssetsIconsProfileGen get profile => const $AssetsIconsProfileGen();
   $AssetsIconsRequestGen get request => const $AssetsIconsRequestGen();
+
+  /// List of all assets
+  List<AssetGenImage> get values => [personCall];
 }
 
 class $AssetsImagesGen {
@@ -66,13 +78,27 @@ class $AssetsImagesGen {
   AssetGenImage get campaign =>
       const AssetGenImage('assets/images/campaign.png');
 
+  /// File path: assets/images/campaign1.png
+  AssetGenImage get campaign1 =>
+      const AssetGenImage('assets/images/campaign1.png');
+
+  /// File path: assets/images/campaignx2.png
+  AssetGenImage get campaignx2 =>
+      const AssetGenImage('assets/images/campaignx2.png');
+
   $AssetsImagesDecorationGen get decoration =>
       const $AssetsImagesDecorationGen();
   $AssetsImagesLottieGen get lottie => const $AssetsImagesLottieGen();
+
+  /// File path: assets/images/operation.png
+  AssetGenImage get operation =>
+      const AssetGenImage('assets/images/operation.png');
+
   $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
 
   /// List of all assets
-  List<AssetGenImage> get values => [campaign];
+  List<AssetGenImage> get values =>
+      [campaign, campaign1, campaignx2, operation];
 }
 
 class $AssetsLocalesGen {
@@ -141,6 +167,10 @@ class $AssetsIconsBottomNavigationGen {
 class $AssetsIconsFeatureMenuGen {
   const $AssetsIconsFeatureMenuGen();
 
+  /// File path: assets/icons/feature_menu/analytics.svg
+  SvgGenImage get analytics =>
+      const SvgGenImage('assets/icons/feature_menu/analytics.svg');
+
   /// File path: assets/icons/feature_menu/assistant.svg
   SvgGenImage get assistant =>
       const SvgGenImage('assets/icons/feature_menu/assistant.svg');
@@ -152,6 +182,10 @@ class $AssetsIconsFeatureMenuGen {
   /// File path: assets/icons/feature_menu/donate.svg
   SvgGenImage get donate =>
       const SvgGenImage('assets/icons/feature_menu/donate.svg');
+
+  /// File path: assets/icons/feature_menu/my_information.svg
+  SvgGenImage get myInformation =>
+      const SvgGenImage('assets/icons/feature_menu/my_information.svg');
 
   /// File path: assets/icons/feature_menu/order.svg
   SvgGenImage get order =>
@@ -166,8 +200,16 @@ class $AssetsIconsFeatureMenuGen {
       const SvgGenImage('assets/icons/feature_menu/search.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [assistant, campaign, donate, order, report, search];
+  List<SvgGenImage> get values => [
+        analytics,
+        assistant,
+        campaign,
+        donate,
+        myInformation,
+        order,
+        report,
+        search
+      ];
 }
 
 class $AssetsIconsLauncherGen {
@@ -185,12 +227,8 @@ class $AssetsIconsLauncherGen {
   AssetGenImage get onboard =>
       const AssetGenImage('assets/icons/launcher/onboard.png');
 
-  /// File path: assets/icons/launcher/onboard_icon.svg
-  SvgGenImage get onboardIcon =>
-      const SvgGenImage('assets/icons/launcher/onboard_icon.svg');
-
   /// List of all assets
-  List<dynamic> get values => [appIcon, logo, onboard, onboardIcon];
+  List<AssetGenImage> get values => [appIcon, logo, onboard];
 }
 
 class $AssetsIconsNotificationGen {
@@ -214,6 +252,18 @@ class $AssetsIconsProfileGen {
   /// File path: assets/icons/profile/available_time.svg
   SvgGenImage get availableTime =>
       const SvgGenImage('assets/icons/profile/available_time.svg');
+
+  /// File path: assets/icons/profile/blood_report.svg
+  SvgGenImage get bloodReport =>
+      const SvgGenImage('assets/icons/profile/blood_report.svg');
+
+  /// File path: assets/icons/profile/blood_type.svg
+  SvgGenImage get bloodType =>
+      const SvgGenImage('assets/icons/profile/blood_type.svg');
+
+  /// File path: assets/icons/profile/certificate.svg
+  SvgGenImage get certificate =>
+      const SvgGenImage('assets/icons/profile/certificate.svg');
 
   /// File path: assets/icons/profile/edit.svg
   SvgGenImage get edit => const SvgGenImage('assets/icons/profile/edit.svg');
@@ -240,14 +290,24 @@ class $AssetsIconsProfileGen {
   /// File path: assets/icons/profile/lock.svg
   SvgGenImage get lock => const SvgGenImage('assets/icons/profile/lock.svg');
 
+  /// File path: assets/icons/profile/power.svg
+  SvgGenImage get power => const SvgGenImage('assets/icons/profile/power.svg');
+
   /// File path: assets/icons/profile/sign_out.svg
   SvgGenImage get signOut =>
       const SvgGenImage('assets/icons/profile/sign_out.svg');
+
+  /// File path: assets/icons/profile/test_form.svg
+  SvgGenImage get testForm =>
+      const SvgGenImage('assets/icons/profile/test_form.svg');
 
   /// List of all assets
   List<dynamic> get values => [
         qRCode,
         availableTime,
+        bloodReport,
+        bloodType,
+        certificate,
         edit,
         editProfile,
         getHelp,
@@ -255,7 +315,9 @@ class $AssetsIconsProfileGen {
         inviteEmail,
         leftArrow,
         lock,
-        signOut
+        power,
+        signOut,
+        testForm
       ];
 }
 

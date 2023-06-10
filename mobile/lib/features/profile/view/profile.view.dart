@@ -29,6 +29,7 @@ class _ProfileView extends StatelessWidget {
     return Scaffold(
       appBar: CommonAppBar(
         title: 'Profile',
+        hasBoxDecoration: false,
         actions: [
           CommonIconButton(
             icon: Assets.icons.profile.edit.svg(width: 18),

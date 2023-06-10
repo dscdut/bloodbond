@@ -66,8 +66,8 @@ class OperationInfo extends StatelessWidget {
                     fixedSize: const Size(149, 49),
                   ),
                   onPressed: () {},
-                  child: const Row(
-                    children: [
+                  child: Row(
+                    children: const [
                       Icon(
                         Icons.phone,
                         color: Color(0xFFFF2456),
@@ -164,8 +164,8 @@ class OperationInfo extends StatelessWidget {
                       },
                     );
                   },
-                  child: const Row(
-                    children: [
+                  child: Row(
+                    children: const [
                       Icon(
                         Icons.check,
                         color: Colors.white,

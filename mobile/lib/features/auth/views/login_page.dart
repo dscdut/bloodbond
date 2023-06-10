@@ -79,7 +79,7 @@ class _HomeScreenView extends StatelessWidget {
                   height: 60,
                   child: ElevatedButton(
                     onPressed: () {
-                      Navigator.of(context).pushNamed(AppRouter.recovery);
+                      Navigator.of(context).pushNamed(AppRouter.connectWallet);
                     },
                     style: ElevatedButton.styleFrom(
                       shape: RoundedRectangleBorder(

@@ -24,14 +24,17 @@ class _NotificationView extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<NotificationBloc, NotificationState>(
       builder: (context, state) {
-        // TODO: return correct widget based on the state.
         return Scaffold(
           appBar: const CommonAppBar(
             title: 'Notification',
+            hasBoxDecoration: false,
           ),
           body: ListView.separated(
-            padding:
-                const EdgeInsets.symmetric(horizontal: AppSize.horizontalSpace),
+            padding: const EdgeInsets.only(
+              left: AppSize.horizontalSpace,
+              right: AppSize.horizontalSpace,
+              bottom: AppSize.horizontalSpace + kBottomNavigationBarHeight,
+            ),
             itemCount: 11, // Increase the item count to include the header
             separatorBuilder: (context, index) => const SizedBox(height: 10),
             itemBuilder: (context, index) {
@@ -99,24 +102,22 @@ class _NotificationView extends StatelessWidget {
                         ],
                       ),
                     ),
-                    Container(
-                      child: Stack(
-                        children: [
-                          Assets.icons.notification.blood.image(),
-                          const Positioned(
-                            right: 2.5,
-                            bottom: 3,
-                            child: Text(
-                              'B+',
-                              style: TextStyle(
-                                fontFamily: 'Poppins',
-                                fontSize: 21,
-                                color: Colors.white,
-                              ),
+                    Stack(
+                      children: [
+                        Assets.icons.notification.blood.image(),
+                        const Positioned(
+                          right: 2.5,
+                          bottom: 3,
+                          child: Text(
+                            'B+',
+                            style: TextStyle(
+                              fontFamily: 'Poppins',
+                              fontSize: 21,
+                              color: Colors.white,
                             ),
                           ),
-                        ],
-                      ),
+                        ),
+                      ],
                     )
                   ],
                 ),

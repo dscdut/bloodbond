@@ -1,6 +1,7 @@
 import 'dart:developer';
 import 'dart:io';
 
+import 'package:bloodbond/flavors.dart';
 import 'package:dio/dio.dart';
 import 'package:bloodbond/common/constants/hive_keys.dart';
 import 'package:bloodbond/data/dtos/auth/refresh_token.dto.dart';
@@ -28,11 +29,10 @@ class AppInterceptor extends QueuedInterceptor {
 
     final String? accessToken = _authBox.get(HiveKeys.accessToken);
 
-    if (accessToken != null) {
-      options.headers.addAll({
-        HttpHeaders.authorizationHeader: 'Bearer $accessToken',
-      });
-    }
+    options.headers.addAll({
+      'x-api-key': AppFlavor.apiKey,
+      HttpHeaders.authorizationHeader: accessToken,
+    });
 
     return super.onRequest(options, handler);
   }

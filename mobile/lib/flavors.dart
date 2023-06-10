@@ -11,6 +11,13 @@ class AppFlavor {
 
   static String get apiBaseUrl => const String.fromEnvironment(EnvKeys.baseURL);
 
+  static String get apiKey => const String.fromEnvironment(EnvKeys.apiKey);
+
+  static String get network => const String.fromEnvironment(EnvKeys.network);
+
+  static String get nftAddress =>
+      const String.fromEnvironment(EnvKeys.nftAddress);
+
   static String get title {
     switch (appFlavor) {
       case Flavor.DEV:

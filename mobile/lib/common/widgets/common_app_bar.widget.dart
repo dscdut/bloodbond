@@ -22,6 +22,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.bottom,
     this.actions = const [],
     this.onLeadingAction,
+    this.hasBoxDecoration = true,
   }) : assert(
           title is Widget || title is String || title == null,
           'Title only can be a widget or string ',
@@ -43,6 +44,8 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
   final Widget? bottom;
   final List<Widget> actions;
 
+  final bool hasBoxDecoration;
+
   final Function()? onLeadingAction;
 
   @override
@@ -53,6 +56,10 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       elevation: elevation,
       toolbarHeight: toolbarHeight,
       titleSpacing: titleSpacing,
+      titleTextStyle: TextStyles.mediumText.copyWith(
+        color: titleColor,
+        fontSize: 20.sp,
+      ),
       automaticallyImplyLeading: false,
       title: title == null
           ? null
@@ -72,7 +79,9 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       leadingWidth: leadingWidth,
       leading: leading ??
           ((automaticallyImplyLeading && Navigator.of(context).canPop())
-              ? const CommonBackButton()
+              ? CommonBackButton(
+                  hasBoxDecoration: hasBoxDecoration,
+                )
               : null),
     );
   }

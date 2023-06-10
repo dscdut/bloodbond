@@ -4,7 +4,9 @@ import 'package:bloodbond/common/theme/color_styles.dart';
 class CommonBackButton extends StatelessWidget {
   const CommonBackButton({
     super.key,
+    this.hasBoxDecoration = true,
   });
+  final bool hasBoxDecoration;
 
   @override
   Widget build(BuildContext context) {
@@ -17,9 +19,12 @@ class CommonBackButton extends StatelessWidget {
             maxWidth: 40,
             maxHeight: 40,
           ),
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-          ),
+          decoration: hasBoxDecoration
+              ? BoxDecoration(
+                  color: ColorStyles.backgroundAppbar,
+                  borderRadius: BorderRadius.circular(5),
+                )
+              : const BoxDecoration(),
           child: const Icon(
             Icons.chevron_left_outlined,
             color: ColorStyles.zodiacBlue,

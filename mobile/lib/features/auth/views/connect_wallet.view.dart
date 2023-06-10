@@ -1,4 +1,5 @@
 import 'package:bloodbond/common/extensions/context.extension.dart';
+import 'package:bloodbond/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/auth/auth.dart';
@@ -99,7 +100,7 @@ class _ConnectRecoveryView extends StatelessWidget {
                       height: 60,
                       child: ElevatedButton(
                         onPressed: () {
-                          // Navigator.of(context).pushNamed(AppRouter.recovery);
+                          Navigator.of(context).pushNamed(AppRouter.root);
                         },
                         style: ElevatedButton.styleFrom(
                           shape: RoundedRectangleBorder(
