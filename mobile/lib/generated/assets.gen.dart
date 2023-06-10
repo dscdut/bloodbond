@@ -15,6 +15,9 @@ import 'package:lottie/lottie.dart';
 class $AssetsFontsGen {
   const $AssetsFontsGen();
 
+  /// File path: assets/fonts/BeVietnamPro-Regular.ttf
+  String get beVietnamProRegular => 'assets/fonts/BeVietnamPro-Regular.ttf';
+
   /// File path: assets/fonts/Mulish-Bold.ttf
   String get mulishBold => 'assets/fonts/Mulish-Bold.ttf';
 
@@ -35,6 +38,7 @@ class $AssetsFontsGen {
 
   /// List of all assets
   List<String> get values => [
+        beVietnamProRegular,
         mulishBold,
         mulishMedium,
         mulishRegular,
@@ -53,8 +57,16 @@ class $AssetsIconsGen {
   $AssetsIconsFeatureMenuGen get featureMenu =>
       const $AssetsIconsFeatureMenuGen();
   $AssetsIconsLauncherGen get launcher => const $AssetsIconsLauncherGen();
+
+  /// File path: assets/icons/person_call.png
+  AssetGenImage get personCall =>
+      const AssetGenImage('assets/icons/person_call.png');
+
   $AssetsIconsProfileGen get profile => const $AssetsIconsProfileGen();
   $AssetsIconsRequestGen get request => const $AssetsIconsRequestGen();
+
+  /// List of all assets
+  List<AssetGenImage> get values => [personCall];
 }
 
 class $AssetsImagesGen {
@@ -64,13 +76,27 @@ class $AssetsImagesGen {
   AssetGenImage get campaign =>
       const AssetGenImage('assets/images/campaign.png');
 
+  /// File path: assets/images/campaign1.png
+  AssetGenImage get campaign1 =>
+      const AssetGenImage('assets/images/campaign1.png');
+
+  /// File path: assets/images/campaignx2.png
+  AssetGenImage get campaignx2 =>
+      const AssetGenImage('assets/images/campaignx2.png');
+
   $AssetsImagesDecorationGen get decoration =>
       const $AssetsImagesDecorationGen();
   $AssetsImagesLottieGen get lottie => const $AssetsImagesLottieGen();
+
+  /// File path: assets/images/operation.png
+  AssetGenImage get operation =>
+      const AssetGenImage('assets/images/operation.png');
+
   $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
 
   /// List of all assets
-  List<AssetGenImage> get values => [campaign];
+  List<AssetGenImage> get values =>
+      [campaign, campaign1, campaignx2, operation];
 }
 
 class $AssetsLocalesGen {

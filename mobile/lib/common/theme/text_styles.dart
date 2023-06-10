@@ -23,6 +23,11 @@ abstract class TextStyles {
     fontWeight: FontWeight.w400,
     fontSize: 17.sp,
   );
+  static TextStyle regularFormBVP = const TextStyle(
+    fontFamily: 'BeVietnamPro',
+    fontSize: 12,
+    color: Color(0xFF4C4C4C),
+  );
 
   // Medium
   static const TextStyle mediumText = TextStyle(
@@ -64,5 +69,10 @@ abstract class TextStyles {
     color: ColorStyles.zodiacBlue,
     fontWeight: FontWeight.w700,
     fontSize: 17.sp,
+  );
+  static TextStyle boldAppbarTitle = TextStyle(
+    color: Colors.black,
+    fontWeight: FontWeight.w600,
+    fontSize: 20.sp,
   );
 }

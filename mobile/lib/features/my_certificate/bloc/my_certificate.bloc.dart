@@ -21,21 +21,21 @@ class MyCertificateBloc extends Bloc<MyCertificateEvent, MyCertificateState> {
     Emitter<MyCertificateState> emit,
   ) async {
     emit(state.copyWith(status: MyCertificateStatus.loading));
-    // try {
-    final List<NFTModel> certificates = await _nftRepository.getNFTs();
-    emit(
-      state.copyWith(
-        status: MyCertificateStatus.success,
-        certificates: certificates,
-      ),
-    );
-    // } catch (e) {
-    //   emit(
-    //     state.copyWith(
-    //       status: MyCertificateStatus.error,
-    //       error: e.toString(),
-    //     ),
-    //   );
-    // }
+    try {
+      final List<NFTModel> certificates = await _nftRepository.getNFTs();
+      emit(
+        state.copyWith(
+          status: MyCertificateStatus.success,
+          certificates: certificates,
+        ),
+      );
+    } catch (e) {
+      emit(
+        state.copyWith(
+          status: MyCertificateStatus.error,
+          error: e.toString(),
+        ),
+      );
+    }
   }
 }

@@ -10,6 +10,9 @@
 class FontFamily {
   FontFamily._();
 
+  /// Font family: BeVietNamPro
+  static const String beVietNamPro = 'BeVietNamPro';
+
   /// Font family: Mulish
   static const String mulish = 'Mulish';
 
