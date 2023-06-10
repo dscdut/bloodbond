@@ -10,6 +10,7 @@ class AppTextFormField extends StatelessWidget {
     this.isObscure = false,
     this.readOnly = false,
     this.extendField = true,
+    this.isDense = false,
     this.enabled = true,
     this.isCenterText = false,
     this.hintText,
@@ -47,6 +48,7 @@ class AppTextFormField extends StatelessWidget {
   final bool isObscure;
   final bool readOnly;
   final bool extendField;
+  final bool isDense;
   final bool enabled;
   final bool isCenterText;
 
@@ -116,6 +118,7 @@ class AppTextFormField extends StatelessWidget {
           style: TextStyles.s14RegularText,
           textAlign: isCenterText ? TextAlign.center : TextAlign.start,
           decoration: InputDecoration(
+            isDense: isDense,
             hintText: hintText,
             hintStyle: TextStyles.s14RegularText.copyWith(color: hintColor),
             focusedErrorBorder: OutlineInputBorder(
@@ -148,7 +151,6 @@ class AppTextFormField extends StatelessWidget {
                 color: ColorStyles.red600,
               ),
             ),
-            // isDense: true,
             filled: true,
             fillColor: fillColor,
             contentPadding: contentPadding,

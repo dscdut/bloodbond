@@ -1,8 +1,8 @@
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/features/core/widgets/app_bottom_navigation_bar.widget.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
+import 'package:bloodbond/features/map/map.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
-import 'package:bloodbond/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/core/bloc/root.bloc.dart';
@@ -36,12 +36,12 @@ class _RootView extends StatelessWidget {
         ) {
           return SlideIndexedStack(
             index: state.currentIndex,
-            children: const [
-              HomePage(),
-              FindDonorsPage(),
-              SizedBox(),
-              NotificationPage(),
-              ProfilePage()
+            children: [
+              const HomePage(),
+              const FindDonorsPage(),
+              MapPage(),
+              const NotificationPage(),
+              const ProfilePage()
             ],
           );
         },
@@ -49,10 +49,11 @@ class _RootView extends StatelessWidget {
           return previous.currentIndex != current.currentIndex;
         },
       ),
+      resizeToAvoidBottomInset: false,
       floatingActionButton: FloatingActionButton(
-        onPressed: () => Navigator.of(context).pushNamed(
-          AppRouter.createRequest,
-        ),
+        onPressed: () {
+          context.read<RootBloc>().add(const RootBottomTabChange(newIndex: 2));
+        },
         elevation: 1,
         backgroundColor: Colors.white,
         child: Container(
@@ -64,7 +65,7 @@ class _RootView extends StatelessWidget {
             shape: BoxShape.circle,
             color: ColorStyles.primary,
           ),
-          child: Assets.icons.bottomNavigation.blood.svg(),
+          child: Assets.icons.bottomNavigation.map.svg(),
         ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,

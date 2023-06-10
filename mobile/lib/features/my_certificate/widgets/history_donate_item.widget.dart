@@ -21,6 +21,7 @@ class HistoryDonateItem extends StatelessWidget {
         vertical: 15,
       ),
       decoration: BoxDecoration(
+        color: Colors.white,
         borderRadius: BorderRadius.circular(10),
         border: Border.all(
           color: ColorStyles.red300,

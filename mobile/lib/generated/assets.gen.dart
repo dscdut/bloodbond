@@ -147,6 +147,10 @@ class $AssetsIconsBottomNavigationGen {
   SvgGenImage get home =>
       const SvgGenImage('assets/icons/bottom_navigation/home.svg');
 
+  /// File path: assets/icons/bottom_navigation/map.svg
+  SvgGenImage get map =>
+      const SvgGenImage('assets/icons/bottom_navigation/map.svg');
+
   /// File path: assets/icons/bottom_navigation/notification.svg
   SvgGenImage get notification =>
       const SvgGenImage('assets/icons/bottom_navigation/notification.svg');
@@ -161,7 +165,7 @@ class $AssetsIconsBottomNavigationGen {
 
   /// List of all assets
   List<SvgGenImage> get values =>
-      [blood, chart, home, notification, profile, search];
+      [blood, chart, home, map, notification, profile, search];
 }
 
 class $AssetsIconsFeatureMenuGen {
