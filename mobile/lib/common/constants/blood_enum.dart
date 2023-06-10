@@ -28,6 +28,7 @@ enum BloodType {
   bPlus('B+'),
   bMinus('B-'),
   oPlus('O+'),
+  oMinus('O-'),
   abPlus('AB+'),
   abMinus('AB-');
 

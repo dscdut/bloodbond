@@ -7,4 +7,7 @@ abstract class Endpoints {
   static String userInfo = '$apiUrlv1/auth/me';
 
   static String nft = '$apiUrlv1/nft';
+
+  static String geoCode =
+      'https://maps.googleapis.com/maps/api/geocode/json?key=${AppFlavor.googleMapApiKey}';
 }

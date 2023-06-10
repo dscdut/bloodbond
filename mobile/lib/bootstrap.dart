@@ -6,6 +6,8 @@ import 'package:bloodbond/flavors.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_maps_flutter_android/google_maps_flutter_android.dart';
+import 'package:google_maps_flutter_platform_interface/google_maps_flutter_platform_interface.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 
 typedef BootstrapBuilder = FutureOr<Widget> Function();
@@ -34,6 +36,12 @@ Future<void> initializeApp() async {
   await Hive.initFlutter();
 
   await configureDependencies();
+
+  final GoogleMapsFlutterPlatform mapsImplementation =
+      GoogleMapsFlutterPlatform.instance;
+  if (mapsImplementation is GoogleMapsFlutterAndroid) {
+    mapsImplementation.useAndroidViewSurface = false;
+  }
 
   Bloc.observer = AppBlocObserver();
 }
