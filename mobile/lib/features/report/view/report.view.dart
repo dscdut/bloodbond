@@ -3,7 +3,6 @@ import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
 import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
-import 'package:bloodbond/common/widgets/icon_title.widget.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -78,20 +77,23 @@ class _ReportViewState extends State<_ReportView> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFFE5E5E5),
       appBar: const CommonAppBar(
         title: 'Report',
+        backgroundColor: ColorStyles.backgroundAppbar,
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(AppSize.horizontalSpace),
         child: Column(
           children: [
-            const IconTitle(
-              icon: Icons.fmd_good_outlined,
-              title: 'Research Center',
-            ),
-            Text(
-              'Dhaka Medical College, Dhaka.',
-              style: TextStyles.s14MediumText.copyWith(color: ColorStyles.gray),
+            const Text(
+              'You can donate blood\nafter 2 months',
+              style: TextStyle(
+                fontFamily: 'Poppins',
+                fontSize: 25,
+                color: Color(0xFF7E7E7E),
+              ),
+              textAlign: TextAlign.center,
             ),
             Padding(
               padding: EdgeInsets.only(right: 60, top: 40.h, bottom: 40.h),

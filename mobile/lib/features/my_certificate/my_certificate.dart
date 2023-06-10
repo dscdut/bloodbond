@@ -1,0 +1,1 @@
+export 'view/my_certificate.view.dart';
