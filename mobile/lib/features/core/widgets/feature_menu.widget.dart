@@ -28,26 +28,26 @@ class _FeatureMenuState extends State<FeatureMenu> {
       title: 'Find Donors',
       route: AppRouter.findDonors,
     ),
-    FeatureUIModel(icon: Assets.icons.featureMenu.donate, title: 'Donates'),
-    FeatureUIModel(icon: Assets.icons.featureMenu.order, title: 'Order Bloods'),
     FeatureUIModel(
-      icon: Assets.icons.featureMenu.assistant,
-      title: 'Assistant',
+      icon: Assets.icons.featureMenu.donate,
+      title: 'Register for Donation',
+    ),
+    FeatureUIModel(icon: Assets.icons.featureMenu.analytics, title: 'Analytics'),
+    FeatureUIModel(
+      icon: Assets.icons.featureMenu.myInformation,
+      title: 'My Information',
       route: AppRouter.myInformation,
     ),
-    FeatureUIModel(
-      icon: Assets.icons.featureMenu.report,
-      title: 'Report',
-      route: AppRouter.report,
-    ),
-    FeatureUIModel(icon: Assets.icons.featureMenu.campaign, title: 'Campaign'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSize.horizontalSpace + 17,
+      ),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+        crossAxisCount: 2,
         crossAxisSpacing: AppSize.horizontalSpace,
         mainAxisSpacing: AppSize.horizontalSpace,
       ),
@@ -70,14 +70,20 @@ class _FeatureMenuState extends State<FeatureMenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                item.icon.svg(),
+                item.icon.svg(
+                  height: 50,
+                ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Text(
                   item.title,
-                  style: TextStyles.s14MediumText
-                      .copyWith(color: ColorStyles.gray),
+                  textAlign: TextAlign.center,
+                  style: TextStyles.s14MediumText.copyWith(
+                    color: ColorStyles.gray,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 15,
+                  ),
                 )
               ],
             ),

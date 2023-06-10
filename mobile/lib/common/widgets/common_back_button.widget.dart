@@ -28,7 +28,7 @@ class CommonBackButton extends StatelessWidget {
           child: const Icon(
             Icons.chevron_left_outlined,
             color: ColorStyles.zodiacBlue,
-            size: 28,
+            size: 35,
           ),
         ),
       ),

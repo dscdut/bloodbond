@@ -39,9 +39,9 @@ class _RootView extends StatelessWidget {
             children: const [
               HomePage(),
               FindDonorsPage(),
+              SizedBox(),
               NotificationPage(),
-              NotificationPage(),
-              ProfilePage(),
+              ProfilePage()
             ],
           );
         },

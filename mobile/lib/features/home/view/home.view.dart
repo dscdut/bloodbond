@@ -1,7 +1,6 @@
 import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/features/core/widgets/feature_menu.widget.dart';
 import 'package:bloodbond/features/home/widgets/campagin_advertising_slider.widget.dart';
-import 'package:bloodbond/features/home/widgets/home_appbar.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/home/bloc/home.bloc.dart';
@@ -24,14 +23,16 @@ class _HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const HomeAppBar(),
-      body: SingleChildScrollView(
-        padding: const EdgeInsets.all(AppSize.horizontalSpace),
-        child: Column(
-          children: const [
-            CampaignAdvertisingSlider(),
-            FeatureMenu(),
-          ],
+      // appBar: const HomeAppBar(),
+      body: SafeArea(
+        child: SingleChildScrollView(
+          padding: const EdgeInsets.all(AppSize.horizontalSpace),
+          child: Column(
+            children: const [
+              CampaignAdvertisingSlider(),
+              FeatureMenu(),
+            ],
+          ),
         ),
       ),
       backgroundColor: Colors.white,

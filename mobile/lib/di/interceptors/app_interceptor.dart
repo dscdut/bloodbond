@@ -48,7 +48,7 @@ class AppInterceptor extends QueuedInterceptor {
   }
 
   @override
-  void onError(DioException err, ErrorInterceptorHandler handler) {
+  void onError(DioError err, ErrorInterceptorHandler handler) {
     if (err.response?.statusCode == 401) {
       // HACK: handle logout, maybe
 
