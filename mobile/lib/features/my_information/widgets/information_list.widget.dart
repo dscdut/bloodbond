@@ -21,6 +21,7 @@ class InformationList extends StatelessWidget {
         InformationItem(
           icon: Assets.icons.profile.bloodReport,
           title: 'Blood Report',
+          route: AppRouter.bloodReport,
         ),
         AppSize.h12,
         InformationItem(

@@ -1,5 +1,6 @@
 import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/features/core/widgets/feature_menu.widget.dart';
+import 'package:bloodbond/features/find_donors/widgets/campaign_card.dart';
 import 'package:bloodbond/features/home/widgets/campagin_advertising_slider.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -31,6 +32,7 @@ class _HomeView extends StatelessWidget {
             children: const [
               CampaignAdvertisingSlider(),
               FeatureMenu(),
+              CampaignCard(),
             ],
           ),
         ),

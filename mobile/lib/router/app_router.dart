@@ -17,6 +17,7 @@ abstract class AppRouter {
   static const String register = '/register';
   static const String homeScreen = '/home_screen';
   static const String connectWallet = '/connectWallet';
+  static const String bloodReport = '/blood_report';
 
   // Root
   static const String root = '/root';
@@ -152,6 +153,13 @@ abstract class AppRouter {
           settings: settings,
           builder: (_) {
             return const CreateRequestView();
+          },
+        );
+      case bloodReport:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const ReportPage();
           },
         );
       default:
