@@ -34,10 +34,12 @@ class _MapAppBarState extends State<MapAppBar> {
   Widget build(BuildContext context) {
     return CommonAppBar(
       toolbarHeight: widget.toolbarHeight,
+      leadingWidth: 0,
+      leading: const SizedBox(),
       title: Row(
         children: [
           Expanded(
-            flex: 6,
+            flex: 3,
             child: Container(
               height: 36,
               padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -96,9 +98,9 @@ class _MapAppBarState extends State<MapAppBar> {
               ),
             ),
           ),
-          const Spacer(),
+          const SizedBox(width: 8),
           Expanded(
-            flex: 5,
+            flex: 2,
             child: Container(
               height: 36,
               padding: const EdgeInsets.symmetric(horizontal: 8),
@@ -134,16 +136,13 @@ class _MapAppBarState extends State<MapAppBar> {
               ),
             ),
           ),
-          const Spacer(),
-          Expanded(
-            flex: 3,
-            child: ElevatedButton(
-              onPressed: () {},
-              style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all(Colors.red),
-              ),
-              child: const Text('Find'),
+          const SizedBox(width: 12),
+          ElevatedButton(
+            onPressed: () {},
+            style: ButtonStyle(
+              backgroundColor: MaterialStateProperty.all(Colors.red),
             ),
+            child: const Text('Find'),
           )
         ],
       ),

@@ -54,6 +54,7 @@ class CommonAppBar extends StatelessWidget implements PreferredSizeWidget {
       centerTitle: isCenterTitle,
       backgroundColor: backgroundColor,
       elevation: elevation,
+      
       toolbarHeight: toolbarHeight,
       titleSpacing: titleSpacing,
       titleTextStyle: TextStyles.mediumText.copyWith(
