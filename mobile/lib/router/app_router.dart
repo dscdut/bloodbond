@@ -4,6 +4,7 @@ import 'package:bloodbond/features/donation_request/donation_request.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:bloodbond/features/map/map.dart';
 import 'package:bloodbond/features/my_certificate/my_certificate.dart';
+import 'package:bloodbond/features/my_form/view/my_form.view.dart';
 import 'package:bloodbond/features/my_information/view/my_information.view.dart';
 import 'package:bloodbond/features/report/view/report.view.dart';
 import 'package:flutter/material.dart';
@@ -38,6 +39,9 @@ abstract class AppRouter {
   //My Information
   static const String myCertificate = '/my_certificate';
   static const String certificateDetail = '/certificate_detail';
+
+  //My Form
+  static const String myForm = 'my_form';
 
   // static final router = GoRouter(
   //   routes: [
@@ -134,11 +138,12 @@ abstract class AppRouter {
             return const MyInformationPage();
           },
         );
-      case map:
+
+      case myForm:
         return MaterialPageRoute(
           settings: settings,
           builder: (_) {
-            return MapPage();
+            return const MyFormPage();
           },
         );
       case myCertificate:

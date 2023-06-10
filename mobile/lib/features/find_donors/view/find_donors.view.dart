@@ -4,6 +4,7 @@ import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
 import 'package:bloodbond/features/find_donors/widgets/campaign_card.dart';
 import 'package:bloodbond/features/find_donors/widgets/operation_info.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
+import 'package:bloodbond/generated/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
@@ -56,7 +57,11 @@ class _FindDonorsViewState extends State<_FindDonorsView> {
                         size: 22.82,
                       ),
                       hintText: 'Search...',
+                      contentPadding: EdgeInsets.only(bottom: 10.0),
                       hintStyle: TextStyle(
+                        fontFamily: 'Poppins',
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
                         color: Color(0xFFCDCDCD),
                       ),
                     ),
@@ -66,17 +71,45 @@ class _FindDonorsViewState extends State<_FindDonorsView> {
               const SizedBox(
                 width: 8,
               ),
-              SizedBox(
-                width: 45.64,
-                height: 45.64,
-                child: ElevatedButton(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFF2156),
+              TextButton(
+                style: ButtonStyle(
+                  minimumSize: MaterialStateProperty.all(
+                    const Size(53, 45),
+                  ), // Set the size
+                  backgroundColor: MaterialStateProperty.all(
+                    const Color(0xffFF2156),
+                  ), // Set the background color
+                ),
+                onPressed: () {},
+                child: const Text(
+                  'Find',
+                  style: TextStyle(
+                    fontFamily: 'BeVietNamPro',
+                    fontWeight: FontWeight.w400,
+                    fontSize: 14,
+                    color: Color(0xFFFBFBFB),
                   ),
-                  onPressed: () {},
-                  child: Assets.icons.appBar.location.svg(),
                 ),
               )
+
+              // SizedBox(
+              //   width: 53,
+              //   height: 45,
+              //   child: ElevatedButton(
+              //     style: ElevatedButton.styleFrom(
+              //       backgroundColor: const Color(0xFFFF2156),
+              //     ),
+              //     onPressed: () {},
+              //     child: const Text(
+              //       'Find',
+              //       style: TextStyle(
+              //         fontFamily: 'BeVietNamPro',
+              //         fontSize: 14,
+              //         fontWeight: FontWeight.w400,
+              //       ),
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),
