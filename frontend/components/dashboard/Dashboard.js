@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
@@ -179,9 +180,11 @@ const Dashboard = () => {
 								The number of requests and donations per month
 							</div>
 							<div className="p-4 flex-grow">
-								<div className="flex items-center justify-center h-full px-4 py-16 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
-									Chart
-								</div>
+								<img
+									src="https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs12913-020-05944-6/MediaObjects/12913_2020_5944_Fig3_HTML.png"
+									width={600}
+									height={300}
+								/>
 							</div>
 						</div>
 						<div className="flex items-center p-8 bg-white shadow rounded-lg">
@@ -352,13 +355,8 @@ const Dashboard = () => {
 							</div>
 						</div>
 						<div className="flex flex-col row-span-3 bg-white shadow rounded-lg">
-							<div className="px-6 py-5 font-semibold border-b border-gray-100">
-								People who are willing to donate blood
-							</div>
 							<div className="p-4 flex-grow">
-								<div className="flex items-center justify-center h-full px-4 py-24 text-gray-400 text-3xl font-semibold bg-gray-100 border-2 border-gray-200 border-dashed rounded-md">
-									Chart
-								</div>
+								<img src="https://rrvblood.wpengine.com/wp-content/uploads/2014/10/BloodChart_Vertical.png" />
 							</div>
 						</div>
 					</section>
