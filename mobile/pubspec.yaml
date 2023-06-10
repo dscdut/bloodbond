@@ -157,7 +157,9 @@ flutter:
           weight: 500
         - asset: assets/fonts/Poppins-Bold.ttf
           weight: 700
-
+    - family: BeVietNamPro
+      fonts:
+        - asset: assets/fonts/BeVietNamPro-Regular.ttf
 flutter_gen:
   output: lib/generated/
   integrations:

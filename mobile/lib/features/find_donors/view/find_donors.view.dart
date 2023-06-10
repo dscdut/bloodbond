@@ -1,7 +1,8 @@
 import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
-import 'package:bloodbond/features/find_donors/widgets/donor_card.widget.dart';
+import 'package:bloodbond/features/find_donors/widgets/campaign_card.dart';
+import 'package:bloodbond/features/find_donors/widgets/operation_info.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -81,11 +82,79 @@ class _FindDonorsViewState extends State<_FindDonorsView> {
         ),
       ),
       body: ListView(
-        children: const [
-          DonorCard(),
-          DonorCard(),
-          DonorCard(),
-          DonorCard(),
+        children: [
+          InkWell(
+            child: const CampaignCard(),
+            onTap: () => showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(30),
+                ),
+              ),
+              builder: (context) => DraggableScrollableSheet(
+                initialChildSize: 0.7,
+                maxChildSize: 0.9,
+                minChildSize: 0.32,
+                expand: false,
+                builder: (context, scrollController) {
+                  return SingleChildScrollView(
+                    controller: scrollController,
+                    child: const OperationInfo(),
+                  );
+                },
+              ),
+            ),
+          ),
+          InkWell(
+            child: const CampaignCard(),
+            onTap: () => showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(30),
+                ),
+              ),
+              builder: (context) => DraggableScrollableSheet(
+                initialChildSize: 0.8,
+                maxChildSize: 0.9,
+                minChildSize: 0.32,
+                expand: false,
+                builder: (context, scrollController) {
+                  return SingleChildScrollView(
+                    controller: scrollController,
+                    child: const OperationInfo(),
+                  );
+                },
+              ),
+            ),
+          ),
+          InkWell(
+            child: const CampaignCard(),
+            onTap: () => showModalBottomSheet(
+              context: context,
+              isScrollControlled: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.vertical(
+                  top: Radius.circular(30),
+                ),
+              ),
+              builder: (context) => DraggableScrollableSheet(
+                initialChildSize: 0.8,
+                maxChildSize: 0.9,
+                minChildSize: 0.32,
+                expand: false,
+                builder: (context, scrollController) {
+                  return SingleChildScrollView(
+                    controller: scrollController,
+                    child: const OperationInfo(),
+                  );
+                },
+              ),
+            ),
+          ),
         ],
       ),
     );

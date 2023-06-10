@@ -26,12 +26,12 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: const HomeAppBar(),
+    return const Scaffold(
+      appBar: HomeAppBar(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(AppSize.horizontalSpace),
+        padding: EdgeInsets.all(AppSize.horizontalSpace),
         child: Column(
-          children: const [
+          children: [
             CampaignAdvertisingSlider(),
             FeatureMenu(),
           ],
