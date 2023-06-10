@@ -3,7 +3,6 @@ import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
-import 'package:bloodbond/router/app_router.dart';
 import 'package:flutter/material.dart';
 
 class FeatureUIModel {
@@ -30,19 +29,16 @@ class _FeatureMenuState extends State<FeatureMenu> {
       icon: Assets.icons.featureMenu.assistant,
       title: 'Assistant',
     ),
-    FeatureUIModel(
-      icon: Assets.icons.featureMenu.report,
-      title: 'Report',
-      route: AppRouter.report,
-    ),
-    FeatureUIModel(icon: Assets.icons.featureMenu.campaign, title: 'Campaign'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
+      padding: const EdgeInsets.symmetric(
+        horizontal: AppSize.horizontalSpace + 17,
+      ),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-        crossAxisCount: 3,
+        crossAxisCount: 2,
         crossAxisSpacing: AppSize.horizontalSpace,
         mainAxisSpacing: AppSize.horizontalSpace,
       ),
@@ -65,14 +61,20 @@ class _FeatureMenuState extends State<FeatureMenu> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                item.icon.svg(),
+                item.icon.svg(
+                  height: 50,
+                ),
                 const SizedBox(
-                  height: 10,
+                  height: 20,
                 ),
                 Text(
                   item.title,
-                  style: TextStyles.s14MediumText
-                      .copyWith(color: ColorStyles.gray),
+                  textAlign: TextAlign.center,
+                  style: TextStyles.s14MediumText.copyWith(
+                    color: ColorStyles.gray,
+                    fontWeight: FontWeight.w800,
+                    fontSize: 15,
+                  ),
                 )
               ],
             ),

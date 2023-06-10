@@ -38,6 +38,9 @@ class _SplashView extends StatelessWidget {
           Column(
             children: [
               const Spacer(),
+              const SizedBox(
+                height: 85,
+              ),
               Column(
                 children: [
                   Assets.icons.launcher.appIcon.image(),
@@ -50,6 +53,9 @@ class _SplashView extends StatelessWidget {
                         .copyWith(color: Colors.white, fontSize: 24),
                   )
                 ],
+              ),
+              const Spacer(
+                flex: 2,
               ),
               Expanded(
                 child: Align(

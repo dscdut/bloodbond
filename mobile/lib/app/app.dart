@@ -75,7 +75,7 @@ class _AppState extends State<App> {
                                 break;
                               case AuthenticationStatus.unauthenticated:
                                 _navigator.pushNamedAndRemoveUntil(
-                                  AppRouter.root,
+                                  AppRouter.homeScreen,
                                   (route) => false,
                                 );
                                 break;

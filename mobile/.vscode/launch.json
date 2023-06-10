@@ -24,6 +24,14 @@
       "program": "lib/main_staging.dart",
       "flutterMode": "debug",
       "args": ["--flavor", "staging", "--dart-define-from-file", "config.json"]
-    }
+    },
+    {
+      "name": "Flutter Dev Profile Mode",
+      "type": "dart",
+      "request": "launch",
+      "program": "lib/main_dev.dart",
+      "flutterMode": "profile",
+      "args": ["--flavor", "dev", "--dart-define-from-file", "config.json"]
+    },
   ]
 }

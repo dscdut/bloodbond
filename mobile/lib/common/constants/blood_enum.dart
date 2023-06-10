@@ -1,4 +1,3 @@
-
 enum BloodIngredientUnit {
   mol('mmol/L'),
   ml('ml/L'),

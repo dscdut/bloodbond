@@ -2,7 +2,6 @@ import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
 import 'package:bloodbond/common/widgets/common_icon_button.widget.dart';
 import 'package:bloodbond/features/profile/widgets/avatar_name_location.widget.dart';
-import 'package:bloodbond/features/profile/widgets/profile_record.widget.dart';
 import 'package:bloodbond/features/profile/widgets/setting_list.widget.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +50,9 @@ class _ProfileView extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: const [
             AvatarNameLocation(),
-            ProfileRecord(),
+            SizedBox(
+              height: 30,
+            ),
             SettingList()
           ],
         ),

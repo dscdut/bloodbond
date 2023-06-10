@@ -53,6 +53,8 @@ class $AssetsIconsGen {
   $AssetsIconsFeatureMenuGen get featureMenu =>
       const $AssetsIconsFeatureMenuGen();
   $AssetsIconsLauncherGen get launcher => const $AssetsIconsLauncherGen();
+  $AssetsIconsNotificationGen get notification =>
+      const $AssetsIconsNotificationGen();
   $AssetsIconsProfileGen get profile => const $AssetsIconsProfileGen();
   $AssetsIconsRequestGen get request => const $AssetsIconsRequestGen();
 }
@@ -60,9 +62,9 @@ class $AssetsIconsGen {
 class $AssetsImagesGen {
   const $AssetsImagesGen();
 
-  /// File path: assets/images/Ellipse27.png
-  AssetGenImage get ellipse27 =>
-      const AssetGenImage('assets/images/Ellipse27.png');
+  /// File path: assets/images/campaign.png
+  AssetGenImage get campaign =>
+      const AssetGenImage('assets/images/campaign.png');
 
   $AssetsImagesDecorationGen get decoration =>
       const $AssetsImagesDecorationGen();
@@ -70,7 +72,7 @@ class $AssetsImagesGen {
   $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
 
   /// List of all assets
-  List<AssetGenImage> get values => [ellipse27];
+  List<AssetGenImage> get values => [campaign];
 }
 
 class $AssetsLocalesGen {
@@ -119,6 +121,10 @@ class $AssetsIconsBottomNavigationGen {
   SvgGenImage get home =>
       const SvgGenImage('assets/icons/bottom_navigation/home.svg');
 
+  /// File path: assets/icons/bottom_navigation/notification.svg
+  SvgGenImage get notification =>
+      const SvgGenImage('assets/icons/bottom_navigation/notification.svg');
+
   /// File path: assets/icons/bottom_navigation/profile.svg
   SvgGenImage get profile =>
       const SvgGenImage('assets/icons/bottom_navigation/profile.svg');
@@ -128,7 +134,8 @@ class $AssetsIconsBottomNavigationGen {
       const SvgGenImage('assets/icons/bottom_navigation/search.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [blood, chart, home, profile, search];
+  List<SvgGenImage> get values =>
+      [blood, chart, home, notification, profile, search];
 }
 
 class $AssetsIconsFeatureMenuGen {
@@ -174,12 +181,35 @@ class $AssetsIconsLauncherGen {
   AssetGenImage get logo =>
       const AssetGenImage('assets/icons/launcher/logo.png');
 
+  /// File path: assets/icons/launcher/onboard.png
+  AssetGenImage get onboard =>
+      const AssetGenImage('assets/icons/launcher/onboard.png');
+
+  /// File path: assets/icons/launcher/onboard_icon.svg
+  SvgGenImage get onboardIcon =>
+      const SvgGenImage('assets/icons/launcher/onboard_icon.svg');
+
   /// List of all assets
-  List<AssetGenImage> get values => [appIcon, logo];
+  List<dynamic> get values => [appIcon, logo, onboard, onboardIcon];
+}
+
+class $AssetsIconsNotificationGen {
+  const $AssetsIconsNotificationGen();
+
+  /// File path: assets/icons/notification/blood.png
+  AssetGenImage get blood =>
+      const AssetGenImage('assets/icons/notification/blood.png');
+
+  /// List of all assets
+  List<AssetGenImage> get values => [blood];
 }
 
 class $AssetsIconsProfileGen {
   const $AssetsIconsProfileGen();
+
+  /// File path: assets/icons/profile/QR_code.png
+  AssetGenImage get qRCode =>
+      const AssetGenImage('assets/icons/profile/QR_code.png');
 
   /// File path: assets/icons/profile/available_time.svg
   SvgGenImage get availableTime =>
@@ -188,21 +218,45 @@ class $AssetsIconsProfileGen {
   /// File path: assets/icons/profile/edit.svg
   SvgGenImage get edit => const SvgGenImage('assets/icons/profile/edit.svg');
 
+  /// File path: assets/icons/profile/edit_profile.svg
+  SvgGenImage get editProfile =>
+      const SvgGenImage('assets/icons/profile/edit_profile.svg');
+
   /// File path: assets/icons/profile/get_help.svg
   SvgGenImage get getHelp =>
       const SvgGenImage('assets/icons/profile/get_help.svg');
 
+  /// File path: assets/icons/profile/info.svg
+  SvgGenImage get info => const SvgGenImage('assets/icons/profile/info.svg');
+
   /// File path: assets/icons/profile/invite_email.svg
   SvgGenImage get inviteEmail =>
       const SvgGenImage('assets/icons/profile/invite_email.svg');
+
+  /// File path: assets/icons/profile/left_arrow.svg
+  SvgGenImage get leftArrow =>
+      const SvgGenImage('assets/icons/profile/left_arrow.svg');
+
+  /// File path: assets/icons/profile/lock.svg
+  SvgGenImage get lock => const SvgGenImage('assets/icons/profile/lock.svg');
 
   /// File path: assets/icons/profile/sign_out.svg
   SvgGenImage get signOut =>
       const SvgGenImage('assets/icons/profile/sign_out.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values =>
-      [availableTime, edit, getHelp, inviteEmail, signOut];
+  List<dynamic> get values => [
+        qRCode,
+        availableTime,
+        edit,
+        editProfile,
+        getHelp,
+        info,
+        inviteEmail,
+        leftArrow,
+        lock,
+        signOut
+      ];
 }
 
 class $AssetsIconsRequestGen {
