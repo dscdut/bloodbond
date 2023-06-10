@@ -29,20 +29,20 @@ const UpdateNFT = () => {
 		setStatus('loading');
 		let formData = new FormData();
 		formData.append('network', network);
-		formData.append('private_key', privKey);
+		formData.append('update_authority_address', privKey);
 		formData.append('token_address', tokAddr);
 		if (name !== '') formData.append('name', name);
 		if (symbol !== '') formData.append('symbol', symbol);
 		if (desc !== '') formData.append('description', desc);
 
-		formData.append('attributes', attr);
+    if (attr !== '') formData.append('attributes', JSON.stringify(attr));
 
 		if (roy !== 0) formData.append('royalty', Number(roy));
 		if (file) formData.append('file', file);
 
 		axios({
 			// Endpoint to send files
-			url: 'https://api.shyft.to/sol/v1/nft/update',
+			url: 'https://api.shyft.to/sol/v2/nft/update',
 			method: 'POST',
 			headers: {
 				'Content-Type': 'multipart/form-data',
