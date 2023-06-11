@@ -91,7 +91,7 @@ class _ReportViewState extends State<_ReportView> {
               style: TextStyle(
                 fontFamily: 'Poppins',
                 fontSize: 25,
-                color: Color(0xFF7E7E7E),
+                color: Color(0xFF515151),
               ),
               textAlign: TextAlign.center,
             ),

@@ -86,6 +86,10 @@ class $AssetsImagesGen {
   AssetGenImage get campaignx2 =>
       const AssetGenImage('assets/images/campaignx2.png');
 
+  /// File path: assets/images/carousel.png
+  AssetGenImage get carousel =>
+      const AssetGenImage('assets/images/carousel.png');
+
   $AssetsImagesDecorationGen get decoration =>
       const $AssetsImagesDecorationGen();
   $AssetsImagesLottieGen get lottie => const $AssetsImagesLottieGen();
@@ -98,7 +102,7 @@ class $AssetsImagesGen {
 
   /// List of all assets
   List<AssetGenImage> get values =>
-      [campaign, campaign1, campaignx2, operation];
+      [campaign, campaign1, campaignx2, carousel, operation];
 }
 
 class $AssetsLocalesGen {
@@ -117,6 +121,9 @@ class $AssetsLocalesGen {
 class $AssetsIconsAppBarGen {
   const $AssetsIconsAppBarGen();
 
+  /// File path: assets/icons/app_bar/find.svg
+  SvgGenImage get find => const SvgGenImage('assets/icons/app_bar/find.svg');
+
   /// File path: assets/icons/app_bar/location.svg
   SvgGenImage get location =>
       const SvgGenImage('assets/icons/app_bar/location.svg');
@@ -129,7 +136,7 @@ class $AssetsIconsAppBarGen {
       const SvgGenImage('assets/icons/app_bar/notification.svg');
 
   /// List of all assets
-  List<SvgGenImage> get values => [location, menu, notification];
+  List<SvgGenImage> get values => [find, location, menu, notification];
 }
 
 class $AssetsIconsBottomNavigationGen {
@@ -195,6 +202,9 @@ class $AssetsIconsFeatureMenuGen {
   SvgGenImage get order =>
       const SvgGenImage('assets/icons/feature_menu/order.svg');
 
+  /// File path: assets/icons/feature_menu/qr.svg
+  SvgGenImage get qr => const SvgGenImage('assets/icons/feature_menu/qr.svg');
+
   /// File path: assets/icons/feature_menu/report.svg
   SvgGenImage get report =>
       const SvgGenImage('assets/icons/feature_menu/report.svg');
@@ -211,6 +221,7 @@ class $AssetsIconsFeatureMenuGen {
         donate,
         myInformation,
         order,
+        qr,
         report,
         search
       ];
@@ -256,6 +267,10 @@ class $AssetsIconsProfileGen {
   /// File path: assets/icons/profile/available_time.svg
   SvgGenImage get availableTime =>
       const SvgGenImage('assets/icons/profile/available_time.svg');
+
+  /// File path: assets/icons/profile/avatar.png
+  AssetGenImage get avatar =>
+      const AssetGenImage('assets/icons/profile/avatar.png');
 
   /// File path: assets/icons/profile/blood_report.svg
   SvgGenImage get bloodReport =>
@@ -309,6 +324,7 @@ class $AssetsIconsProfileGen {
   List<dynamic> get values => [
         qRCode,
         availableTime,
+        avatar,
         bloodReport,
         bloodType,
         certificate,
@@ -356,12 +372,12 @@ class $AssetsImagesDecorationGen {
   SvgGenImage get requestSuccess =>
       const SvgGenImage('assets/images/decoration/request_success.svg');
 
-  /// File path: assets/images/decoration/splash_background.svg
-  SvgGenImage get splashBackground =>
-      const SvgGenImage('assets/images/decoration/splash_background.svg');
+  /// File path: assets/images/decoration/splash_background.png
+  AssetGenImage get splashBackground =>
+      const AssetGenImage('assets/images/decoration/splash_background.png');
 
   /// List of all assets
-  List<SvgGenImage> get values => [report, requestSuccess, splashBackground];
+  List<dynamic> get values => [report, requestSuccess, splashBackground];
 }
 
 class $AssetsImagesLottieGen {

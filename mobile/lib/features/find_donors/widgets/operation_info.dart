@@ -45,7 +45,7 @@ class OperationInfo extends StatelessWidget {
               child: Text(
                 'Organisation Name',
                 style: TextStyle(
-                  color: Color(0xFF7E7E7E),
+                  color: Color(0xFF515151),
                   fontSize: 13.31,
                   fontFamily: 'Poppins',
                 ),

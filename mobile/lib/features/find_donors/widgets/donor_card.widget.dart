@@ -42,7 +42,7 @@ class DonorCard extends StatelessWidget {
                 Text(
                   organisationName,
                   style: const TextStyle(
-                    color: Color(0xFF7E7E7E),
+                    color: Color(0xFF515151),
                     fontFamily: 'Poppins',
                     fontSize: 11,
                   ),

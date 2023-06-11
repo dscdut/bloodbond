@@ -39,6 +39,6 @@ abstract class ColorStyles {
   static const Color primary = Color(0xFFFF2156);
   static const Color highlight = Color(0xFFE23E3E);
   static const Color limeGreen = Color(0xFF38E54D);
-  static const Color gray = Color(0xFF7E7E7E);
+  static const Color gray = Color(0xFF515151);
   static const Color cultured = Color(0xFFF5F5F5);
 }
