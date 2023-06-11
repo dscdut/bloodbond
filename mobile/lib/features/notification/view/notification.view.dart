@@ -29,6 +29,7 @@ class _NotificationView extends StatelessWidget {
             title: 'Notification',
             hasBoxDecoration: false,
           ),
+          backgroundColor: const Color(0xFFF5F5F5),
           body: ListView.separated(
             padding: const EdgeInsets.only(
               left: AppSize.horizontalSpace,
@@ -73,7 +74,7 @@ class _NotificationView extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 11,
-                              color: Color(0xFF7E7E7E),
+                              color: Color(0xFF515151),
                             ),
                           ),
                           SizedBox(height: 2),
@@ -94,7 +95,7 @@ class _NotificationView extends StatelessWidget {
                             style: TextStyle(
                               fontFamily: 'Poppins',
                               fontSize: 12.58,
-                              color: Color(0xFF7E7E7E),
+                              color: Color(0xFF515151),
                             ),
                             maxLines: 3,
                             overflow: TextOverflow.ellipsis,

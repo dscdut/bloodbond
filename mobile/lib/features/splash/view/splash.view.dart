@@ -1,12 +1,9 @@
 import 'package:bloodbond/common/extensions/context.extension.dart';
-import 'package:bloodbond/flavors.dart';
+import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloodbond/common/theme/text_styles.dart';
-import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:bloodbond/features/auth/bloc/auth/auth.bloc.dart';
 import 'package:bloodbond/features/splash/bloc/splash.bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({super.key});
@@ -31,10 +28,8 @@ class _SplashView extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          Positioned.fill(
-            child:
-                Assets.images.decoration.splashBackground.svg(fit: BoxFit.fill),
-          ),
+          Assets.images.decoration.splashBackground
+              .image(width: double.infinity, fit: BoxFit.cover),
           Column(
             children: [
               const Spacer(),
@@ -43,15 +38,13 @@ class _SplashView extends StatelessWidget {
               ),
               Column(
                 children: [
-                  Assets.icons.launcher.appIcon.image(),
                   const SizedBox(
                     height: 20,
                   ),
-                  Text(
-                    AppFlavor.title,
-                    style: TextStyles.boldText
-                        .copyWith(color: Colors.white, fontSize: 24),
-                  )
+                  SizedBox(
+                    height: 550,
+                    child: Assets.icons.launcher.appIcon.image(),
+                  ),
                 ],
               ),
               const Spacer(
@@ -65,11 +58,6 @@ class _SplashView extends StatelessWidget {
                       bottom: context.paddingBottom > 0
                           ? context.paddingBottom
                           : 20,
-                    ),
-                    child: Text(
-                      'Powered by GDSC-DUT',
-                      style: TextStyles.boldText
-                          .copyWith(color: Colors.white, fontSize: 16.sp),
                     ),
                   ),
                 ),

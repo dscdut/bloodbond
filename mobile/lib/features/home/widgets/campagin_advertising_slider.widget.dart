@@ -1,4 +1,5 @@
 import 'package:bloodbond/common/theme/color_styles.dart';
+import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -15,10 +16,10 @@ class _CampaignAdvertisingSliderState extends State<CampaignAdvertisingSlider> {
   final ValueNotifier<int> _currentPageNotifier = ValueNotifier<int>(0);
   final CarouselController _carouselController = CarouselController();
   final List<String> _images = [
-    'https://post.healthline.com/wp-content/uploads/2020/09/Blood_Donation-732X549-thumbnail.jpg',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSnNsbhyXcO2J2olt66c_oGd31Xr1_VGCuKnlMbdHzogtq9_k-X2RmpOkbbkBUB6r7gDog&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTslncQA7SjCMcCWq2Xt0YgCe_M1gNLrlNyA&usqp=CAU',
-    'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSb6DPROxRxUAfeti9TjJAc0bMN7GUsZqLzig&usqp=CAU'
+    Assets.images.carousel.path,
+    Assets.images.carousel.path,
+    Assets.images.carousel.path,
+    Assets.images.carousel.path,
   ];
 
   void _onTapIndicator(int newIndex) {
@@ -49,11 +50,11 @@ class _CampaignAdvertisingSliderState extends State<CampaignAdvertisingSlider> {
           itemBuilder: (context, index, realIndex) {
             return ClipRRect(
               borderRadius: BorderRadius.circular(10),
-              child: Image.network(
+              child: Image.asset(
                 _images[index],
                 width: double.infinity,
                 height: double.infinity,
-                fit: BoxFit.cover,
+                fit: BoxFit.fitWidth,
               ),
             );
           },

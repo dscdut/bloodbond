@@ -13,8 +13,8 @@ class AvatarNameLocation extends StatelessWidget {
           // borderRadius: BorderRadius.circular(10),
           // border lại thành hình tròn
           borderRadius: BorderRadius.circular(100),
-          child: Image.network(
-            'https://images.thedirect.com/media/article_full/avatar-sons.jpg',
+          child: Image.asset(
+            'assets/icons/profile/avatar.png',
             width: 105,
             height: 105,
             fit: BoxFit.cover,
@@ -24,7 +24,7 @@ class AvatarNameLocation extends StatelessWidget {
           height: 30.h,
         ),
         Text(
-          'Fahim Ekan',
+          'Happy Child',
           style: TextStyles.mediumText.copyWith(
             fontSize: 26,
             fontWeight: FontWeight.w500,
@@ -40,8 +40,8 @@ class AvatarNameLocation extends StatelessWidget {
             children: [
               Image.asset(
                 'assets/icons/profile/QR_code.png',
-                width: 92.w,
-                height: 92.h,
+                width: 84.w,
+                height: 84.h,
               ),
               SizedBox(
                 width: 20.w,
@@ -51,8 +51,8 @@ class AvatarNameLocation extends StatelessWidget {
                   '0x61391dBA277dA6ffC2856528E02cB603aE7fe7A9',
                   style: TextStyles.s14MediumText.copyWith(
                     color: const Color(0xFF272A2F),
-                    fontSize: 18,
-                    height: 1.5, // Giá trị line height mong muốn
+                    fontSize: 16,
+                    height: 1.5,
                   ),
                 ),
               ),

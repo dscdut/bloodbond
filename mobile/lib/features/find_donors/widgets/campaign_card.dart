@@ -31,7 +31,7 @@ class CampaignCard extends StatelessWidget {
                 '\t\t\t\tJune 4th 2023, 23:59',
                 textAlign: TextAlign.left,
                 style: TextStyle(
-                  color: Color(0xFF7E7E7E),
+                  color: Color(0xFF515151),
                   fontSize: 13,
                   fontFamily: 'BeVietNamPro',
                   fontWeight: FontWeight.w400,

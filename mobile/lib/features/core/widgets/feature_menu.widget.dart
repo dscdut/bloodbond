@@ -29,10 +29,14 @@ class _FeatureMenuState extends State<FeatureMenu> {
       route: AppRouter.findDonors,
     ),
     FeatureUIModel(
-      icon: Assets.icons.featureMenu.donate,
-      title: 'Register for Donation',
+      icon: Assets.icons.featureMenu.analytics,
+      title: 'Report',
+      route: AppRouter.bloodReport,
     ),
-    FeatureUIModel(icon: Assets.icons.featureMenu.analytics, title: 'Analytics'),
+    FeatureUIModel(
+      icon: Assets.icons.featureMenu.qr,
+      title: 'QR Scan',
+    ),
     FeatureUIModel(
       icon: Assets.icons.featureMenu.myInformation,
       title: 'My Information',
@@ -44,7 +48,7 @@ class _FeatureMenuState extends State<FeatureMenu> {
   Widget build(BuildContext context) {
     return GridView.builder(
       padding: const EdgeInsets.symmetric(
-        horizontal: AppSize.horizontalSpace + 17,
+        horizontal: AppSize.horizontalSpace + 10,
       ),
       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,

@@ -35,7 +35,7 @@ class AvatarBloodName extends StatelessWidget {
           height: 30.h,
         ),
         Text(
-          'Fahim Ekan',
+          'Happy Child',
           style: TextStyles.boldText.copyWith(fontSize: 26),
         ),
       ],

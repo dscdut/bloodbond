@@ -3,6 +3,7 @@ import 'package:bloodbond/features/core/widgets/feature_menu.widget.dart';
 import 'package:bloodbond/features/find_donors/widgets/campaign_card.dart';
 import 'package:bloodbond/features/home/widgets/campagin_advertising_slider.widget.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/home/bloc/home.bloc.dart';
 
@@ -23,21 +24,40 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // appBar: const HomeAppBar(),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.all(AppSize.horizontalSpace),
-          child: Column(
-            children: const [
-              CampaignAdvertisingSlider(),
-              FeatureMenu(),
-              CampaignCard(),
-            ],
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        // appBar: const HomeAppBar(),
+        body: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.all(AppSize.horizontalSpace),
+            child: Column(
+              children: const [
+                CampaignAdvertisingSlider(),
+                FeatureMenu(),
+                SizedBox(
+                  height: 10,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 10),
+                  child: Align(
+                    alignment: Alignment.centerLeft,
+                    child: Text(
+                      'Campaigns',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ),
+                CampaignCard(),
+              ],
+            ),
           ),
         ),
+        backgroundColor: Colors.white,
       ),
-      backgroundColor: Colors.white,
     );
   }
 }

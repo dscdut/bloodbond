@@ -4,6 +4,7 @@ import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:bloodbond/features/map/map.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/core/bloc/root.bloc.dart';
 import 'package:bloodbond/features/core/widgets/custom_lazy_indexed_stack.widget.dart';
@@ -28,49 +29,54 @@ class _RootView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: BlocBuilder<RootBloc, RootState>(
-        builder: (
-          context,
-          state,
-        ) {
-          return SlideIndexedStack(
-            index: state.currentIndex,
-            children: [
-              const HomePage(),
-              const FindDonorsPage(),
-              MapPage(),
-              const NotificationPage(),
-              const ProfilePage()
-            ],
-          );
-        },
-        buildWhen: (previous, current) {
-          return previous.currentIndex != current.currentIndex;
-        },
-      ),
-      resizeToAvoidBottomInset: false,
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          context.read<RootBloc>().add(const RootBottomTabChange(newIndex: 2));
-        },
-        elevation: 1,
-        backgroundColor: Colors.white,
-        child: Container(
-          width: double.infinity,
-          height: double.infinity,
-          margin: const EdgeInsets.all(6),
-          padding: const EdgeInsets.all(10),
-          decoration: const BoxDecoration(
-            shape: BoxShape.circle,
-            color: ColorStyles.primary,
-          ),
-          child: Assets.icons.bottomNavigation.map.svg(),
+    return AnnotatedRegion<SystemUiOverlayStyle>(
+      value: SystemUiOverlayStyle.dark,
+      child: Scaffold(
+        body: BlocBuilder<RootBloc, RootState>(
+          builder: (
+            context,
+            state,
+          ) {
+            return SlideIndexedStack(
+              index: state.currentIndex,
+              children: [
+                const HomePage(),
+                const FindDonorsPage(),
+                MapPage(),
+                const NotificationPage(),
+                const ProfilePage()
+              ],
+            );
+          },
+          buildWhen: (previous, current) {
+            return previous.currentIndex != current.currentIndex;
+          },
         ),
+        resizeToAvoidBottomInset: false,
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            context
+                .read<RootBloc>()
+                .add(const RootBottomTabChange(newIndex: 2));
+          },
+          elevation: 1,
+          backgroundColor: Colors.white,
+          child: Container(
+            width: double.infinity,
+            height: double.infinity,
+            margin: const EdgeInsets.all(6),
+            padding: const EdgeInsets.all(10),
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: ColorStyles.primary,
+            ),
+            child: Assets.icons.bottomNavigation.map.svg(),
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+        bottomNavigationBar: const AppBottomNavigationBar(),
+        extendBody: true,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
-      bottomNavigationBar: const AppBottomNavigationBar(),
-      extendBody: true,
     );
   }
 }
