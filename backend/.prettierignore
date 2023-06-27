@@ -1,0 +1,5 @@
+dist
+logs
+.github
+.husky
+node_modules
