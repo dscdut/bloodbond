@@ -1,54 +1,52 @@
-import {
-  ClassSerializerInterceptor,
-  ValidationPipe,
-  VersioningType,
-} from '@nestjs/common';
-import { ConfigService } from '@nestjs/config';
-import { NestFactory, Reflector } from '@nestjs/core';
-import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
-import { useContainer } from 'class-validator';
+import { ValidationPipe } from '@nestjs/common';
+import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import validationOptions from './utils/validation-options';
-import { AllConfigType } from './config/config.type';
-import { ExpressAdapter } from '@nestjs/platform-express';
-import * as express from 'express';
+import { GlobalExceptionsFilter } from '@core/filters/global-exception-filter';
+import { ProjectLogger } from '@core/loggers';
+import { ConfigService } from '@nestjs/config';
+import { requestLoggerMiddleware } from '@shared/middleware/request-logger.middleware';
+import { setupSwagger } from './setup-swagger';
+import {
+  ExpressAdapter,
+  NestExpressApplication,
+} from '@nestjs/platform-express';
 
-async function bootstrap() {
-  const app = await NestFactory.create(
+const logger = new ProjectLogger('bootstrap');
+
+async function bootstrap(): Promise<NestExpressApplication> {
+  const app = await NestFactory.create<NestExpressApplication>(
     AppModule,
-    new ExpressAdapter(express()),
+    new ExpressAdapter(),
     { cors: true },
   );
-  useContainer(app.select(AppModule), { fallbackOnErrors: true });
-  const configService = app.get(ConfigService<AllConfigType>);
-
-  app.enableShutdownHooks();
-  app.setGlobalPrefix(
-    configService.getOrThrow('app.apiPrefix', { infer: true }),
-    {
-      exclude: ['/'],
-    },
+  app.setGlobalPrefix('/api');
+  app.use(requestLoggerMiddleware);
+  app.enableCors();
+  app.useGlobalPipes(
+    new ValidationPipe({
+      whitelist: true,
+      stopAtFirstError: true,
+      transform: true,
+    }),
   );
-  app.enableVersioning({
-    type: VersioningType.URI,
-  });
-  app.useGlobalPipes(new ValidationPipe(validationOptions));
-  app.useGlobalInterceptors(new ClassSerializerInterceptor(app.get(Reflector)));
 
-  const options = new DocumentBuilder()
-    .setTitle('Unihack API')
-    .setDescription('Unihack API docs')
-    .setVersion('1.0')
-    .addBearerAuth()
-    .build();
+  setupSwagger(app);
 
-  const document = SwaggerModule.createDocument(app, options);
-  SwaggerModule.setup('docs', app, document, {
-    customSiteTitle: 'Backend Unihack',
-    customfavIcon:
-      'https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png',
+  app.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Accept');
+    next();
   });
 
-  await app.listen(configService.getOrThrow('app.port', { infer: true }));
+  const config = app.get<ConfigService>(ConfigService);
+
+  app.useGlobalFilters(new GlobalExceptionsFilter(config));
+
+  await app.listen(config.get('PORT'), async () => {
+    logger.info(`Application is running on: ${await app.getUrl()}`);
+  });
+
+  return app;
 }
-void bootstrap();
+bootstrap();
