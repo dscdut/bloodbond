@@ -3,7 +3,7 @@ to: src/database/seeds/<%= h.inflection.transform(name, ['underscore', 'dasheriz
 ---
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { <%= name %> } from 'src/<%= h.inflection.transform(name, ['pluralize', 'underscore', 'dasherize']) %>/entities/<%= h.inflection.transform(name, ['underscore', 'dasherize']) %>.entity';
+import { <%= name %> } from 'src/database/entities/<%= h.inflection.transform(name, ['underscore', 'dasherize']) %>.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()

@@ -1,12 +1,11 @@
 # compiled output
 /dist
 /node_modules
+/.yarn
 
 # Logs
-logs
 *.log
 npm-debug.log*
-pnpm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 lerna-debug.log*
@@ -26,6 +25,7 @@ lerna-debug.log*
 *.launch
 .settings/
 *.sublime-workspace
+/.vscode/
 
 # IDE - VSCode
 .vscode/*
@@ -34,8 +34,14 @@ lerna-debug.log*
 !.vscode/launch.json
 !.vscode/extensions.json
 
-.data
-/files
+# Environment files
 .env
-/ormconfig.json
-.vercel
+
+# Winston audit file
+*-audit.json
+
+ca-certificate.crt
+/db/
+yarn.lock
+package-lock.json
+/uploads/

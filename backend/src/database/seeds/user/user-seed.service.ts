@@ -1,8 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { RoleEnum } from 'src/roles/roles.enum';
-import { StatusEnum } from 'src/statuses/statuses.enum';
-import { User } from 'src/users/entities/user.entity';
+import { USER_ROLE } from '@shared/enum/user.enum';
+import { User } from 'src/database/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -13,57 +12,25 @@ export class UserSeedService {
   ) {}
 
   async run() {
-    const countAdmin = await this.repository.count({
-      where: {
-        role: {
-          id: RoleEnum.admin,
-        },
-      },
-    });
+    const count = await this.repository.count();
 
-    if (!countAdmin) {
+    if (count === 0) {
       await this.repository.save(
-        this.repository.create({
-          firstName: 'Super',
-          lastName: 'Admin',
-          email: 'admin@example.com',
-          password: 'secret',
-          role: {
-            id: RoleEnum.admin,
-            name: 'Admin',
+        this.repository.create([
+          {
+            email: 'user1@gmail.com',
+            password: '123456',
           },
-          status: {
-            id: StatusEnum.active,
-            name: 'Active',
+          {
+            email: 'user2@gmail.com',
+            password: '123456',
           },
-        }),
-      );
-    }
-
-    const countUser = await this.repository.count({
-      where: {
-        role: {
-          id: RoleEnum.user,
-        },
-      },
-    });
-
-    if (!countUser) {
-      await this.repository.save(
-        this.repository.create({
-          firstName: 'John',
-          lastName: 'Doe',
-          email: 'john.doe@example.com',
-          password: 'secret',
-          role: {
-            id: RoleEnum.user,
-            name: 'Admin',
+          {
+            email: 'admin@gmail.com',
+            password: '123456sa',
+            role: USER_ROLE.ADMIN,
           },
-          status: {
-            id: StatusEnum.active,
-            name: 'Active',
-          },
-        }),
+        ]),
       );
     }
   }
