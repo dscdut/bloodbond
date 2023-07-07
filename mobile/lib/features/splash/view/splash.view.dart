@@ -34,7 +34,7 @@ class _SplashView extends StatelessWidget {
             children: [
               const Spacer(),
               const SizedBox(
-                height: 85,
+                height: 15,
               ),
               Column(
                 children: [
@@ -44,6 +44,57 @@ class _SplashView extends StatelessWidget {
                   SizedBox(
                     height: 550,
                     child: Assets.icons.launcher.appIcon.image(),
+                  ),
+                  SizedBox(
+                    width: 250,
+                    height: 45,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigator.of(context)
+                        //     .pushNamed(AppRouter.connectWallet);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                        ),
+                        backgroundColor: const Color(0xFFFF2156),
+                      ),
+                      child: const Text(
+                        'Login',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 16),
+                  SizedBox(
+                    width: 250,
+                    height: 45,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        // Navigator.of(context).pushNamed(AppRouter.root);
+                      },
+                      style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(8),
+                          side: const BorderSide(
+                            color: Color(0xFFFF2156),
+                          ),
+                        ),
+                        backgroundColor: Colors.white,
+                      ),
+                      child: const Text(
+                        'Register',
+                        style: TextStyle(
+                          color: Color(0xFFFF2156),
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
                   ),
                 ],
               ),
