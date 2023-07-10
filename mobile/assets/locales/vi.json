@@ -17,7 +17,9 @@
   },
   "auth": {
     "welcome_back": "Rất vui khi được gặp lại bạn!",
-    "sign_in": "Đăng nhập"
+    "sign_in": "Đăng nhập",
+    "login": "Đăng nhập",
+    "register": "Đăng ký"
   },
   "validator": {
     "email_required": "Vui lòng nhập email",
