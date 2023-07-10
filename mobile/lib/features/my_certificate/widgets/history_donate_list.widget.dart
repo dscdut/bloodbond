@@ -3,7 +3,8 @@ import 'package:bloodbond/features/my_certificate/widgets/history_donate_item.wi
 import 'package:flutter/material.dart';
 
 class HistoryDonateList extends StatelessWidget {
-  const HistoryDonateList({super.key, required this.items, required this.itemCount});
+  const HistoryDonateList(
+      {super.key, required this.items, required this.itemCount,});
 
   final List<BloodItemModel> items;
   final int itemCount;

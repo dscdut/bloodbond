@@ -2,7 +2,6 @@ import 'package:bloodbond/data/models/nft.model.dart';
 import 'package:bloodbond/features/auth/auth.dart';
 import 'package:bloodbond/features/donation_request/donation_request.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
-import 'package:bloodbond/features/map/map.dart';
 import 'package:bloodbond/features/my_certificate/my_certificate.dart';
 import 'package:bloodbond/features/my_form/view/my_form.view.dart';
 import 'package:bloodbond/features/my_information/view/my_information.view.dart';
@@ -20,6 +19,7 @@ abstract class AppRouter {
   static const String homeScreen = '/home_screen';
   static const String connectWallet = '/connectWallet';
   static const String bloodReport = '/blood_report';
+  static const String welcome = '/welcome';
 
   // Root
   static const String root = '/root';
@@ -89,11 +89,11 @@ abstract class AppRouter {
             return const LoginScreenPage();
           },
         );
-      case connectWallet:
+      case welcome: 
         return MaterialPageRoute(
           settings: settings,
           builder: (_) {
-            return const ConnectWalletPage();
+            return const WelcomePage();
           },
         );
       case login:
