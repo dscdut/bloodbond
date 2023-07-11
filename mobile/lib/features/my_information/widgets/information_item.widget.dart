@@ -56,7 +56,8 @@ class _InformationItemState extends State<InformationItem> {
             Expanded(
               child: Text(
                 widget.title,
-                style: TextStyles.s17MediumText.copyWith(color: ColorStyles.gray),
+                style:
+                    TextStyles.s17MediumText.copyWith(color: ColorStyles.gray),
               ),
             ),
             const Icon(

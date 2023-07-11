@@ -1,7 +1,6 @@
 part of 'map.bloc.dart';
 
 class MapState extends Equatable {
-
   const MapState.initial()
       : this(
           myLocation: const LatLng(18.635370, 105.737148),

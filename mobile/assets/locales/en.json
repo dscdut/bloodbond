@@ -17,7 +17,9 @@
   },
   "auth": {
     "welcome_back": "Nice to have you back!",
-    "sign_in": "Sign in"
+    "sign_in": "Sign in",
+    "login": "Login",
+    "register": "Register"
   },
   "validator": {
     "email_required": "Please enter your email",

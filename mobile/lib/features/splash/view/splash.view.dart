@@ -34,7 +34,7 @@ class _SplashView extends StatelessWidget {
             children: [
               const Spacer(),
               const SizedBox(
-                height: 85,
+                height: 15,
               ),
               Column(
                 children: [

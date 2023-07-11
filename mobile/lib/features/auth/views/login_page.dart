@@ -1,9 +1,10 @@
+import 'package:bloodbond/features/auth/bloc/auth/auth.bloc.dart';
+import 'package:bloodbond/features/auth/bloc/login/login.bloc.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:bloodbond/router/app_router.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloodbond/features/auth/auth.dart';
 
 class LoginScreenPage extends StatelessWidget {
   const LoginScreenPage({super.key});
@@ -11,14 +12,18 @@ class LoginScreenPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (_) => HomeScreenBloc(),
-      child: const _HomeScreenView(),
+      create: (_) => LoginBloc(
+        authBloc: context.read<AuthBloc>(),
+        userRepository: context.read(),
+      ),
+      lazy: false,
+      child: const _LoginPage(),
     );
   }
 }
 
-class _HomeScreenView extends StatelessWidget {
-  const _HomeScreenView();
+class _LoginPage extends StatelessWidget {
+  const _LoginPage();
 
   @override
   Widget build(BuildContext context) {
