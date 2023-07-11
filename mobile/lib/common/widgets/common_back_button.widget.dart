@@ -11,7 +11,7 @@ class CommonBackButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 10, 0, 10),
+      padding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
       child: GestureDetector(
         onTap: () => Navigator.of(context).pop(),
         child: Container(

@@ -9,6 +9,7 @@ import 'package:bloodbond/features/report/view/report.view.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
 import 'package:bloodbond/features/splash/splash.dart';
+import 'package:bloodbond/features/finish_verify/view/finish_verify.view.dart';
 
 abstract class AppRouter {
   static const String splash = '/';
@@ -20,6 +21,8 @@ abstract class AppRouter {
   static const String connectWallet = '/connectWallet';
   static const String bloodReport = '/blood_report';
   static const String welcome = '/welcome';
+  static const String finish = '/finish_verify';
+  static const String forgotPassword = '/forgot_password';
 
   // Root
   static const String root = '/root';
@@ -43,36 +46,6 @@ abstract class AppRouter {
   //My Form
   static const String myForm = 'my_form';
 
-  // static final router = GoRouter(
-  //   routes: [
-  //     GoRoute(
-  //       path: login,
-  //       pageBuilder: (_, __) {
-  //         return const MaterialPage(
-  //           child: LoginPage(),
-  //         );
-  //       },
-  //     ),
-  //     GoRoute(
-  //       path: register,
-  //       pageBuilder: (_, __) {
-  //         return const MaterialPage(
-  //           child: RegisterView(),
-  //         );
-  //       },
-  //     ),
-  //     GoRoute(
-  //       path: root,
-  //       pageBuilder: (_, __) {
-  //         return const MaterialPage(
-  //           child: RootPage(),
-  //         );
-  //       },
-  //     )
-  //   ],
-  //   initialLocation: login,
-  // );
-
   static Route? onGenerateRoute(RouteSettings settings) {
     switch (settings.name) {
       case splash:
@@ -82,14 +55,7 @@ abstract class AppRouter {
             return const SplashPage();
           },
         );
-      case homeScreen:
-        return MaterialPageRoute(
-          settings: settings,
-          builder: (_) {
-            return const LoginScreenPage();
-          },
-        );
-      case welcome: 
+      case welcome:
         return MaterialPageRoute(
           settings: settings,
           builder: (_) {
@@ -101,6 +67,20 @@ abstract class AppRouter {
           settings: settings,
           builder: (_) {
             return const LoginPage();
+          },
+        );
+      case finish:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const FinishVerifyPage();
+          },
+        );
+      case forgotPassword:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const ForgotPasswordPage();
           },
         );
       case root:

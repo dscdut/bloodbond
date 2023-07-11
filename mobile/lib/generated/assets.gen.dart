@@ -234,6 +234,18 @@ class $AssetsIconsLauncherGen {
   AssetGenImage get appIcon =>
       const AssetGenImage('assets/icons/launcher/app_icon.png');
 
+  /// File path: assets/icons/launcher/apple_icon.svg
+  SvgGenImage get appleIcon =>
+      const SvgGenImage('assets/icons/launcher/apple_icon.svg');
+
+  /// File path: assets/icons/launcher/facebook_icon.svg
+  SvgGenImage get facebookIcon =>
+      const SvgGenImage('assets/icons/launcher/facebook_icon.svg');
+
+  /// File path: assets/icons/launcher/google_icon.svg
+  SvgGenImage get googleIcon =>
+      const SvgGenImage('assets/icons/launcher/google_icon.svg');
+
   /// File path: assets/icons/launcher/logo.png
   AssetGenImage get logo =>
       const AssetGenImage('assets/icons/launcher/logo.png');
@@ -243,7 +255,8 @@ class $AssetsIconsLauncherGen {
       const AssetGenImage('assets/icons/launcher/onboard.png');
 
   /// List of all assets
-  List<AssetGenImage> get values => [appIcon, logo, onboard];
+  List<dynamic> get values =>
+      [appIcon, appleIcon, facebookIcon, googleIcon, logo, onboard];
 }
 
 class $AssetsIconsNotificationGen {
@@ -376,8 +389,13 @@ class $AssetsImagesDecorationGen {
   AssetGenImage get splashBackground =>
       const AssetGenImage('assets/images/decoration/splash_background.png');
 
+  /// File path: assets/images/decoration/success.png
+  AssetGenImage get success =>
+      const AssetGenImage('assets/images/decoration/success.png');
+
   /// List of all assets
-  List<dynamic> get values => [report, requestSuccess, splashBackground];
+  List<dynamic> get values =>
+      [report, requestSuccess, splashBackground, success];
 }
 
 class $AssetsImagesLottieGen {

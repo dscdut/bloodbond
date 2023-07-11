@@ -4,6 +4,7 @@ import 'package:bloodbond/common/theme/text_styles.dart';
 import 'package:bloodbond/common/widgets/common_rounded_button.widget.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:bloodbond/generated/locale_keys.g.dart';
+import 'package:bloodbond/router/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 
@@ -36,7 +37,9 @@ class WelcomePage extends StatelessWidget {
                     width: 250,
                     height: 45,
                     child: CommonRoundedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushNamed(AppRouter.login);
+                      },
                       backgroundColor: ColorStyles.primary,
                       content: LocaleKeys.auth_login.tr(),
                       textStyle: TextStyles.s17BoldText.copyWith(

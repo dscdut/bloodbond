@@ -31,6 +31,10 @@
 	<string>$(FLUTTER_BUILD_NUMBER)</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>BloodChain needs access to your location so it can show blood donations around you when it in background</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>BloodChain needs access to your location so it can show blood donations around you</string>
 	<key>UIApplicationSupportsIndirectInputEvents</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
@@ -54,9 +58,5 @@
 	<false/>
 	<key>googleMapsApiKey</key>
 	<string>$(GOOGLE_MAPS_API_KEY)</string>
-	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>BloodChain needs access to your location so it can show blood donations around you</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>BloodChain needs access to your location so it can show blood donations around you when it in background</string>
 </dict>
 </plist>
