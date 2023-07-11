@@ -17,7 +17,6 @@
   },
   "auth": {
     "welcome_back": "Nice to have you back!",
-    "sign_in": "Sign in",
     "login": "Login",
     "register": "Register"
   },

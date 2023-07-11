@@ -56,79 +56,93 @@ class CommonRoundedButton extends StatelessWidget {
     return SizedBox(
       width: width,
       height: height,
-      child: Theme(
-        data: ThemeData(
-          elevatedButtonTheme: ElevatedButtonThemeData(
-            style: ButtonStyle(
-              overlayColor: MaterialStateProperty.all<Color>(
-                isDisable ? disableBackgroundColor : backgroundColor,
-              ),
-              foregroundColor: MaterialStateProperty.all<Color>(
-                isDisable ? disableBackgroundColor : backgroundColor,
-              ),
-              backgroundColor: MaterialStateProperty.all<Color>(
-                isDisable ? disableBackgroundColor : backgroundColor,
-              ),
-              elevation: MaterialStateProperty.resolveWith<double>(
-                (Set<MaterialState> states) {
-                  if (states.contains(MaterialState.focused)) {
-                    return 0;
-                  }
-
-                  return elevation;
-                },
-              ),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(borderRadius),
+          boxShadow: [
+            BoxShadow(
+              color:
+                  isDisable ? Colors.transparent : Colors.grey.withOpacity(0.5),
+              spreadRadius: 1,
+              blurRadius: 3,
+              offset:
+                  const Offset(0, 2), // Điều chỉnh vị trí của hiệu ứng inwell
             ),
-          ),
+          ],
         ),
-        child: ElevatedButton(
-          onPressed: (isLoading || isDisable) ? null : onPressed,
-          style: ElevatedButton.styleFrom(
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(borderRadius),
-              side: borderSide ?? BorderSide.none,
+        child: Theme(
+          data: ThemeData(
+            elevatedButtonTheme: ElevatedButtonThemeData(
+              style: ButtonStyle(
+                overlayColor: MaterialStateProperty.all<Color>(
+                  isDisable ? disableBackgroundColor : backgroundColor,
+                ),
+                foregroundColor: MaterialStateProperty.all<Color>(
+                  isDisable ? disableBackgroundColor : backgroundColor,
+                ),
+                backgroundColor: MaterialStateProperty.all<Color>(
+                  isDisable ? disableBackgroundColor : backgroundColor,
+                ),
+                elevation: MaterialStateProperty.resolveWith<double>(
+                  (Set<MaterialState> states) {
+                    if (states.contains(MaterialState.focused)) {
+                      return 0;
+                    }
+                    return elevation;
+                  },
+                ),
+              ),
             ),
-            shadowColor: shadowColor,
-            splashFactory: NoSplash.splashFactory,
-            tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-            disabledBackgroundColor: disableBackgroundColor,
-            disabledForegroundColor: disableBackgroundColor,
-            enableFeedback: false,
           ),
-          child: isLoading
-              ? const LoadingDot()
-              : (child ??
-                  FittedBox(
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        if (prefixIcon != null)
-                          Row(
-                            children: [
-                              prefixIcon!,
-                              const SizedBox(
-                                width: 15,
-                              ),
-                            ],
+          child: ElevatedButton(
+            onPressed: (isLoading || isDisable) ? null : onPressed,
+            style: ElevatedButton.styleFrom(
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(borderRadius),
+                side: borderSide ?? BorderSide.none,
+              ),
+              shadowColor: shadowColor,
+              splashFactory: NoSplash.splashFactory,
+              tapTargetSize: MaterialTapTargetSize.shrinkWrap,
+              disabledBackgroundColor: disableBackgroundColor,
+              disabledForegroundColor: disableBackgroundColor,
+              enableFeedback: false,
+            ),
+            child: isLoading
+                ? const LoadingDot()
+                : (child ??
+                    FittedBox(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (prefixIcon != null)
+                            Row(
+                              children: [
+                                prefixIcon!,
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                              ],
+                            ),
+                          Text(
+                            content,
+                            style: textStyle,
+                            maxLines: 1,
+                            overflow: TextOverflow.ellipsis,
                           ),
-                        Text(
-                          content,
-                          style: textStyle,
-                          maxLines: 1,
-                          overflow: TextOverflow.ellipsis,
-                        ),
-                        if (suffixIcon != null)
-                          Row(
-                            children: [
-                              const SizedBox(
-                                width: 15,
-                              ),
-                              suffixIcon!
-                            ],
-                          ),
-                      ],
-                    ),
-                  )),
+                          if (suffixIcon != null)
+                            Row(
+                              children: [
+                                const SizedBox(
+                                  width: 15,
+                                ),
+                                suffixIcon!
+                              ],
+                            ),
+                        ],
+                      ),
+                    )),
+          ),
         ),
       ),
     );
