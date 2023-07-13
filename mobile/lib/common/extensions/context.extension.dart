@@ -8,6 +8,8 @@ extension ContextExtension on BuildContext {
 
   double get width => mediaQuerySize.width;
 
+  double get sizeBoxHeight => MediaQuery.of(this).size.height * 0.1;
+
   ThemeData get theme => Theme.of(this);
 
   /// Check if dark mode theme is enable

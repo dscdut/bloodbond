@@ -41,4 +41,6 @@ abstract class ColorStyles {
   static const Color limeGreen = Color(0xFF38E54D);
   static const Color gray = Color(0xFF515151);
   static const Color cultured = Color(0xFFF5F5F5);
+  static const Color concrete = Color(0xFFF2F2F2);
+  static const Color silver = Color(0xFFBEBEBE);
 }
