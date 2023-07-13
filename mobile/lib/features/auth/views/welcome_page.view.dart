@@ -30,7 +30,7 @@ class WelcomePage extends StatelessWidget {
                     height: 20,
                   ),
                   SizedBox(
-                    height: 550,
+                    height: context.height * 0.63,
                     child: Assets.icons.launcher.appIcon.image(),
                   ),
                   SizedBox(

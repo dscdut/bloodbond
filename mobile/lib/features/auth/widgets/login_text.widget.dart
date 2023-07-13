@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 
-class CustomText extends StatelessWidget {
-  const CustomText({
+class LoginCustomText extends StatelessWidget {
+  const LoginCustomText({
+    super.key,
     required this.text,
     this.fontSize = 17,
     this.fontWeight = FontWeight.bold,
-    this.color = const Color(0xFF000000),
+    this.color = Colors.black,
   });
 
   final String text;

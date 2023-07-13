@@ -1,66 +1,103 @@
+import 'package:bloodbond/common/theme/color_styles.dart';
+import 'package:bloodbond/common/theme/text_styles.dart';
+import 'package:bloodbond/common/widgets/common_rounded_button.widget.dart';
+import 'package:bloodbond/common/widgets/common_text_form_field.widget.dart';
+import 'package:bloodbond/features/auth/widgets/login_text.widget.dart';
+import 'package:bloodbond/generated/locale_keys.g.dart';
+import 'package:bloodbond/router/app_router.dart';
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:bloodbond/common/utils/validator.util.dart';
-import 'package:bloodbond/common/widgets/common_text_form_field.widget.dart';
-import 'package:bloodbond/generated/locale_keys.g.dart';
-import 'package:bloodbond/features/auth/bloc/login/login.bloc.dart';
 
 class LoginForm extends StatefulWidget {
   const LoginForm({
     super.key,
-    required this.formKey,
-    required this.emailEditController,
-    required this.passwordEditController,
   });
-
-  final GlobalKey<FormState> formKey;
-  final TextEditingController emailEditController;
-  final TextEditingController passwordEditController;
-
   @override
   State<LoginForm> createState() => _LoginFormState();
 }
 
 class _LoginFormState extends State<LoginForm> {
-  bool _isObscure = true;
-
   @override
   Widget build(BuildContext context) {
     return Form(
-      key: widget.formKey,
+      // key: widget.formKey,
       child: Column(
         children: [
-          const SizedBox(height: 40),
-          AppTextFormField(
-            validator: ValidatorUtil.validateEmail,
-            textController: widget.emailEditController,
-            labelText: LocaleKeys.texts_email_address.tr(),
-            keyboardType: TextInputType.emailAddress,
-            hintText: 'name@email.com',
+          Padding(
+            padding: const EdgeInsets.only(top: 35),
+            child: LoginCustomText(
+              text: LocaleKeys.texts_email.tr(),
+            ),
           ),
-          const SizedBox(height: 15),
-          BlocBuilder<LoginBloc, LoginState>(
-            builder: (context, state) {
-              return AppTextFormField(
-                textController: widget.passwordEditController,
-                labelText: LocaleKeys.texts_password.tr(),
-                keyboardType: TextInputType.text,
-                errorText: state.error,
-                hintText: '••••••••',
-                suffixIcon:
-                    _isObscure ? Icons.visibility_off : Icons.visibility,
-                onTapSuffixIcon: () {
-                  setState(() {
-                    _isObscure = !_isObscure;
-                  });
+          Padding(
+            padding: const EdgeInsets.fromLTRB(40, 5, 40, 0),
+            child: AppTextFormField(
+              hintText: LocaleKeys.validator_email_required.tr(),
+              fillColor: ColorStyles.concrete,
+              hintColor: ColorStyles.silver,
+              borderRadius: 20,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 22,
+              ),
+              onChanged: (value) {
+                // Handle onChanged event
+              },
+              // Add any other required parameters
+            ),
+          ),
+          LoginCustomText(
+            text: LocaleKeys.texts_password.tr(),
+          ),
+          Padding(
+            padding: const EdgeInsets.fromLTRB(40, 5, 40, 0),
+            child: AppTextFormField(
+              hintText: LocaleKeys.validator_password_required.tr(),
+              fillColor: ColorStyles.concrete,
+              hintColor: ColorStyles.silver,
+              borderRadius: 20,
+              contentPadding: const EdgeInsets.symmetric(
+                vertical: 18,
+                horizontal: 22,
+              ),
+              onChanged: (value) {
+                // Handle onChanged event
+              },
+              // Add any other required parameters
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(top: 20),
+            child: SizedBox(
+              width: 250,
+              height: 45,
+              child: CommonRoundedButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed(AppRouter.finish);
                 },
-                isObscure: _isObscure,
-                onChanged: (value) {},
-              );
-            },
+                backgroundColor: ColorStyles.primary,
+                content: LocaleKeys.auth_login.tr(),
+                textStyle: TextStyles.s17BoldText.copyWith(
+                  color: Colors.white,
+                ),
+              ),
+            ),
           ),
-          const SizedBox(height: 15),
+          TextButton(
+            onPressed: () {
+              Navigator.of(context).pushNamed(AppRouter.forgotPassword);
+            },
+            style: ButtonStyle(
+              overlayColor:
+                  MaterialStateProperty.all<Color>(Colors.transparent),
+            ),
+            child: Text(
+              LocaleKeys.auth_forgot_password.tr(),
+              style: TextStyles.s17MediumText.copyWith(
+                color: ColorStyles.primary,
+              ),
+            ),
+          ),
         ],
       ),
     );
