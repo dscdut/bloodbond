@@ -7,8 +7,11 @@ import { ApiConfigService } from '@shared/services/api-config.service';
 
 import { UserSeedModule } from './user/user-seed.module';
 
+import { BloodTypeSeedModule } from './blood-type/blood-type-seed.module';
+
 @Module({
   imports: [
+    BloodTypeSeedModule,
     UserSeedModule,
     ConfigModule.forRoot({
       isGlobal: true,
