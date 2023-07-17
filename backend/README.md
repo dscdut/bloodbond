@@ -36,6 +36,14 @@ $ npm run typeorm:generate-migration --name=some-name
 $ name=migration-name npm run typeorm:generate-migration
 ```
 
+## Generate entity from database
+
+```bash
+$ npm run gen-entity-local
+```
+
+All the entities will be created in `src/database/entities`
+
 ## Seeding
 
 ### Creating seeds
