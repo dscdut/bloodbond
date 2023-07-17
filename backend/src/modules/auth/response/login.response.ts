@@ -1,5 +1,5 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { USER_ROLE } from '@shared/enum/user.enum';
+// import { USER_ROLE } from '@shared/enum/user.enum';
 
 export class LoginResponse {
   @ApiProperty({
@@ -14,9 +14,9 @@ export class LoginResponse {
   })
   token: string;
 
-  @ApiProperty({
-    type: String,
-    example: 1,
-  })
-  role: USER_ROLE;
+  // @ApiProperty({
+  //   type: String,
+  //   example: 1,
+  // })
+  // role: USER_ROLE;
 }

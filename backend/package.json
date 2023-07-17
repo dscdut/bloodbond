@@ -23,7 +23,8 @@
     "seed:run": "ts-node -r tsconfig-paths/register ./src/database/seeds/run-seed.ts",
     "module:generate": "nest g module modules/%name%",
     "controller:generate": "nest g controller modules/%name%",
-    "service:generate": "nest g service modules/%name%"
+    "service:generate": "nest g service modules/%name%",
+    "gen-entity-local": "npx typeorm-model-generator -h localhost -d bloodbond -u postgres -x postgres -e postgres -o src/database/entities  --skipTables=migrations,spatial_ref_sys --noConfig --cf=none --namingStrategy=./src/config/namingStrategy"
   },
   "dependencies": {
     "@nestjs/common": "^9.2.0",
@@ -55,6 +56,7 @@
     "rimraf": "^3.0.2",
     "rxjs": "^7.5.7",
     "typeorm": "^0.3.11",
+    "typeorm-model-generator": "^0.4.6",
     "winston": "^3.8.2",
     "winston-daily-rotate-file": "^4.7.1"
   },

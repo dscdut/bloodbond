@@ -1,7 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { USER_ROLE } from '@shared/enum/user.enum';
-import { User } from 'src/database/entities/user.entity';
+import { User } from '@database/entities/user.entity';
 import { Repository } from 'typeorm';
 
 @Injectable()
@@ -18,17 +17,28 @@ export class UserSeedService {
       await this.repository.save(
         this.repository.create([
           {
+            name: 'User 1',
             email: 'user1@gmail.com',
             password: '123456',
+            bloodType: {
+              id: 1,
+            },
           },
           {
+            name: 'User 2',
             email: 'user2@gmail.com',
             password: '123456',
+            bloodType: {
+              id: 2,
+            },
           },
           {
-            email: 'admin@gmail.com',
-            password: '123456sa',
-            role: USER_ROLE.ADMIN,
+            name: 'User 3',
+            email: 'user3@gmail.com',
+            password: '123456',
+            bloodType: {
+              id: 3,
+            },
           },
         ]),
       );

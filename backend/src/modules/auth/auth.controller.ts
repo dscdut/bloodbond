@@ -18,8 +18,7 @@ import { LocalAuthGuard } from './guard/local-auth.guard';
 import { User } from '@database/entities';
 import { CurrentUser } from '@shared/decorator/user.decorator';
 import { Response } from 'express';
-import { AuthGoogleLoginDto } from './dto/auth-google-login.dto';
-import { GoogleAuthGuard } from './guard/google-oauth.guard';
+// import { AuthGoogleLoginDto } from './dto/auth-google-login.dto';
 
 @Controller('auth')
 export class AuthController {
@@ -66,22 +65,22 @@ export class AuthController {
     return data;
   }
 
-  @Post('google/login')
-  @HttpCode(HttpStatus.OK)
-  @ApiOperation({
-    tags: ['auth'],
-    operationId: 'loginWithGoogle',
-    summary: 'Login with Google',
-    description: 'Login with Google',
-  })
-  @ApiResponse({
-    status: HttpStatus.OK,
-    description: 'Successful',
-    type: LoginResponse,
-  })
-  async loginWithGoogle(@Body() loginDto: AuthGoogleLoginDto) {
-    const socialData = await this.authService.getProfileByToken(loginDto);
+  // @Post('google/login')
+  // @HttpCode(HttpStatus.OK)
+  // @ApiOperation({
+  //   tags: ['auth'],
+  //   operationId: 'loginWithGoogle',
+  //   summary: 'Login with Google',
+  //   description: 'Login with Google',
+  // })
+  // @ApiResponse({
+  //   status: HttpStatus.OK,
+  //   description: 'Successful',
+  //   type: LoginResponse,
+  // })
+  // async loginWithGoogle(@Body() loginDto: AuthGoogleLoginDto) {
+  //   const socialData = await this.authService.getProfileByToken(loginDto);
 
-    return this.authService.validateSocialLogin('google', socialData);
-  }
+  //   return this.authService.validateSocialLogin('google', socialData);
+  // }
 }

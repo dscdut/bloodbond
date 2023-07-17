@@ -1,5 +1,4 @@
 import { Column, Entity, OneToMany, PrimaryGeneratedColumn } from 'typeorm';
-import { User } from './user.entity';
 
 @Entity({ name: 'media' })
 export class Media {
@@ -11,7 +10,4 @@ export class Media {
 
   @Column({ nullable: true })
   url: string;
-
-  @OneToMany(() => User, (user) => user.avatar)
-  users: User[];
 }
