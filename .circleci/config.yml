@@ -9,7 +9,7 @@ aliases:
     - &install-deps
       run:
           name: Install dependencies
-          command: npm i
+          command: cd ~/bloodbond/backend && npm i
 
 orbs:
     node: circleci/node@5.0.1
