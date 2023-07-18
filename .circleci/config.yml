@@ -1,60 +1,60 @@
 version: 2.1
 aliases:
-  - &restore-cache
-    restore_cache:
-      keys:
-        - v1-dependencies-
-        # fallback to using the latest cache if no exact match is found
-        - v1-dependencies-
-  - &install-deps
-    run:
-      name: Install dependencies
-      command: npm i
+    - &restore-cache
+      restore_cache:
+          keys:
+              - v1-dependencies-
+              # fallback to using the latest cache if no exact match is found
+              - v1-dependencies-
+    - &install-deps
+      run:
+          name: Install dependencies
+          command: npm i
 
 orbs:
-  node: circleci/node@5.0.1
+    node: circleci/node@5.0.1
 
 jobs:
-  build:
-    working_directory: ~/bloodbond/backend
-    docker:
-      - image: circleci/node:16
-      - image: docker:19.03.14
+    build:
+        working_directory: ~/bloodbond/backend
+        docker:
+            - image: circleci/node:16
+            - image: docker:19.03.14
 
-    steps:
-      - checkout
-      - setup_remote_docker
-      - *restore-cache
-      - run: npm cache clear --force
-      - run:
-          name: Update NPM version
-          command: 'sudo npm install -g npm@latest'
-                - *install-deps
-      - save_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
-          paths:
-            - ./node_modules
-  deploy:
-    machine:
-      enabled: true
-    working_directory: ~/bloodbond/backend
-    steps:
-      - add_ssh_keys:
-          fingerprints: '55:b9:a6:73:af:2f:30:b5:96:34:fb:47:29:ac:da:d8'
-      - run:
-          name: Deploy via ssh
-          command: |
-            echo Starting deploy to server
-            ssh -oStrictHostKeyChecking=no -v $SSH_USER@$SSH_HOST 'cd ~/bloodbond/backend && git checkout develop && git pull && chmod 777 ./script/deploy.sh && ./script/deploy.sh'
+        steps:
+            - checkout
+            - setup_remote_docker
+            - *restore-cache
+            - run: npm cache clear --force
+            - run:
+                  name: Update NPM version
+                  command: 'sudo npm install -g npm@latest'
+            - *install-deps
+            - save_cache:
+                  key: v1-dependencies-{{ checksum "package.json" }}
+                  paths:
+                      - ./node_modules
+    deploy:
+        machine:
+            enabled: true
+        working_directory: ~/bloodbond/backend
+        steps:
+            - add_ssh_keys:
+                  fingerprints: '09:03:4f:fb:dd:07:f0:0a:85:79:1f:48:ab:66:96:62'
+            - run:
+                  name: Deploy via ssh
+                  command: |
+                      echo Starting deploy to server
+                      ssh -oStrictHostKeyChecking=no -v $SSH_USER@$SSH_HOST 'cd ~/bloodbond/backend && git checkout develop && git pull && chmod 777 ./script/deploy.sh && ./script/deploy.sh'
 
 workflows:
-  build-and-deploy:
-    jobs:
-      - build
-      - deploy:
-          requires:
+    build-and-deploy:
+        jobs:
             - build
-          filters:
-            branches:
-              only:
-                - develop
+            - deploy:
+                  requires:
+                      - build
+                  filters:
+                      branches:
+                          only:
+                              - develop
