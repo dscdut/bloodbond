@@ -55,11 +55,19 @@ export class User {
   })
   citizenshipNumber: string | null;
 
+  @Column('integer', { name: 'blood_type_id', nullable: true })
+  bloodTypeId: number | null;
+
   @Column('character varying', { name: 'address', nullable: true, length: 255 })
   address: string | null;
 
-  @Column('geometry', { name: 'coordinates', nullable: true })
-  coordinates: string | null;
+  @Column({
+    type: 'geometry',
+    spatialFeatureType: 'Point',
+    name: 'geom',
+    nullable: true,
+  })
+  geom: { type: string; coordinates: [number, number] } | null;
 
   @Column('text', { name: 'refresh_token', nullable: true, array: true })
   refreshToken: string[] | null;
@@ -79,10 +87,10 @@ export class User {
   updatedAt: Date | null;
 
   @OneToMany(() => BloodCommit, (bloodCommit) => bloodCommit.donor)
-  bloodCommits: BloodCommit[];
+  donors: BloodCommit[];
 
   @OneToMany(() => BloodCommit, (bloodCommit) => bloodCommit.recipient)
-  bloodCommits2: BloodCommit[];
+  recipients: BloodCommit[];
 
   @OneToMany(() => DonationInfo, (donationInfo) => donationInfo.donor)
   donationInfos: DonationInfo[];

@@ -31,11 +31,11 @@ export class BloodCommit {
   @Column('integer', { name: 'status', default: () => '0' })
   status: number;
 
-  @ManyToOne(() => User, (user) => user.bloodCommits)
+  @ManyToOne(() => User, (user) => user.donors)
   @JoinColumn([{ name: 'donor_id', referencedColumnName: 'id' }])
   donor: User;
 
-  @ManyToOne(() => User, (user) => user.bloodCommits2)
+  @ManyToOne(() => User, (user) => user.recipients)
   @JoinColumn([{ name: 'recipient_id', referencedColumnName: 'id' }])
   recipient: User;
 }
