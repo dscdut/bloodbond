@@ -12,6 +12,6 @@ export class CreateBloodTypesTable1689609623610 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<void> {
-    await queryRunner.query(`DROP TABLE IF EXISTS blood_types`);
+    await queryRunner.query('DROP TABLE IF EXISTS blood_types');
   }
 }
