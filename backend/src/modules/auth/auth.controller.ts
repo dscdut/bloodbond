@@ -18,6 +18,7 @@ import { LocalAuthGuard } from './guard/local-auth.guard';
 import { User } from '@database/entities';
 import { CurrentUser } from '@shared/decorator/user.decorator';
 import { Response } from 'express';
+import { RegisterUserDto } from './dto/register-user.dto';
 // import { AuthGoogleLoginDto } from './dto/auth-google-login.dto';
 
 @Controller('auth')
@@ -37,7 +38,7 @@ export class AuthController {
     description: 'Successful',
     type: RegisterResponse,
   })
-  async register(@Body() data: AuthCredentialDto): Promise<RegisterResponse> {
+  async register(@Body() data: RegisterUserDto): Promise<RegisterResponse> {
     return this.authService.registerUser(data);
   }
 

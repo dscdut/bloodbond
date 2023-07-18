@@ -16,6 +16,7 @@ import * as argon2 from 'argon2';
 // import { LoginResponse } from './response/login.response';
 import { OAuth2Client } from 'google-auth-library';
 import { ConfigService } from '@nestjs/config';
+import { RegisterUserDto } from './dto/register-user.dto';
 // import { AuthGoogleLoginDto } from './dto/auth-google-login.dto';
 // import { SocialInterface } from './interface/social.interface';
 // import { USER_ROLE } from '@shared/enum/user.enum';
@@ -39,11 +40,12 @@ export class AuthService {
   }
 
   async registerUser(
-    authCredentialDto: AuthCredentialDto,
+    registerUserDto: RegisterUserDto,
   ): Promise<RegisterResponse> {
-    const user = await this.userService.createOne(authCredentialDto);
+    const user = await this.userService.createOne(registerUserDto);
     return {
       id: user.id,
+      name: user.name,
       email: user.email,
     };
   }
