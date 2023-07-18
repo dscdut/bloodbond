@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Column,
   Entity,
   Index,
@@ -9,7 +10,7 @@ import { User } from './user.entity';
 
 @Index('blood_types_pkey', ['id'], { unique: true })
 @Entity('blood_types', { schema: 'public' })
-export class BloodType {
+export class BloodType extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'integer', name: 'id' })
   id: number;
 

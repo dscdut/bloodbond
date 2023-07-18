@@ -7,6 +7,9 @@ import { Repository } from 'typeorm';
 import { PageMetaDto } from '@core/pagination/dto/page-meta.dto';
 import { PaginateTransformDto } from '../../core/pagination/dto/paginate-transformer.dto';
 import { PaginateQueryBuilder } from '@core/pagination/query/query-builder';
+import { UpdateUserDto } from './dto/update-user.dto';
+import { UpdatedUserResponse } from './response/update-user.response';
+import { BloodType } from '@database/entities/blood_type.entity';
 
 @Injectable()
 export class UserService {
@@ -50,13 +53,75 @@ export class UserService {
     return this.userRepository.save(user);
   }
 
-  async updateOne(id: number, data: Partial<User>): Promise<User> {
-    return this.userRepository.save(
-      this.userRepository.create({
+  async updateOne(
+    id: number,
+    updateUserDto: UpdateUserDto,
+  ): Promise<UpdatedUserResponse> {
+    const user = await this.userRepository.findOneBy({ id });
+    if (!user) {
+      throw new NotFoundException('User not found');
+    }
+
+    const { longitude, latitude, bloodTypeId, ...rest } = updateUserDto;
+
+    let updateData: any = {
+      ...rest,
+    };
+
+    if (longitude && latitude) {
+      updateData = {
+        ...updateData,
+        geom: () => `ST_SETSRID(ST_MAKEPOINT(${longitude}, ${latitude}), 4326)`,
+      };
+    }
+
+    const bloodType = await BloodType.findOneBy({ id: bloodTypeId });
+    if (!bloodType) {
+      throw new NotFoundException('Blood type not found');
+    } else {
+      updateData = {
+        ...updateData,
+        bloodTypeId,
+      };
+    }
+
+    const query = this.userRepository
+      .createQueryBuilder('user')
+      .update(User)
+      .set(updateData)
+      .where('id = :id', { id })
+      .returning('*')
+      .execute();
+
+    return query.then((data) => {
+      console.log(data.raw[0]);
+      const {
         id,
-        ...data,
-      }),
-    );
+        name,
+        email,
+        avatar,
+        birthdate,
+        phone_number,
+        citizenship_number,
+        address,
+        created_at,
+        updated_at,
+      } = data.raw[0];
+
+      return {
+        id,
+        name,
+        email,
+        avatar,
+        birthdate,
+        phoneNumber: phone_number,
+        citizenshipNumber: citizenship_number,
+        bloodType: bloodType,
+        address,
+        createdAt: created_at,
+        updatedAt: updated_at,
+      };
+    });
   }
 
   async findOneById(id: number): Promise<User> {
