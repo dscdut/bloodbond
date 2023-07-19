@@ -16,10 +16,14 @@ orbs:
 
 jobs:
     build:
+        environment:
+            DOCKER_IMAGE: high10hunter/node
+            DOCKER_TAG: latest
         working_directory: ~/bloodbond/backend
         docker:
             - image: circleci/node:16
             - image: docker:19.03.14
+        executor: docker/docker
 
         steps:
             - checkout
@@ -29,11 +33,29 @@ jobs:
             - run:
                   name: Update NPM version
                   command: 'sudo npm install -g npm@latest'
-            - *install-deps
+            - run:
+                  name: Install dependencies
+                  command: npm install
             - save_cache:
                   key: v1-dependencies-{{ checksum "package.json" }}
                   paths:
                       - ./node_modules
+            # login to DockerHub
+            - docker/check:
+                  docker-username: DOCKER_USERNAME
+                  docker-password: DOCKER_PASSWORD
+            # build Docker image
+            - docker/build:
+                  image: $DOCKER_IMAGE
+                  tag: $DOCKER_TAG
+            # push built image to registry
+            - docker/push:
+                  digest-path: /tmp/digest.txt
+                  image: $DOCKER_IMAGE
+                  tag: $DOCKER_TAG
+            - run:
+                  command: |
+                      echo "Digest is: $(</tmp/digest.txt)"
     deploy:
         machine:
             enabled: true
