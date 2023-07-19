@@ -9,7 +9,7 @@ aliases:
     - &install-deps
       run:
           name: Install dependencies
-          command: sudo su high10hunter && npm i --fronzen-lockfile
+          command: whoami && npm i --fronzen-lockfile
 
 orbs:
     node: circleci/node@5.0.1
