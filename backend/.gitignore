@@ -43,5 +43,4 @@ lerna-debug.log*
 ca-certificate.crt
 /db/
 yarn.lock
-package-lock.json
 /uploads/
