@@ -9,7 +9,7 @@ aliases:
     - &install-deps
       run:
           name: Install dependencies
-          command: npm i --fronzen-lockfile
+          command: cd backend && npm i --fronzen-lockfile
 
 orbs:
     node: circleci/node@5.0.1
@@ -20,12 +20,10 @@ jobs:
         environment:
             DOCKER_IMAGE: high10hunter/node
             DOCKER_TAG: latest
-        working_directory: ~/bloodbond/backend
         docker:
             - image: circleci/node:16
             - image: docker:19.03.14
-        executor: docker/docker
-
+        working_directory: ~/bloodbond
         steps:
             - checkout
             - setup_remote_docker
