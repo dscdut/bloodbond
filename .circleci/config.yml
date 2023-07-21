@@ -20,14 +20,13 @@ jobs:
         environment:
             DOCKER_IMAGE: high10hunter/node
             DOCKER_TAG: latest
-        working_directory: ~/bloodbond/backend
         docker:
             - image: circleci/node:16
             - image: docker:19.03.14
-        executor: docker/docker
-
+        working_directory: ~/bloodbond/backend
         steps:
-            - checkout
+            - checkout:
+                  path: ~/bloodbond
             - setup_remote_docker
             - *restore-cache
             - run: npm cache clear --force
