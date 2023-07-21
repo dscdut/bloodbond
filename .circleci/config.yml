@@ -26,6 +26,7 @@ jobs:
         working_directory: ~/bloodbond/backend
         steps:
             - checkout
+                path: ~/bloodbond
             - setup_remote_docker
             - *restore-cache
             - run: npm cache clear --force
