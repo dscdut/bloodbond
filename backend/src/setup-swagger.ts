@@ -4,7 +4,7 @@ import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 export function setupSwagger(app: INestApplication): void {
   const documentBuilder = new DocumentBuilder()
     .setTitle('Bloodbond API')
-    .setDescription('Bloodbond API docs')
+    .setDescription('API documentation for Bloodbond')
     .addBearerAuth(
       {
         type: 'http',
