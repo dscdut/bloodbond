@@ -43,9 +43,10 @@ jobs:
                   docker-username: DOCKER_USERNAME
                   docker-password: DOCKER_PASSWORD
             # build Docker image
-            - docker/build:
-                  image: $DOCKER_IMAGE
-                  tag: $DOCKER_TAG
+            - run:
+                  name: Build Docker image
+                  command: |
+                      docker build -t $DOCKER_IMAGE:$DOCKER_TAG .
             # push built image to registry
             - docker/push:
                   digest-path: /tmp/digest.txt
@@ -70,7 +71,11 @@ jobs:
 workflows:
     build-and-deploy:
         jobs:
-            - build
+            - build:
+                  filters:
+                      branches:
+                          only:
+                              - develop
             - deploy:
                   requires:
                       - build
