@@ -21,7 +21,7 @@ jobs:
             DOCKER_IMAGE: high10hunter/node
             DOCKER_TAG: latest
         docker:
-            - image: circleci/node:16
+            - image: cimg/node:16
             - image: docker:19.03.14
         working_directory: ~/bloodbond/backend
         steps:
@@ -49,8 +49,7 @@ jobs:
                   image: $DOCKER_IMAGE
                   tag: $DOCKER_TAG
     deploy:
-        machine:
-            enabled: true
+        executor: docker/docker
         working_directory: ~/bloodbond/backend
         steps:
             - add_ssh_keys:
