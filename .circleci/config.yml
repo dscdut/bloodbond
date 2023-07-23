@@ -21,7 +21,7 @@ jobs:
             DOCKER_IMAGE: high10hunter/node
             DOCKER_TAG: latest
         docker:
-            - image: cimg/node:16
+            - image: cimg/node:16.20
             - image: docker:19.03.14
         working_directory: ~/bloodbond/backend
         steps:
