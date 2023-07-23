@@ -34,6 +34,16 @@ jobs:
                   key: v1-dependencies-{{ checksum "package.json" }}
                   paths:
                       - ./node_modules
+            - docker/check:
+                  docker-username: DOCKER_USERNAME
+                  docker-password: DOCKER_PASSWORD
+            - docker/build:
+                  image: $DOCKER_IMAGE
+                  tag: $DOCKER_TAG
+            - docker/push:
+                  digest-path: /tmp/digest.txt
+                  image: $DOCKER_IMAGE
+                  tag: $DOCKER_TAG
     deploy:
         machine:
             enabled: true
