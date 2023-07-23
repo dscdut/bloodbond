@@ -38,12 +38,15 @@ jobs:
                   key: v1-dependencies-{{ checksum "package.json" }}
                   paths:
                       - ./node_modules
+            # login to docker hub
             - docker/check:
                   docker-username: DOCKER_USERNAME
                   docker-password: DOCKER_PASSWORD
+            # build docker image
             - docker/build:
                   image: $DOCKER_IMAGE
                   tag: $DOCKER_TAG
+            # push docker image
             - docker/push:
                   digest-path: /tmp/digest.txt
                   image: $DOCKER_IMAGE
