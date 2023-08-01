@@ -36,6 +36,8 @@
     "@nestjs/swagger": "^6.2.1",
     "@nestjs/testing": "^9.2.0",
     "@nestjs/typeorm": "^9.0.1",
+    "@sentry/node": "^7.61.0",
+    "@sentry/tracing": "^7.61.0",
     "@types/lodash": "^4.14.195",
     "@types/multer": "^1.4.7",
     "argon2": "^0.30.2",
