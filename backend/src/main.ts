@@ -1,5 +1,6 @@
+import { SentryFilter } from './core/filters/sentry-filter';
 import { ValidationPipe } from '@nestjs/common';
-import { NestFactory } from '@nestjs/core';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 import { GlobalExceptionsFilter } from '@core/filters/global-exception-filter';
 import { ProjectLogger } from '@core/loggers';
@@ -10,6 +11,7 @@ import {
   ExpressAdapter,
   NestExpressApplication,
 } from '@nestjs/platform-express';
+import * as Sentry from '@sentry/node';
 
 const logger = new ProjectLogger('bootstrap');
 
@@ -41,7 +43,15 @@ async function bootstrap(): Promise<NestExpressApplication> {
 
   const config = app.get<ConfigService>(ConfigService);
 
-  app.useGlobalFilters(new GlobalExceptionsFilter(config));
+  Sentry.init({
+    dsn: config.get('SENTRY_DSN'),
+  });
+
+  const { httpAdapter } = app.get(HttpAdapterHost);
+  app.useGlobalFilters(
+    new GlobalExceptionsFilter(config),
+    new SentryFilter(httpAdapter),
+  );
 
   await app.listen(config.get('PORT'), async () => {
     logger.info(`Application is running on: ${await app.getUrl()}`);
