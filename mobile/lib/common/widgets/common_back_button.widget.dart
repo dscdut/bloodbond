@@ -10,26 +10,23 @@ class CommonBackButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 10, 0, 10),
-      child: GestureDetector(
-        onTap: () => Navigator.of(context).pop(),
-        child: Container(
-          constraints: const BoxConstraints(
-            maxWidth: 40,
-            maxHeight: 40,
-          ),
-          decoration: hasBoxDecoration
-              ? BoxDecoration(
-                  color: ColorStyles.backgroundAppbar,
-                  borderRadius: BorderRadius.circular(5),
-                )
-              : const BoxDecoration(),
-          child: const Icon(
-            Icons.chevron_left_outlined,
-            color: ColorStyles.zodiacBlue,
-            size: 35,
-          ),
+    return GestureDetector(
+      onTap: () => Navigator.of(context).pop(),
+      child: Container(
+        constraints: const BoxConstraints(
+          maxWidth: 40,
+          maxHeight: 40,
+        ),
+        decoration: hasBoxDecoration
+            ? BoxDecoration(
+                color: ColorStyles.backgroundAppbar,
+                borderRadius: BorderRadius.circular(5),
+              )
+            : const BoxDecoration(),
+        child: const Icon(
+          Icons.chevron_left_outlined,
+          color: ColorStyles.zodiacBlue,
+          size: 35,
         ),
       ),
     );

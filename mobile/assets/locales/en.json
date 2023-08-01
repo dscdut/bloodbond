@@ -4,11 +4,16 @@
     "success": "Success",
     "error_occur": "An error has occurred, please try again later",
     "email_address": "Email Address",
-    "password": "Password"
+    "email": "Email",
+    "password": "Password",
+    "login_prompt": "Login to continue using the app",
+    "or_login_with": "Or login with",
+    "email_verification_prompt": "Enter your email for the verification process, we will send a 4-digit code to your email."
   },
   "button": {
     "cancel": "Cancel",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "send": "Send"
   },
   "root": {
     "home": "Home",
@@ -17,13 +22,14 @@
   },
   "auth": {
     "welcome_back": "Nice to have you back!",
-    "sign_in": "Sign in",
     "login": "Login",
-    "register": "Register"
+    "register": "Register",
+    "forgot_password": "Forgot password?",
+    "dont_have_an_account": "Don't have an account?"
   },
   "validator": {
-    "email_required": "Please enter your email",
-    "password_required": "Please enter your password",
+    "email_required": "Enter your email",
+    "password_required": "Enter your password",
     "invalid_email": "Invalid email address",
     "incorrect_email_password": "Incorrect email or password",
     "invalid_password": "Password must be at least 8 characters",

@@ -20,11 +20,16 @@ class CodegenLoader extends AssetLoader{
     "success": "Success",
     "error_occur": "An error has occurred, please try again later",
     "email_address": "Email Address",
-    "password": "Password"
+    "email": "Email",
+    "password": "Password",
+    "login_prompt": "Login to continue using the app",
+    "or_login_with": "Or login with",
+    "email_verification_prompt": "Enter your email for the verification process, we will send a 4-digit code to your email."
   },
   "button": {
     "cancel": "Cancel",
-    "confirm": "Confirm"
+    "confirm": "Confirm",
+    "send": "Send"
   },
   "root": {
     "home": "Home",
@@ -33,13 +38,14 @@ class CodegenLoader extends AssetLoader{
   },
   "auth": {
     "welcome_back": "Nice to have you back!",
-    "sign_in": "Sign in",
-    "Login": "Login",
-    "Register": "Register"
+    "login": "Login",
+    "register": "Register",
+    "forgot_password": "Forgot password?",
+    "dont_have_an_account": "Don't have an account?"
   },
   "validator": {
-    "email_required": "Please enter your email",
-    "password_required": "Please enter your password",
+    "email_required": "Enter your email",
+    "password_required": "Enter your password",
     "invalid_email": "Invalid email address",
     "incorrect_email_password": "Incorrect email or password",
     "invalid_password": "Password must be at least 8 characters",
@@ -52,12 +58,17 @@ static const Map<String,dynamic> vi = {
     "notification": "Thông báo",
     "success": "Thành công",
     "error_occur": "Đã có lỗi xảy ra, vui lòng thử lại sau",
-    "email_address": "Email",
-    "password": "Mật khẩu"
+    "email_address": "Email Address",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "login_prompt": "Đăng nhập để tiếp tục sử dụng ứng dụng",
+    "or_login_with": "Hoặc đăng nhập bằng",
+    "email_verification_prompt": "Nhập email của bạn để tiến hành xác thực, chúng tôi sẽ gửi mã xác thực 4 chữ số đến email của bạn"
   },
   "button": {
     "cancel": "Hủy",
-    "confirm": "Xác nhận"
+    "confirm": "Xác nhận",
+    "send": "Gửi"
   },
   "root": {
     "home": "Trang chủ",
@@ -66,9 +77,10 @@ static const Map<String,dynamic> vi = {
   },
   "auth": {
     "welcome_back": "Rất vui khi được gặp lại bạn!",
-    "sign_in": "Đăng nhập",
-    "Login": "Đăng nhập",
-    "Register": "Đăng ký"
+    "login": "Đăng nhập",
+    "register": "Đăng ký",
+    "forgot_password": "Quên mật khẩu?",
+    "dont_have_an_account": "Chưa có tài khoản?"
   },
   "validator": {
     "email_required": "Vui lòng nhập email",

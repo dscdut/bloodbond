@@ -3,12 +3,17 @@
     "notification": "Thông báo",
     "success": "Thành công",
     "error_occur": "Đã có lỗi xảy ra, vui lòng thử lại sau",
-    "email_address": "Email",
-    "password": "Mật khẩu"
+    "email_address": "Email Address",
+    "email": "Email",
+    "password": "Mật khẩu",
+    "login_prompt": "Đăng nhập để tiếp tục sử dụng ứng dụng",
+    "or_login_with": "Hoặc đăng nhập bằng",
+    "email_verification_prompt": "Nhập email của bạn để tiến hành xác thực, chúng tôi sẽ gửi mã xác thực 4 chữ số đến email của bạn"
   },
   "button": {
     "cancel": "Hủy",
-    "confirm": "Xác nhận"
+    "confirm": "Xác nhận",
+    "send": "Gửi"
   },
   "root": {
     "home": "Trang chủ",
@@ -17,9 +22,10 @@
   },
   "auth": {
     "welcome_back": "Rất vui khi được gặp lại bạn!",
-    "sign_in": "Đăng nhập",
     "login": "Đăng nhập",
-    "register": "Đăng ký"
+    "register": "Đăng ký",
+    "forgot_password": "Quên mật khẩu?",
+    "dont_have_an_account": "Chưa có tài khoản?"
   },
   "validator": {
     "email_required": "Vui lòng nhập email",

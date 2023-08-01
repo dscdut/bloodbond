@@ -19,7 +19,7 @@ class AppTextFormField extends StatelessWidget {
     this.initialValue,
     this.borderRadius = 6,
     this.borderColor = ColorStyles.gray100,
-    this.focusedBorderColor = ColorStyles.blue400,
+    this.focusedBorderColor = ColorStyles.gray100,
     this.fillColor = Colors.white,
     this.hintColor = ColorStyles.gray200,
     this.prefixIconColor,
@@ -37,6 +37,7 @@ class AppTextFormField extends StatelessWidget {
     this.focusNode,
     this.maxLines = 1,
     this.contentPadding = const EdgeInsets.symmetric(horizontal: 20),
+    this.fontSize = 17,
   })  : assert(
           prefixIcon is Widget || prefixIcon is IconData || prefixIcon == null,
           'prefixIcon must be a Widget or IconData',
@@ -87,6 +88,8 @@ class AppTextFormField extends StatelessWidget {
 
   final EdgeInsetsGeometry? contentPadding;
 
+  final double fontSize;
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -115,12 +118,20 @@ class AppTextFormField extends StatelessWidget {
           enabled: enabled,
           keyboardType: keyboardType,
           initialValue: initialValue,
-          style: TextStyles.s14RegularText,
+          style: TextStyle(
+            fontSize: fontSize,
+            fontWeight: FontWeight.w400,
+            color: const Color(0xFF000000),
+          ),
           textAlign: isCenterText ? TextAlign.center : TextAlign.start,
           decoration: InputDecoration(
             isDense: isDense,
             hintText: hintText,
-            hintStyle: TextStyles.s14RegularText.copyWith(color: hintColor),
+            hintStyle: TextStyle(
+              fontSize: fontSize - 1,
+              color: hintColor,
+              fontWeight: FontWeight.w500,
+            ),
             focusedErrorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(borderRadius),
               borderSide: const BorderSide(
@@ -184,11 +195,14 @@ class AppTextFormField extends StatelessWidget {
                 : null,
             helperText: extendField ? '' : null,
             helperStyle: extendField
-                ? TextStyles.regularText.copyWith(fontSize: 13)
+                ? TextStyles.regularText.copyWith(fontSize: fontSize - 3)
                 : null,
             errorText: errorText == '' || errorText == null ? null : errorText,
-            errorStyle: TextStyles.regularText
-                .copyWith(color: Colors.red, fontSize: 13, height: 0),
+            errorStyle: TextStyles.regularText.copyWith(
+              color: Colors.red,
+              fontSize: fontSize - 3,
+              height: 0,
+            ),
           ),
         ),
       ],
