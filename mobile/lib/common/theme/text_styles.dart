@@ -49,6 +49,11 @@ abstract class TextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 17.sp,
   );
+  static TextStyle BVPred = TextStyle(
+    color: const Color(0xffFF2744),
+    fontWeight: FontWeight.w400,
+    fontSize: 14.sp,
+  );
 
   // Bold
   static const TextStyle boldText = TextStyle(

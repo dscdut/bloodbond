@@ -16,6 +16,7 @@ abstract class ColorStyles {
   static const Color red500 = Color(0xFFFF0000);
   static const Color red600 = Color(0xFFCC0000);
   static const Color red700 = Color(0xFF990000);
+  static const Color Red1 = Color(0xffFF576E);
 
   static const Color green100 = Color(0xFFCCFFCC);
   static const Color green200 = Color(0xFF99FF99);
