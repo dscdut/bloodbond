@@ -16,7 +16,7 @@ class AppFlavor {
   static String get network => const String.fromEnvironment(EnvKeys.network);
 
   static String get googleMapApiKey =>
-      const String.fromEnvironment(EnvKeys.googleMapApiKey);
+      const String.fromEnvironment(EnvKeys.googleMapsApiKey);
 
   static String get nftAddress =>
       const String.fromEnvironment(EnvKeys.nftAddress);
