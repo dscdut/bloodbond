@@ -13,18 +13,26 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapPage extends StatelessWidget {
-  MapPage({super.key});
+class MapPage extends StatefulWidget {
+  const MapPage({super.key});
+
+  @override
+  State<MapPage> createState() => _MapPageState();
+}
+
+class _MapPageState extends State<MapPage> {
   final Completer<GoogleMapController> controller = Completer();
+
+  late LatLng destination;
+
+  late List<LatLng> polylineCoordinates = [];
 
   @override
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => MapBloc(
-            placeRepository: getIt.get<PlaceRepository>(),
-          ),
+          create: (context) => MapsBloc(),
         ),
         BlocProvider(
           create: (context) => MapBottomsheetBloc(
@@ -32,7 +40,7 @@ class MapPage extends StatelessWidget {
           ),
         )
       ],
-      child: BlocListener<MapBloc, MapState>(
+      child: BlocListener<MapsBloc, MapsState>(
         listener: (context, state) => _listenMapStateChanged(context, state),
         child: _MapView(
           controller: controller,
@@ -43,9 +51,9 @@ class MapPage extends StatelessWidget {
 
   Future<void> _listenMapStateChanged(
     BuildContext context,
-    MapState state,
+    MapsState state,
   ) async {
-    if (state is MapGetLocationSuccess) {
+    if (state is MapsGetLocationSuccess) {
       GoogleMapController googleMapController = await controller.future;
       googleMapController.animateCamera(
         CameraUpdate.newLatLngZoom(
@@ -76,7 +84,7 @@ class _MapViewState extends State<_MapView> {
     return Scaffold(
       appBar: const MapAppBar(),
       extendBodyBehindAppBar: true,
-      body: BlocBuilder<MapBloc, MapState>(
+      body: BlocBuilder<MapsBloc, MapsState>(
         builder: (context, state) {
           return SizedBox(
             height: context.height,

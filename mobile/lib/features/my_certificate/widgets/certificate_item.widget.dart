@@ -31,7 +31,7 @@ class CertificateItem extends StatelessWidget {
             ),
           ],
           image: DecorationImage(
-            image: NetworkImage(certificate.image),
+            image: NetworkImage(certificate.image ?? ''),
             fit: BoxFit.cover,
             opacity: 0.04,
           ),
@@ -43,14 +43,14 @@ class CertificateItem extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  certificate.attributes.first.timestamp,
+                  certificate.attributes?.first?.timestamp ?? 'Unknown',
                   style: TextStyles.mediumText.copyWith(
                     color: Colors.grey,
                   ),
                 ),
                 AppSize.h8,
                 Text(
-                  certificate.attributes.first.operationName,
+                  certificate.attributes?.first?.operationName ?? 'Unknown',
                   style: TextStyles.boldText.copyWith(
                     color: Colors.black,
                     fontSize: 20,
@@ -58,19 +58,19 @@ class CertificateItem extends StatelessWidget {
                 ),
                 AppSize.h8,
                 Text(
-                  'Amount: ${certificate.attributes.first.capacity}cc',
+                  'Amount: ${certificate.attributes?.first?.capacity}cc',
                   style: TextStyles.mediumText.copyWith(color: Colors.grey),
                 ),
                 AppSize.h8,
                 Text(
-                  'Location: ${certificate.attributes.first.organizationName}',
+                  'Location: ${certificate.attributes?.first?.organizationName}',
                   style: TextStyles.mediumText.copyWith(color: Colors.grey),
                 ),
               ],
             ),
             const Spacer(),
             BloodTypeWidget(
-              bloodType: certificate.attributes.first.bloodType,
+              bloodType: certificate.attributes?.first?.bloodType ?? 'Unknown',
             ),
           ],
         ),

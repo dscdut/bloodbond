@@ -17,54 +17,54 @@ class NFTRawModel {
 @JsonSerializable(createToJson: false, fieldRename: FieldRename.snake)
 class Attribute {
   Attribute({
-    required this.traitType,
-    required this.timestamp,
-    required this.operationName,
-    required this.capacity,
-    required this.organizationName,
-    required this.bloodType,
-    required this.bilirubin,
-    required this.rbc,
+    this.traitType,
+    this.timestamp,
+    this.operationName,
+    this.capacity,
+    this.organizationName,
+    this.bloodType,
+    this.bilirubin,
+    this.rbc,
   });
 
   factory Attribute.fromJson(Map<String, dynamic> json) =>
       _$AttributeFromJson(json);
 
-  final String traitType;
-  final String timestamp;
-  final String operationName;
-  final String capacity;
-  final String organizationName;
-  final String bloodType;
-  final String bilirubin;
-  final String rbc;
+  final String? traitType;
+  final String? timestamp;
+  final String? operationName;
+  final String? capacity;
+  final String? organizationName;
+  final String? bloodType;
+  final String? bilirubin;
+  final String? rbc;
 }
 
 @JsonSerializable(createToJson: false, fieldRename: FieldRename.snake)
 class Creator {
   Creator({
-    required this.address,
-    required this.share,
+    this.address,
+    this.share,
   });
 
   factory Creator.fromJson(Map<String, dynamic> json) =>
       _$CreatorFromJson(json);
 
-  final String address;
-  final int share;
+  final String? address;
+  final int? share;
 }
 
 @JsonSerializable(createToJson: false, fieldRename: FieldRename.snake)
 class File {
   File({
-    required this.uri,
-    required this.type,
+    this.uri,
+    this.type,
   });
 
   factory File.fromJson(Map<String, dynamic> json) => _$FileFromJson(json);
 
-  final String uri;
-  final String type;
+  final String? uri;
+  final String? type;
 }
 
 @JsonSerializable(
@@ -74,15 +74,15 @@ class File {
 )
 class Properties {
   Properties({
-    required this.creators,
-    required this.files,
+    this.creators,
+    this.files,
   });
 
   factory Properties.fromJson(Map<String, dynamic> json) =>
       _$PropertiesFromJson(json);
 
-  final List<Creator> creators;
-  final List<File> files;
+  final List<Creator?>? creators;
+  final List<File?>? files;
 }
 
 @JsonSerializable(
@@ -92,25 +92,25 @@ class Properties {
 )
 class NFTModel {
   NFTModel({
-    required this.name,
-    required this.symbol,
-    required this.description,
-    required this.sellerFeeBasisPoints,
-    required this.externalUrl,
-    required this.image,
-    required this.attributes,
-    required this.properties,
+    this.name,
+    this.symbol,
+    this.description,
+    this.sellerFeeBasisPoints,
+    this.externalUrl,
+    this.image,
+    this.attributes,
+    this.properties,
   });
 
   factory NFTModel.fromJson(Map<String, dynamic> json) =>
       _$NFTModelFromJson(json);
 
-  final String name;
-  final String symbol;
-  final String description;
-  final int sellerFeeBasisPoints;
-  final String externalUrl;
-  final String image;
-  final List<Attribute> attributes;
-  final Properties properties;
+  final String? name;
+  final String? symbol;
+  final String? description;
+  final int? sellerFeeBasisPoints;
+  final String? externalUrl;
+  final String? image;
+  final List<Attribute?>? attributes;
+  final Properties? properties;
 }

@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:bloodbond/common/constants/endpoints.dart';
 import 'package:bloodbond/common/helpers/dio.helper.dart';
@@ -49,6 +50,8 @@ class NFTDataSource {
       final List attributes = jsonDecode(decodedAttribute) as List;
 
       decodedMetadata['attributes'] = attributes;
+
+      log(decodedMetadata.toString());
 
       nftModel.add(NFTModel.fromJson(decodedMetadata));
     }

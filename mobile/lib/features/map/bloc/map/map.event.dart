@@ -1,24 +1,23 @@
 part of 'map.bloc.dart';
 
-abstract class MapEvent extends Equatable {
-  const MapEvent();
+abstract class MapsEvent extends Equatable {
+  const MapsEvent();
 
   @override
   List<Object?> get props => [];
 }
 
-class MapPermissionRequest extends MapEvent {}
+class MapsPermissionRequest extends MapsEvent {}
 
-class MapMarkersGet extends MapEvent {
-  const MapMarkersGet();
+class MapsGetDirection extends MapsEvent {
+  const MapsGetDirection({
+    required this.origin,
+    required this.destination,
+  });
+
+  final Polyline origin;
+  final Polyline destination;
 
   @override
-  List<Object?> get props => [];
-}
-
-class MapProjectsGet extends MapEvent {
-  const MapProjectsGet();
-
-  @override
-  List<Object?> get props => [];
+  List<Object?> get props => [origin, destination];
 }

@@ -1,84 +1,77 @@
 import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
-import 'package:bloodbond/common/constants/constants.dart';
-import 'package:bloodbond/data/repositories/place.repository.dart';
 import 'package:equatable/equatable.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:permission_handler/permission_handler.dart';
-import 'package:geolocator/geolocator.dart';
 
-part 'map.state.dart';
 part 'map.event.dart';
+part 'map.state.dart';
 
-class MapBloc extends Bloc<MapEvent, MapState> {
-  MapBloc({
-    required PlaceRepository placeRepository,
-  })  : _placeRepository = placeRepository,
-        super(
-          const MapState.initial(),
-        ) {
-    on<MapPermissionRequest>(_onRequestPermission);
-    on<MapMarkersGet>(_onGetMarkers);
-    add(MapPermissionRequest());
-    add(const MapMarkersGet());
+class MapsBloc extends Bloc<MapsEvent, MapsState> {
+  MapsBloc() : super(const MapsState.initial()) {
+    on<MapsPermissionRequest>(_onMapsPermissionRequest);
+    add(MapsPermissionRequest());
   }
-  final PlaceRepository _placeRepository;
 
-  Future<LatLng> _getMyLocation(Emitter<MapState> emiiter) async {
+  Future<void> _onMapsPermissionRequest(
+    MapsPermissionRequest event,
+    Emitter<MapsState> emit,
+  ) async {
     try {
-      final Position userPosition = await Geolocator.getCurrentPosition();
-
-      return LatLng(userPosition.latitude, userPosition.longitude);
-    } catch (err) {
-      log('Error in get user location');
-      emiiter(
-        state.copyWith(
-          error: err.toString(),
-        ),
+      final bool isLocationGranted = await Permission.location.isGranted;
+      if (!isLocationGranted) {
+        final PermissionStatus permissionStatus =
+            await Permission.location.request();
+        if (permissionStatus != PermissionStatus.granted) {
+          emit(
+            state.copyWith(
+              error: 'Location permissions are denied',
+            ),
+          );
+          return;
+        }
+      }
+      final LocationPermission permission = await Geolocator.checkPermission();
+      if (permission == LocationPermission.denied ||
+          permission == LocationPermission.deniedForever) {
+        final LocationPermission permission =
+            await Geolocator.requestPermission();
+        if (permission == LocationPermission.denied ||
+            permission == LocationPermission.deniedForever) {
+          emit(
+            state.copyWith(
+              error: 'Location permissions are denied',
+            ),
+          );
+          return;
+        }
+      }
+      final Position position = await Geolocator.getCurrentPosition();
+      final LatLng myLocation = LatLng(
+        position.latitude,
+        position.longitude,
       );
 
-      return defaultLocation;
-    }
-  }
-
-  Future<void> _onRequestPermission(
-    MapPermissionRequest event,
-    Emitter<MapState> emiiter,
-  ) async {
-    final bool isGranted = await Permission.location.isGranted;
-
-    if (!isGranted) {
-      await Permission.location.request();
-    }
-
-    emiiter(
-      MapGetLocationSuccess(
-        myLocation: await _getMyLocation(emiiter),
-        markers: state.markers ?? const {},
-      ),
-    );
-  }
-
-  Future<void> _onGetMarkers(
-    MapMarkersGet event,
-    Emitter<MapState> emiiter,
-  ) async {
-    try {
-      final response = await _getMyLocation(emiiter);
-      emiiter(
-        state.copyWith(
-          markers: {
-            Marker(
-              markerId: const MarkerId('myLocation'),
-              position: response,
-            ),
-          },
+      final Set<Marker> markers = {
+        Marker(
+          markerId: const MarkerId('myLocation'),
+          position: LatLng(
+            position.latitude,
+            position.longitude,
+          ),
+          infoWindow: const InfoWindow(
+            title: 'My Location',
+          ),
         ),
+      };
+      emit(
+        MapsGetLocationSuccess(myLocation: myLocation, markers: markers),
       );
     } catch (e) {
-      log('Error in get markers');
-      emiiter(
+      log(e.toString());
+      emit(
         state.copyWith(
           error: e.toString(),
         ),

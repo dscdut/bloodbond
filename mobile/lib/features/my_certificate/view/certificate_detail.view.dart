@@ -33,31 +33,31 @@ class _CertificateDetailState extends State<CertificateDetail> {
     _items.addAll([
       BloodItemModel(
         title: 'Capacity',
-        content: '${_certificate.attributes.first.capacity} cc',
+        content: '${_certificate.attributes?.first?.capacity} cc',
       ),
       BloodItemModel(
         title: 'Blood type',
-        content: _certificate.attributes.first.bloodType,
+        content: _certificate.attributes?.first?.bloodType ?? 'Unknown',
       ),
       BloodItemModel(
         title: 'Bilirubin',
-        content: '${_certificate.attributes.first.bilirubin} mmol/L',
+        content: '${_certificate.attributes?.first?.bilirubin} mmol/L',
       ),
       BloodItemModel(
         title: 'RBC',
-        content: '${_certificate.attributes.first.rbc} ml/L',
+        content: '${_certificate.attributes?.first?.rbc} ml/L',
       ),
       BloodItemModel(
         title: 'Name',
-        content: _certificate.name,
+        content: _certificate.name ?? 'Unknown',
       ),
       BloodItemModel(
         title: 'Owner',
-        content: _certificate.properties.creators.first.address,
+        content: _certificate.properties?.creators?.first?.address ?? 'Unknown',
       ),
       BloodItemModel(
         title: 'Update authority',
-        content: _certificate.properties.creators.first.address,
+        content: _certificate.properties?.creators?.first?.address ?? 'Unknown',
       ),
     ]);
     super.initState();
@@ -67,7 +67,7 @@ class _CertificateDetailState extends State<CertificateDetail> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CommonAppBar(
-        title: Text(widget.certificate.name),
+        title: Text(widget.certificate.name ?? 'Unknown'),
         hasBoxDecoration: false,
         backgroundColor: Colors.transparent,
       ),
@@ -84,7 +84,7 @@ class _CertificateDetailState extends State<CertificateDetail> {
                     context: context,
                     builder: (context) {
                       return InteractiveViewer(
-                        child: Image.network(widget.certificate.image),
+                        child: Image.network(widget.certificate.image ?? ''),
                       );
                     },
                   );
@@ -102,7 +102,7 @@ class _CertificateDetailState extends State<CertificateDetail> {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(20),
                     child: Image.network(
-                      widget.certificate.image,
+                      widget.certificate.image ?? '',
                       fit: BoxFit.cover,
                     ),
                   ),
@@ -152,7 +152,7 @@ class _CertificateDetailState extends State<CertificateDetail> {
                   ),
                   const SizedBox(height: 14),
                   Text(
-                    _certificate.description,
+                    _certificate.description ?? 'Unknown',
                     style: TextStyles.s17MediumText.copyWith(
                       color: ColorStyles.gray,
                     ),
