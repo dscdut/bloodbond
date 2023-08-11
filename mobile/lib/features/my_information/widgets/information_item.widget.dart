@@ -6,7 +6,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../../../common/widgets/common_rounded_button.widget.dart';
 import '../../../common/widgets/common_text_form_field.widget.dart';
-import '../../auth/widgets/login_text.widget.dart';
+import 'package:bloodbond/features/auth/widgets/login_text.widget.dart';
 
 class InformationItem extends StatefulWidget {
   const InformationItem({
@@ -35,6 +35,7 @@ class _InformationItemState extends State<InformationItem> {
           Navigator.of(context).pushNamed(widget.route!);
         } else {
           showModalBottomSheet(
+            barrierColor: Colors.transparent,
             context: context,
             builder: (BuildContext context) {
               return FractionallySizedBox(
@@ -61,13 +62,13 @@ class _InformationItemState extends State<InformationItem> {
                           Tab(
                             child: Text(
                               'Personal Information',
-                              style: TextStyles.BVPred,
+                              style: TextStyles.bVPred,
                             ),
                           ),
                           Tab(
                             child: Text(
                               'Health Information',
-                              style: TextStyles.BVPred,
+                              style: TextStyles.bVPred,
                             ),
                           ),
                         ],

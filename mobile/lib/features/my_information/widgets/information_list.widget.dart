@@ -21,7 +21,7 @@ class InformationList extends StatelessWidget {
         InformationItem(
           icon: Assets.icons.profile.certificate,
           title: 'My Certificates',
-          route: AppRouter.myCertificate,
+          route: AppRouter.antiNFTCertificates,
         ),
         AppSize.h12,
         InformationItem(

@@ -28,6 +28,12 @@ abstract class TextStyles {
     fontSize: 12,
     color: Color(0xFF4C4C4C),
   );
+  static TextStyle smallPoppins1 = const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 11,
+    fontWeight: FontWeight.w400,
+    color: Color(0xFF7E7E7E),
+  );
 
   // Medium
   static const TextStyle mediumText = TextStyle(
@@ -49,7 +55,7 @@ abstract class TextStyles {
     fontWeight: FontWeight.w500,
     fontSize: 17.sp,
   );
-  static TextStyle BVPred = TextStyle(
+  static TextStyle bVPred = TextStyle(
     color: const Color(0xffFF2744),
     fontWeight: FontWeight.w400,
     fontSize: 14.sp,
@@ -79,5 +85,24 @@ abstract class TextStyles {
     color: Colors.black,
     fontWeight: FontWeight.w600,
     fontSize: 20.sp,
+  );
+  static TextStyle boldPoppins1 = TextStyle(
+    color: Color(0xff272A2F),
+    fontWeight: FontWeight.w500,
+    fontSize: 15.sp,
+    fontFamily: 'Poppins',
+  );
+
+  static TextStyle boldPoppins2 = const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 12,
+    fontWeight: FontWeight.w400,
+    color: Color(0xFF7E7E7E),
+  );
+  static TextStyle boldPoppins3 = const TextStyle(
+    fontFamily: 'Poppins',
+    fontSize: 12,
+    fontWeight: FontWeight.w700,
+    color: Color(0xFF7E7E7E),
   );
 }
