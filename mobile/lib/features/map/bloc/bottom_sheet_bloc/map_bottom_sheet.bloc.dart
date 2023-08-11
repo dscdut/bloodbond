@@ -1,7 +1,9 @@
 import 'package:bloc/bloc.dart';
+import 'package:bloodbond/common/constants/blood_enum.dart';
 import 'package:bloodbond/common/constants/handle_status.enum.dart';
 import 'package:bloodbond/data/models/address/campaign.model.dart';
-import 'package:bloodbond/data/repositories/campaign.repository.dart';
+import 'package:bloodbond/data/models/donor.model.dart';
+import 'package:bloodbond/data/repositories/donor.repository.dart';
 import 'package:equatable/equatable.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
@@ -10,15 +12,15 @@ part 'map_bottom_sheet.state.dart';
 
 class MapBottomsheetBloc
     extends Bloc<MapBottomSheetEvent, MapBottomSheetState> {
-  MapBottomsheetBloc({required CampaignRepository campaignRepository})
-      : _campaignRepository = campaignRepository,
+  MapBottomsheetBloc({required DonorRepository donorRepository})
+      : _donorRepository = donorRepository,
         super(const MapBottomSheetState.initial()) {
-    on<MapBottomSheetGetCampaigns>(_onGetCampaigns);
+    on<MapBottomSheetGetDonors>(_onGetDonors);
   }
-  final CampaignRepository _campaignRepository;
+  final DonorRepository _donorRepository;
 
-  Future<void> _onGetCampaigns(
-    MapBottomSheetGetCampaigns event,
+  Future<void> _onGetDonors(
+    MapBottomSheetGetDonors event,
     Emitter<MapBottomSheetState> emit,
   ) async {
     emit(
@@ -26,10 +28,9 @@ class MapBottomsheetBloc
     );
 
     try {
-      final List<CampaignModel> campaigns =
-          await _campaignRepository.getCampaigns();
+      final List<DonorModel> donors = await _donorRepository.getDonors();
 
-      emit(MapBottomSheetState.success(campaigns: campaigns));
+      emit(MapBottomSheetState.success(donors: donors));
     } catch (err) {
       emit(
         MapBottomSheetState.error(
@@ -38,4 +39,26 @@ class MapBottomsheetBloc
       );
     }
   }
+
+  // Future<void> _onGetCampaigns(
+  //   MapBottomSheetGetCampaigns event,
+  //   Emitter<MapBottomSheetState> emit,
+  // ) async {
+  //   emit(
+  //     const MapBottomSheetState.loading(),
+  //   );
+
+  //   try {
+  //     final List<CampaignModel> campaigns =
+  //         await _campaignRepository.getCampaigns();
+
+  //     emit(MapBottomSheetState.success(campaigns: campaigns));
+  //   } catch (err) {
+  //     emit(
+  //       MapBottomSheetState.error(
+  //         error: err.toString(),
+  //       ),
+  //     );
+  //   }
+  // }
 }

@@ -21,3 +21,12 @@ class MapsGetDirection extends MapsEvent {
   @override
   List<Object?> get props => [origin, destination];
 }
+
+class MapsGetDonors extends MapsEvent {
+  const MapsGetDonors({required this.bloodType, required this.distance});
+  final BloodType bloodType;
+  final double distance;
+
+  @override
+  List<Object?> get props => [bloodType, distance];
+}

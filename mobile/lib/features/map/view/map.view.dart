@@ -1,9 +1,11 @@
 import 'dart:async';
+import 'dart:developer';
 
+import 'package:bloodbond/common/constants/blood_enum.dart';
 import 'package:bloodbond/common/constants/constants.dart';
 import 'package:bloodbond/common/extensions/context.extension.dart';
 import 'package:bloodbond/common/utils/toast.util.dart';
-import 'package:bloodbond/data/repositories/campaign.repository.dart';
+import 'package:bloodbond/data/repositories/donor.repository.dart';
 import 'package:bloodbond/di/di.dart';
 import 'package:bloodbond/features/map/map.dart';
 import 'package:bloodbond/features/map/widgets/map_app_bar.widget.dart';
@@ -27,6 +29,20 @@ class _MapPageState extends State<MapPage> {
   late LatLng destination;
 
   late List<LatLng> polylineCoordinates = [];
+
+  late BloodType bloodType;
+
+  late double distance;
+
+  void _setBloodType(BloodType bloodType) {
+    this.bloodType = bloodType;
+    setState(() {});
+  }
+
+  void _setDistance(double distance) {
+    this.distance = distance;
+    setState(() {});
+  }
 
   void _setDestination(LatLng destination) {
     this.destination = destination;
@@ -67,11 +83,12 @@ class _MapPageState extends State<MapPage> {
     return MultiBlocProvider(
       providers: [
         BlocProvider(
-          create: (context) => MapsBloc(),
+          create: (context) =>
+              MapsBloc(donorRepository: getIt.get<DonorRepository>()),
         ),
         BlocProvider(
           create: (context) => MapBottomsheetBloc(
-            campaignRepository: getIt.get<CampaignRepository>(),
+            donorRepository: getIt.get<DonorRepository>(),
           ),
         )
       ],
@@ -83,6 +100,10 @@ class _MapPageState extends State<MapPage> {
           polylineCoordinates: polylineCoordinates,
           getPolyPoints: _getPolyPoints,
           setDestination: _setDestination,
+          bloodType: bloodType,
+          distance: distance,
+          setBloodType: _setBloodType,
+          setDistance: _setDistance,
         ),
       ),
     );
@@ -93,13 +114,28 @@ class _MapPageState extends State<MapPage> {
     MapsState state,
   ) async {
     if (state is MapsGetLocationSuccess) {
-      GoogleMapController googleMapController = await controller.future;
-      googleMapController.animateCamera(
-        CameraUpdate.newLatLngZoom(
-          state.myLocation ?? defaultLocation,
-          13,
-        ),
-      );
+      // GoogleMapController googleMapController1 = await controller.future;
+      // log('state.myLocation: ${state.myLocation}');
+      // log('defaultLocation: $defaultLocation');
+      // googleMapController1.animateCamera(
+      //   CameraUpdate.newLatLngZoom(
+      //     state.myLocation ?? defaultLocation,
+      //     7,
+      //   ),
+      // );
+    }
+    if (state is MapsGetDonorsSuccess) {
+      // GoogleMapController googleMapController2 = await controller.future;
+      // googleMapController2.animateCamera(
+      //   CameraUpdate.newLatLngZoom(
+      //     state.myLocation ?? defaultLocation,
+      //     11,
+      //   ),
+      // );
+
+      _setBloodType(state.bloodType ?? BloodType.aMinus);
+
+      _setDistance(state.distance ?? 5);
     }
     if (state.error != null && context.mounted) {
       ToastUtil.showError(context, text: state.error);
@@ -111,16 +147,22 @@ class _MapPageState extends State<MapPage> {
     super.initState();
     _getPolyPoints(const MapsState.initial(), polylineCoordinates);
     _setDestination(defaultLocation);
+    _setBloodType(BloodType.aMinus);
+    _setDistance(0);
   }
 }
 
-class _MapView extends StatefulWidget {
+class _MapView extends StatelessWidget {
   const _MapView({
     required this.controller,
     required this.destination,
     required this.polylineCoordinates,
     required this.getPolyPoints,
     required this.setDestination,
+    required this.bloodType,
+    required this.distance,
+    required this.setBloodType,
+    required this.setDistance,
   });
   final Completer<GoogleMapController> controller;
   final LatLng destination;
@@ -128,16 +170,23 @@ class _MapView extends StatefulWidget {
   final Function(MapsState state, List<LatLng> polylineCoordinates)
       getPolyPoints;
   final Function(LatLng destination) setDestination;
+  final Function(BloodType bloodType) setBloodType;
+  final Function(double distance) setDistance;
 
-  @override
-  State<_MapView> createState() => _MapViewState();
-}
+  final BloodType bloodType;
 
-class _MapViewState extends State<_MapView> {
+  final double distance;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const MapAppBar(),
+      appBar: MapAppBar(
+        onFindTap: () {
+          _onFindTap(context);
+        },
+        setBloodType: setBloodType,
+        setDistance: setDistance,
+      ),
       extendBodyBehindAppBar: true,
       resizeToAvoidBottomInset: true,
       body: BlocBuilder<MapsBloc, MapsState>(
@@ -149,22 +198,23 @@ class _MapViewState extends State<_MapView> {
             child: GoogleMap(
               padding: EdgeInsets.only(
                 bottom: context.height * 0.15,
-                top: context.height * 0.15,
+                top: context.height * 2,
               ),
               initialCameraPosition: const CameraPosition(
                 target: defaultLocation,
-                zoom: 5,
+                zoom: 12,
               ),
               onMapCreated: (gController) {
-                widget.controller.complete(gController);
+                controller.complete(gController);
               },
               buildingsEnabled: false,
               myLocationEnabled: true,
+              mapToolbarEnabled: false,
               circles: {
                 Circle(
                   circleId: const CircleId('myLocation'),
                   center: state.myLocation ?? defaultLocation,
-                  radius: 5000,
+                  radius: (5) * 1000,
                   fillColor: const Color(0xFFFF2156).withOpacity(0.1),
                   strokeColor: Colors.transparent,
                   strokeWidth: 0,
@@ -197,6 +247,15 @@ class _MapViewState extends State<_MapView> {
         },
       ),
     );
+  }
+
+  void _onFindTap(BuildContext context) {
+    context.read<MapsBloc>().add(
+          MapsGetDonors(
+            bloodType: bloodType,
+            distance: distance,
+          ),
+        );
   }
 
   void _onClickMarker(BuildContext context, LatLng wardLocation) {

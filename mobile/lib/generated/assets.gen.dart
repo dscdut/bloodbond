@@ -263,6 +263,10 @@ class $AssetsIconsLauncherGen {
 class $AssetsIconsMapsGen {
   const $AssetsIconsMapsGen();
 
+  /// File path: assets/icons/maps/ic_donor.png
+  AssetGenImage get icDonor =>
+      const AssetGenImage('assets/icons/maps/ic_donor.png');
+
   /// File path: assets/icons/maps/ic_my_location.png
   AssetGenImage get icMyLocationPng =>
       const AssetGenImage('assets/icons/maps/ic_my_location.png');
@@ -272,7 +276,7 @@ class $AssetsIconsMapsGen {
       const SvgGenImage('assets/icons/maps/ic_my_location.svg');
 
   /// List of all assets
-  List<dynamic> get values => [icMyLocationPng, icMyLocationSvg];
+  List<dynamic> get values => [icDonor, icMyLocationPng, icMyLocationSvg];
 }
 
 class $AssetsIconsNotificationGen {

@@ -1,5 +1,8 @@
 import 'dart:developer';
 import 'dart:typed_data';
+import 'package:bloodbond/common/constants/blood_enum.dart';
+import 'package:bloodbond/data/models/donor.model.dart';
+import 'package:bloodbond/data/repositories/donor.repository.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:ui' as ui;
@@ -13,9 +16,69 @@ part 'map.event.dart';
 part 'map.state.dart';
 
 class MapsBloc extends Bloc<MapsEvent, MapsState> {
-  MapsBloc() : super(const MapsState.initial()) {
+  MapsBloc({required DonorRepository donorRepository})
+      : _donorRepository = donorRepository,
+        super(const MapsState.initial()) {
     on<MapsPermissionRequest>(_onMapsPermissionRequest);
     add(MapsPermissionRequest());
+    on<MapsGetDonors>(_onGetDonors);
+  }
+
+  final DonorRepository _donorRepository;
+
+  Future<void> _onGetDonors(
+    MapsGetDonors event,
+    Emitter<MapsState> emit,
+  ) async {
+    final List<DonorModel> donors = await _donorRepository.getDonors();
+    final Uint8List donorMarker = await getBytesFromAsset(
+      path: Assets.icons.maps.icDonor.path, //paste the custom image path
+      width: 50, // size of custom image as marker
+    );
+    //filter donors by blood type
+    donors.removeWhere((DonorModel donor) {
+      return donor.bloodType != event.bloodType;
+    });
+    final Set<Marker> markers = donors.map((DonorModel donor) {
+      return Marker(
+        markerId: MarkerId(donor.donorId),
+        position: LatLng(donor.location.lat, donor.location.lng),
+        icon: BitmapDescriptor.fromBytes(donorMarker),
+      );
+    }).toSet();
+
+    final Position position = await Geolocator.getCurrentPosition();
+    log('eeeeeeeeeeeeeeeeeeeeeeeeeeeeeee${position.toString()}');
+    final LatLng myLocation = LatLng(
+      position.latitude,
+      position.longitude,
+    );
+
+    final Uint8List customMarker = await getBytesFromAsset(
+      path:
+          Assets.icons.maps.icMyLocationPng.path, //paste the custom image path
+      width: 100, // size of custom image as marker
+    );
+
+    final Set<Marker> myLocationMarker = {
+      Marker(
+        markerId: const MarkerId('myLocation'),
+        position: myLocation,
+        icon: BitmapDescriptor.fromBytes(customMarker),
+      ),
+    };
+
+    markers.addAll(myLocationMarker);
+
+    emit(
+      MapsGetDonorsSuccess(
+        myLocation: myLocation,
+        donors: donors,
+        markers: markers,
+        distance: event.distance,
+        bloodType: event.bloodType,
+      ),
+    );
   }
 
   Future<void> _onMapsPermissionRequest(
@@ -60,7 +123,8 @@ class MapsBloc extends Bloc<MapsEvent, MapsState> {
       );
 
       final Uint8List customMarker = await getBytesFromAsset(
-        path: Assets.icons.maps.icMyLocationPng.path, //paste the custom image path
+        path: Assets
+            .icons.maps.icMyLocationPng.path, //paste the custom image path
         width: 100, // size of custom image as marker
       );
 
