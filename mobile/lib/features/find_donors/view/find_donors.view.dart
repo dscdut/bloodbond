@@ -3,8 +3,6 @@ import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
 import 'package:bloodbond/features/find_donors/widgets/campaign_card.dart';
 import 'package:bloodbond/features/find_donors/widgets/operation_info.dart';
-import 'package:bloodbond/generated/assets.gen.dart';
-import 'package:bloodbond/generated/fonts.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';

@@ -3,7 +3,7 @@ part of 'map.bloc.dart';
 class MapsState extends Equatable {
   const MapsState.initial()
       : this(
-          myLocation: const LatLng(18.635370, 105.737148),
+          myLocation: defaultLocation,
           markers: const {},
           polylines: const {},
         );

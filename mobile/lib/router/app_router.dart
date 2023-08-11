@@ -2,7 +2,6 @@ import 'package:bloodbond/data/models/nft.model.dart';
 import 'package:bloodbond/features/auth/auth.dart';
 import 'package:bloodbond/features/donation_request/donation_request.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
-import 'package:bloodbond/features/map/map.dart';
 import 'package:bloodbond/features/my_certificate/my_certificate.dart';
 import 'package:bloodbond/features/my_form/view/my_form.view.dart';
 import 'package:bloodbond/features/my_information/view/my_information.view.dart';
