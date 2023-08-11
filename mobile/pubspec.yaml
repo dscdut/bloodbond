@@ -41,6 +41,7 @@ dependencies:
   google_maps_flutter_android: ^2.4.6
   permission_handler: ^10.2.0
   geolocator: ^9.0.2
+  flutter_polyline_points: ^1.0.0
 
   #
   injectable: ^2.1.0
@@ -132,6 +133,7 @@ flutter:
     - assets/icons/profile/
     - assets/icons/request/
     - assets/icons/notification/
+    - assets/icons/maps/
     - assets/locales/
     - assets/images/
     - assets/images/lottie/

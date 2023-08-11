@@ -1,29 +1,34 @@
 part of 'map.bloc.dart';
 
-class MapState extends Equatable {
-  const MapState.initial()
+class MapsState extends Equatable {
+  const MapsState.initial()
       : this(
-          myLocation: const LatLng(18.635370, 105.737148),
+          myLocation: defaultLocation,
           markers: const {},
+          polylines: const {},
         );
-  const MapState({
+  const MapsState({
     this.myLocation,
     this.markers,
+    this.polylines,
     this.error,
   });
 
   final LatLng? myLocation;
   final Set<Marker>? markers;
+  final Set<Polyline>? polylines;
   final String? error;
 
-  MapState copyWith({
+  MapsState copyWith({
     LatLng? myLocation,
     Set<Marker>? markers,
+    Set<Polyline>? polylines,
     String? error,
   }) {
-    return MapState(
+    return MapsState(
       myLocation: myLocation ?? this.myLocation,
       markers: markers ?? this.markers,
+      polylines: polylines ?? this.polylines,
       error: error ?? this.error,
     );
   }
@@ -32,12 +37,13 @@ class MapState extends Equatable {
   List<Object?> get props => [
         myLocation,
         markers,
+        polylines,
         error,
       ];
 }
 
-class MapGetLocationSuccess extends MapState {
-  const MapGetLocationSuccess({
+class MapsGetLocationSuccess extends MapsState {
+  const MapsGetLocationSuccess({
     required LatLng myLocation,
     required Set<Marker> markers,
   }) : super(myLocation: myLocation, markers: markers);

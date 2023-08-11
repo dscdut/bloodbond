@@ -57,6 +57,7 @@ class $AssetsIconsGen {
   $AssetsIconsFeatureMenuGen get featureMenu =>
       const $AssetsIconsFeatureMenuGen();
   $AssetsIconsLauncherGen get launcher => const $AssetsIconsLauncherGen();
+  $AssetsIconsMapsGen get maps => const $AssetsIconsMapsGen();
   $AssetsIconsNotificationGen get notification =>
       const $AssetsIconsNotificationGen();
 
@@ -257,6 +258,21 @@ class $AssetsIconsLauncherGen {
   /// List of all assets
   List<dynamic> get values =>
       [appIcon, appleIcon, facebookIcon, googleIcon, logo, onboard];
+}
+
+class $AssetsIconsMapsGen {
+  const $AssetsIconsMapsGen();
+
+  /// File path: assets/icons/maps/ic_my_location.png
+  AssetGenImage get icMyLocationPng =>
+      const AssetGenImage('assets/icons/maps/ic_my_location.png');
+
+  /// File path: assets/icons/maps/ic_my_location.svg
+  SvgGenImage get icMyLocationSvg =>
+      const SvgGenImage('assets/icons/maps/ic_my_location.svg');
+
+  /// List of all assets
+  List<dynamic> get values => [icMyLocationPng, icMyLocationSvg];
 }
 
 class $AssetsIconsNotificationGen {
