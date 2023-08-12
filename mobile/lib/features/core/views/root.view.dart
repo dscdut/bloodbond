@@ -2,6 +2,7 @@ import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/features/core/widgets/app_bottom_navigation_bar.widget.dart';
 import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:bloodbond/features/map/map.dart';
+import 'package:bloodbond/features/my_information/my_information.dart';
 import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -11,6 +12,8 @@ import 'package:bloodbond/features/core/widgets/custom_lazy_indexed_stack.widget
 import 'package:bloodbond/features/home/home.dart';
 import 'package:bloodbond/features/notification/notification.dart';
 import 'package:bloodbond/features/profile/profile.dart';
+
+import '../../../router/app_router.dart';
 
 class RootPage extends StatelessWidget {
   const RootPage({super.key});
@@ -44,7 +47,7 @@ class _RootView extends StatelessWidget {
                 FindDonorsPage(),
                 MapPage(),
                 NotificationPage(),
-                ProfilePage()
+                MyInformationPage()
               ],
             );
           },
@@ -55,9 +58,7 @@ class _RootView extends StatelessWidget {
         resizeToAvoidBottomInset: false,
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            context
-                .read<RootBloc>()
-                .add(const RootBottomTabChange(newIndex: 2));
+            Navigator.of(context).pushNamed(AppRouter.map);
           },
           elevation: 1,
           backgroundColor: Colors.white,

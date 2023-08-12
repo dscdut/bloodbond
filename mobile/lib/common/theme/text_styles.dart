@@ -57,8 +57,9 @@ abstract class TextStyles {
   );
   static TextStyle bVPred = TextStyle(
     color: const Color(0xffFF2744),
-    fontWeight: FontWeight.w400,
-    fontSize: 14.sp,
+    fontWeight: FontWeight.w600,
+    fontSize: 15.sp,
+    fontFamily: 'BeVietNamPro',
   );
 
   // Bold

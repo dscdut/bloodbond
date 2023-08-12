@@ -1,4 +1,5 @@
 import 'package:bloodbond/common/theme/app_size.dart';
+import 'package:bloodbond/common/theme/color_styles.dart';
 import 'package:bloodbond/features/core/widgets/feature_menu.widget.dart';
 import 'package:bloodbond/features/find_donors/widgets/campaign_card.dart';
 import 'package:bloodbond/features/home/widgets/campagin_advertising_slider.widget.dart';
@@ -24,17 +25,17 @@ class _HomeView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AnnotatedRegion<SystemUiOverlayStyle>(
+    return const AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle.dark,
       child: Scaffold(
         // appBar: const HomeAppBar(),
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.all(AppSize.horizontalSpace),
+            padding: EdgeInsets.all(AppSize.horizontalSpace),
             child: Column(
               children: const [
                 CampaignAdvertisingSlider(),
-                FeatureMenu(),
+                //FeatureMenu(),
                 SizedBox(
                   height: 10,
                 ),
@@ -51,12 +52,13 @@ class _HomeView extends StatelessWidget {
                     ),
                   ),
                 ),
-                CampaignCard(),
+                CampaignCard(campaignImage: 'assets/images/campaignPic1.png'),
+                CampaignCard(campaignImage: 'assets/images/campaignPic2.png'),
               ],
             ),
           ),
         ),
-        backgroundColor: Colors.white,
+        backgroundColor: ColorStyles.cultured,
       ),
     );
   }

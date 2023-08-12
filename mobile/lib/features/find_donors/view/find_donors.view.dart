@@ -115,7 +115,7 @@ class _FindDonorsViewState extends State<_FindDonorsView> {
       body: ListView(
         children: [
           InkWell(
-            child: const CampaignCard(),
+            child: CampaignCard(campaignImage: 'assets/images/campaign1.png'),
             onTap: () => showModalBottomSheet(
               context: context,
               isScrollControlled: true,
@@ -139,7 +139,7 @@ class _FindDonorsViewState extends State<_FindDonorsView> {
             ),
           ),
           InkWell(
-            child: const CampaignCard(),
+            child: CampaignCard(campaignImage: 'assets/images/campaign1.png'),
             onTap: () => showModalBottomSheet(
               context: context,
               isScrollControlled: true,
@@ -163,7 +163,7 @@ class _FindDonorsViewState extends State<_FindDonorsView> {
             ),
           ),
           InkWell(
-            child: const CampaignCard(),
+            child: CampaignCard(campaignImage: 'assets/images/campaign1.png'),
             onTap: () => showModalBottomSheet(
               context: context,
               isScrollControlled: true,

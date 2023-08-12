@@ -2,6 +2,7 @@ import 'package:bloodbond/common/constants/blood_enum.dart';
 import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
 import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
+import 'package:bloodbond/common/widgets/common_back_button.widget.dart';
 import 'package:flutter/material.dart';
 
 class MapAppBar extends StatefulWidget implements PreferredSizeWidget {
@@ -48,8 +49,10 @@ class _MapAppBarState extends State<MapAppBar> {
   Widget build(BuildContext context) {
     return CommonAppBar(
       toolbarHeight: widget.toolbarHeight,
-      leadingWidth: 0,
-      leading: const SizedBox(),
+      leadingWidth: 20,
+      leading: const CommonBackButton(
+        hasBoxDecoration: false,
+      ),
       title: Row(
         children: [
           Expanded(

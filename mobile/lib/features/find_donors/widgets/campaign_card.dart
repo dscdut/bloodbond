@@ -3,15 +3,18 @@ import 'package:flutter/material.dart';
 class CampaignCard extends StatelessWidget {
   const CampaignCard({
     super.key,
+    required this.campaignImage,
   });
+
+  final String campaignImage;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(25, 10, 25, 10),
+      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
       child: Container(
         width: 336,
-        height: 196,
+        height: 172,
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(9.68),
@@ -19,9 +22,9 @@ class CampaignCard extends StatelessWidget {
         child: Column(
           children: [
             const SizedBox(
-              height: 5,
+              height: 3,
             ),
-            Image.asset('assets/images/campaign1.png'),
+            Image.asset(campaignImage),
             const SizedBox(
               height: 4.5,
             ),

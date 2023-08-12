@@ -57,7 +57,6 @@ class _MapPageState extends State<MapPage> {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
       AppFlavor.googleMapApiKey,
       PointLatLng(state.myLocation!.latitude, state.myLocation!.longitude),
-      PointLatLng(destination.latitude, destination.longitude),
     );
 
     this.polylineCoordinates = polylineCoordinates;

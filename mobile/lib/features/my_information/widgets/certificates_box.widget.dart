@@ -31,7 +31,7 @@ class CertificateBox extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(left: 24, top: 10),
             child: Container(
-              width: 250,
+              width: 260,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -85,7 +85,7 @@ class CertificateBox extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.only(left: 40, bottom: 35),
+            padding: const EdgeInsets.only(left: 30, bottom: 35),
             child: Stack(
               children: [
                 Assets.icons.profile.bloodType.svg(),

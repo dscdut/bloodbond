@@ -39,7 +39,7 @@ class _InformationItemState extends State<InformationItem> {
             context: context,
             builder: (BuildContext context) {
               return FractionallySizedBox(
-                heightFactor: 1.3,
+                heightFactor: 1.25,
                 child: DefaultTabController(
                   length: 2,
                   child: Scaffold(
@@ -88,11 +88,11 @@ class _InformationItemState extends State<InformationItem> {
                               ),
                               Padding(
                                 padding:
-                                    const EdgeInsets.fromLTRB(40, 5, 40, 0),
+                                    const EdgeInsets.fromLTRB(40, 0, 40, 0),
                                 child: AppTextFormField(
                                   hintText: '0585703870',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
@@ -102,7 +102,7 @@ class _InformationItemState extends State<InformationItem> {
                                 ),
                               ),
                               const Padding(
-                                padding: EdgeInsets.only(top: 10),
+                                padding: EdgeInsets.only(top: 8),
                                 child: LoginCustomText(
                                   text: 'Email',
                                 ),
@@ -113,7 +113,7 @@ class _InformationItemState extends State<InformationItem> {
                                 child: AppTextFormField(
                                   hintText: 'quannguyenbk59@gmail.com',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
@@ -123,7 +123,7 @@ class _InformationItemState extends State<InformationItem> {
                                 ),
                               ),
                               const Padding(
-                                padding: EdgeInsets.only(top: 10),
+                                padding: EdgeInsets.only(top: 8),
                                 child: LoginCustomText(
                                   text: 'Address',
                                 ),
@@ -134,7 +134,7 @@ class _InformationItemState extends State<InformationItem> {
                                 child: AppTextFormField(
                                   hintText: 'P304 Chung cu Hoa Minh, Phu Thanh',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
@@ -143,6 +143,7 @@ class _InformationItemState extends State<InformationItem> {
                                   onChanged: (value) {},
                                 ),
                               ),
+                              const SizedBox(height: 60),
                               CommonRoundedButton(
                                 width: 238,
                                 onPressed: () {},
@@ -171,7 +172,7 @@ class _InformationItemState extends State<InformationItem> {
                                 child: AppTextFormField(
                                   hintText: 'A+',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
@@ -192,7 +193,7 @@ class _InformationItemState extends State<InformationItem> {
                                 child: AppTextFormField(
                                   hintText: '70kg',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
@@ -213,7 +214,7 @@ class _InformationItemState extends State<InformationItem> {
                                 child: AppTextFormField(
                                   hintText: '180cm',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
@@ -234,7 +235,7 @@ class _InformationItemState extends State<InformationItem> {
                                 child: AppTextFormField(
                                   hintText: 'exhausted',
                                   fillColor: ColorStyles.concrete,
-                                  hintColor: ColorStyles.silver,
+                                  hintColor: ColorStyles.gray,
                                   borderRadius: 20,
                                   contentPadding: const EdgeInsets.symmetric(
                                     vertical: 18,
