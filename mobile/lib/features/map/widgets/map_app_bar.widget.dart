@@ -2,12 +2,27 @@ import 'package:bloodbond/common/constants/blood_enum.dart';
 import 'package:bloodbond/common/theme/app_size.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
 import 'package:bloodbond/common/widgets/common_app_bar.widget.dart';
+import 'package:bloodbond/common/widgets/common_back_button.widget.dart';
 import 'package:flutter/material.dart';
 
 class MapAppBar extends StatefulWidget implements PreferredSizeWidget {
-  const MapAppBar({super.key, this.toolbarHeight = AppSize.appBarHeight});
+  MapAppBar({
+    super.key,
+    this.toolbarHeight = AppSize.appBarHeight,
+    required this.onFindTap,
+    required this.setDistance,
+    required this.setBloodType,
+  });
 
   final double toolbarHeight;
+
+  final TextEditingController searchController = TextEditingController();
+
+  final VoidCallback onFindTap;
+
+  //distance limit
+  final Function(double distance) setDistance;
+  final Function(BloodType bloodType) setBloodType;
 
   @override
   State<MapAppBar> createState() => _MapAppBarState();
@@ -34,8 +49,10 @@ class _MapAppBarState extends State<MapAppBar> {
   Widget build(BuildContext context) {
     return CommonAppBar(
       toolbarHeight: widget.toolbarHeight,
-      leadingWidth: 0,
-      leading: const SizedBox(),
+      leadingWidth: 20,
+      leading: const CommonBackButton(
+        hasBoxDecoration: false,
+      ),
       title: Row(
         children: [
           Expanded(
@@ -67,6 +84,7 @@ class _MapAppBarState extends State<MapAppBar> {
                   onChanged: (value) {
                     setState(() {
                       bloodType = value;
+                      widget.setBloodType(value!);
                     });
                   },
                   icon: Container(
@@ -116,6 +134,7 @@ class _MapAppBarState extends State<MapAppBar> {
                 ],
               ),
               child: TextFormField(
+                controller: widget.searchController,
                 keyboardType: TextInputType.number,
                 decoration: InputDecoration(
                   isDense: true,
@@ -138,7 +157,14 @@ class _MapAppBarState extends State<MapAppBar> {
           ),
           const SizedBox(width: 12),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              widget.setDistance(
+                double.tryParse(widget.searchController.text) ?? 5.0,
+              );
+              widget.onFindTap();
+
+              FocusScope.of(context).unfocus();
+            },
             style: ButtonStyle(
               backgroundColor: MaterialStateProperty.all(Colors.red),
             ),

@@ -9,14 +9,18 @@ class InformationList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var testForm;
     return Column(
       children: [
         AppSize.h12,
         InformationItem(
           icon: Assets.icons.profile.certificate,
+          title: 'My Information',
+        ),
+        AppSize.h12,
+        InformationItem(
+          icon: Assets.icons.profile.certificate,
           title: 'My Certificates',
-          route: AppRouter.myCertificate,
+          route: AppRouter.antiNFTCertificates,
         ),
         AppSize.h12,
         InformationItem(
@@ -25,11 +29,11 @@ class InformationList extends StatelessWidget {
           route: AppRouter.bloodReport,
         ),
         AppSize.h12,
-        InformationItem(
-          icon: Assets.icons.profile.testForm,
-          title: 'Test Form',
-          route: AppRouter.myForm,
-        ),
+        // InformationItem(
+        //   icon: Assets.icons.profile.testForm,
+        //   title: 'Test Form',
+        //   route: AppRouter.myForm,
+        // ),
       ],
     );
   }

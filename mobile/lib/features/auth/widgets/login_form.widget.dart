@@ -73,7 +73,11 @@ class _LoginFormState extends State<LoginForm> {
               height: 45,
               child: CommonRoundedButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed(AppRouter.finish);
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    AppRouter.root,
+                    (route) => false,
+                  );
                 },
                 backgroundColor: ColorStyles.primary,
                 content: LocaleKeys.auth_login.tr(),

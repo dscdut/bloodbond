@@ -14,3 +14,11 @@ class MapBottomSheetGetCampaigns extends MapBottomSheetEvent {
   @override
   List<Object?> get props => [wardLocation];
 }
+
+class MapBottomSheetGetDonors extends MapBottomSheetEvent {
+  const MapBottomSheetGetDonors({required this.bloodType});
+  final BloodType bloodType;
+
+  @override
+  List<Object?> get props => [bloodType];
+}
