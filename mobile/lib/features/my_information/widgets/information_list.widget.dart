@@ -9,7 +9,6 @@ class InformationList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //var testForm;
     return Column(
       children: [
         AppSize.h12,

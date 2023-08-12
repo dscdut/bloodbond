@@ -39,12 +39,12 @@ class _RootView extends StatelessWidget {
           ) {
             return SlideIndexedStack(
               index: state.currentIndex,
-              children: [
-                const HomePage(),
-                const FindDonorsPage(),
+              children: const [
+                HomePage(),
+                FindDonorsPage(),
                 MapPage(),
-                const NotificationPage(),
-                const ProfilePage()
+                NotificationPage(),
+                ProfilePage()
               ],
             );
           },
