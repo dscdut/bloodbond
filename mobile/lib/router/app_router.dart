@@ -5,6 +5,7 @@ import 'package:bloodbond/features/find_donors/find_donors.dart';
 import 'package:bloodbond/features/my_certificate/my_certificate.dart';
 import 'package:bloodbond/features/my_form/view/my_form.view.dart';
 import 'package:bloodbond/features/my_information/view/my_information.view.dart';
+import 'package:bloodbond/features/my_information/widgets/antiNFTCertificates.widget.dart';
 import 'package:bloodbond/features/report/view/report.view.dart';
 import 'package:flutter/material.dart';
 import 'package:bloodbond/features/core/views/root.view.dart';
@@ -42,7 +43,7 @@ abstract class AppRouter {
   //My Information
   static const String myCertificate = '/my_certificate';
   static const String certificateDetail = '/certificate_detail';
-
+  static const String antiNFTCertificates = '/antiNFT_certificates';
   //My Form
   static const String myForm = 'my_form';
 
@@ -147,6 +148,13 @@ abstract class AppRouter {
           settings: settings,
           builder: (_) {
             return const CreateRequestView();
+          },
+        );
+      case antiNFTCertificates:
+        return MaterialPageRoute(
+          settings: settings,
+          builder: (_) {
+            return const AntiNFTCertificates();
           },
         );
       case bloodReport:

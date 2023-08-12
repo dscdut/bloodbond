@@ -22,13 +22,13 @@ class AvatarBloodName extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
-            Positioned(
-              bottom: -15,
-              right: -10,
-              child: BloodTypeWidget(
-                bloodType: BloodType.abPlus.name,
-              ),
-            ),
+            // Positioned(
+            //   bottom: -15,
+            //   right: -10,
+            //   child: BloodTypeWidget(
+            //     bloodType: BloodType.abPlus.name,
+            //   ),
+            // ),
           ],
         ),
         SizedBox(

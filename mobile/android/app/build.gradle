@@ -21,9 +21,9 @@ if (flutterVersionName == null) {
     flutterVersionName = '1.0'
 }
 
-def GOOGLE_MAPS_API_KEY = localProperties.getProperty("GOOGLE_MAPS_API_KEY")
-if(GOOGLE_MAPS_API_KEY == null) {
-    throw new GradleException("GOOGLE_MAPS_API_KEY not found. Define location with GOOGLE_MAPS_API_KEY in the local.properties file.")
+def MAPS_API_KEY = localProperties.getProperty("MAPS_API_KEY")
+if(MAPS_API_KEY == null) {
+    throw new GradleException("MAPS_API_KEY not found. Define location with MAPS_API_KEY in the local.properties file.")
 }
 
 apply plugin: 'com.android.application'
