@@ -87,6 +87,14 @@ class $AssetsImagesGen {
   AssetGenImage get campaignx2 =>
       const AssetGenImage('assets/images/campaignx2.png');
 
+  /// File path: assets/images/campaignPic1.png
+  AssetGenImage get campaignPic1 =>
+      const AssetGenImage('assets/images/campaignPic1.png');
+
+  /// File path: assets/images/campaignPic2.png
+  AssetGenImage get campaignPic2 =>
+      const AssetGenImage('assets/images/campaignPic2.png');
+
   /// File path: assets/images/carousel.png
   AssetGenImage get carousel =>
       const AssetGenImage('assets/images/carousel.png');
