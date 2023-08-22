@@ -1,6 +1,5 @@
-import 'package:bloodbond/common/constants/blood_enum.dart';
 import 'package:bloodbond/common/theme/text_styles.dart';
-import 'package:bloodbond/common/widgets/blood_type.widget.dart';
+import 'package:bloodbond/generated/assets.gen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,20 +14,12 @@ class AvatarBloodName extends StatelessWidget {
           clipBehavior: Clip.none,
           children: [
             ClipOval(
-              child: Image.network(
-                'https://images.thedirect.com/media/article_full/avatar-sons.jpg',
+              child: Assets.icons.profile.avatar.image(
                 width: 100,
                 height: 100,
                 fit: BoxFit.cover,
               ),
             ),
-            // Positioned(
-            //   bottom: -15,
-            //   right: -10,
-            //   child: BloodTypeWidget(
-            //     bloodType: BloodType.abPlus.name,
-            //   ),
-            // ),
           ],
         ),
         SizedBox(

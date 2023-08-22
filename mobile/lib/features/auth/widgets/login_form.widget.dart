@@ -52,6 +52,7 @@ class _LoginFormState extends State<LoginForm> {
           Padding(
             padding: const EdgeInsets.fromLTRB(40, 5, 40, 0),
             child: AppTextFormField(
+              isObscure: true,
               hintText: LocaleKeys.validator_password_required.tr(),
               fillColor: ColorStyles.concrete,
               hintColor: ColorStyles.silver,

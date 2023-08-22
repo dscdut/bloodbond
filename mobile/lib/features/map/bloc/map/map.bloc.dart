@@ -57,7 +57,8 @@ class MapsBloc extends Bloc<MapsEvent, MapsState> {
     final Uint8List customMarker = await getBytesFromAsset(
       path:
           Assets.icons.maps.icMyLocationPng.path, //paste the custom image path
-      width: 100, // size of custom image as marker
+      width: 50
+      , // size of custom image as marker
     );
 
     final Set<Marker> myLocationMarker = {
@@ -125,7 +126,7 @@ class MapsBloc extends Bloc<MapsEvent, MapsState> {
       final Uint8List customMarker = await getBytesFromAsset(
         path: Assets
             .icons.maps.icMyLocationPng.path, //paste the custom image path
-        width: 100, // size of custom image as marker
+        width: 50, // size of custom image as marker
       );
 
       final Set<Marker> markers = {
