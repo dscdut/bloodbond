@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:developer';
 
 import 'package:bloodbond/common/constants/blood_enum.dart';
 import 'package:bloodbond/common/constants/constants.dart';
@@ -57,6 +56,7 @@ class _MapPageState extends State<MapPage> {
     PolylineResult result = await polylinePoints.getRouteBetweenCoordinates(
       AppFlavor.googleMapApiKey,
       PointLatLng(state.myLocation!.latitude, state.myLocation!.longitude),
+      PointLatLng(defaultLocation.latitude, defaultLocation.longitude),
     );
 
     this.polylineCoordinates = polylineCoordinates;
@@ -213,7 +213,7 @@ class _MapView extends StatelessWidget {
                 Circle(
                   circleId: const CircleId('myLocation'),
                   center: state.myLocation ?? defaultLocation,
-                  radius: (5) * 1000,
+                  radius: (5) * 500,
                   fillColor: const Color(0xFFFF2156).withOpacity(0.1),
                   strokeColor: Colors.transparent,
                   strokeWidth: 0,

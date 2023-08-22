@@ -18,7 +18,7 @@ class _LoginOtherMethodState extends State<LoginOtherMethod> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 5),
+          padding: const EdgeInsets.symmetric(),
           child: Row(
             children: [
               Expanded(

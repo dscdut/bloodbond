@@ -18,7 +18,7 @@ class _LoginFooterState extends State<LoginFooter> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.symmetric(vertical: 10),
+          padding: const EdgeInsets.symmetric(),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [

@@ -38,18 +38,18 @@ android {
     productFlavors {
         dev {
             dimension "flavor-type"
-            applicationId "com.bloodchain.dev"
-            resValue "string", "app_name", "BloodChain DEV"
+            applicationId "com.BloodBond.dev"
+            resValue "string", "app_name", "BloodBond DEV"
         }
         qa {
             dimension "flavor-type"
-            applicationId "com.bloodchain.qa"
-            resValue "string", "app_name", "BloodChain QA"
+            applicationId "com.BloodBond.qa"
+            resValue "string", "app_name", "BloodBond QA"
         }
         staging {
             dimension "flavor-type"
-            applicationId "com.gdscdut.bloodchain"
-            resValue "string", "app_name", "BloodChain"
+            applicationId "com.gdscdut.BloodBond"
+            resValue "string", "app_name", "BloodBond"
         }
     }
 

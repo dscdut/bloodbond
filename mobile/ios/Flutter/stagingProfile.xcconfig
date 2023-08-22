@@ -2,5 +2,5 @@
 
 FLUTTER_TARGET=lib/main_staging.dart
 ASSET_PREFIX=staging
-BUNDLE_NAME=BloodChain
-BUNDLE_DISPLAY_NAME=BloodChain
+BUNDLE_NAME=BloodBond
+BUNDLE_DISPLAY_NAME=BloodBond

@@ -30,7 +30,7 @@ class CertificateBox extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.only(left: 24, top: 10),
-            child: Container(
+            child: SizedBox(
               width: 260,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,

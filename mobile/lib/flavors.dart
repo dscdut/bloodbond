@@ -24,11 +24,11 @@ class AppFlavor {
   static String get title {
     switch (appFlavor) {
       case Flavor.DEV:
-        return 'BloodChain DEV';
+        return 'BloodBond DEV';
       case Flavor.QA:
-        return 'BloodChain QA';
+        return 'BloodBond QA';
       case Flavor.STAGING:
-        return 'BloodChain';
+        return 'BloodBond';
       default:
         return 'title';
     }

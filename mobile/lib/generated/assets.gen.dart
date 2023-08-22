@@ -110,8 +110,15 @@ class $AssetsImagesGen {
   $AssetsImagesSplashGen get splash => const $AssetsImagesSplashGen();
 
   /// List of all assets
-  List<AssetGenImage> get values =>
-      [campaign, campaign1, campaignx2, carousel, operation];
+  List<AssetGenImage> get values => [
+        campaign,
+        campaign1,
+        campaignPic1,
+        campaignPic2,
+        campaignx2,
+        carousel,
+        operation
+      ];
 }
 
 class $AssetsLocalesGen {
@@ -294,8 +301,16 @@ class $AssetsIconsNotificationGen {
   AssetGenImage get blood =>
       const AssetGenImage('assets/icons/notification/blood.png');
 
+  /// File path: assets/icons/notification/checked_icon.png
+  AssetGenImage get checkedIcon =>
+      const AssetGenImage('assets/icons/notification/checked_icon.png');
+
+  /// File path: assets/icons/notification/double_blood.png
+  AssetGenImage get doubleBlood =>
+      const AssetGenImage('assets/icons/notification/double_blood.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [blood];
+  List<AssetGenImage> get values => [blood, checkedIcon, doubleBlood];
 }
 
 class $AssetsIconsProfileGen {

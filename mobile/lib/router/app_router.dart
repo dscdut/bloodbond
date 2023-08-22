@@ -1,3 +1,5 @@
+import 'package:bloodbond/common/enums/page_transition_type.dart';
+import 'package:bloodbond/common/widgets/transition_page_route.dart';
 import 'package:bloodbond/data/models/nft.model.dart';
 import 'package:bloodbond/features/auth/auth.dart';
 import 'package:bloodbond/features/donation_request/donation_request.dart';
@@ -58,25 +60,28 @@ abstract class AppRouter {
           },
         );
       case welcome:
-        return MaterialPageRoute(
+        return TransitionPageRoute(
           settings: settings,
           builder: (_) {
             return const WelcomePage();
           },
+          type: PageTransitionType.fade,
         );
       case login:
-        return MaterialPageRoute(
+        return TransitionPageRoute(
           settings: settings,
           builder: (_) {
             return const LoginPage();
           },
+          type: PageTransitionType.fade,
         );
       case finish:
-        return MaterialPageRoute(
+        return TransitionPageRoute(
           settings: settings,
           builder: (_) {
             return const FinishVerifyPage();
           },
+          type: PageTransitionType.fade,
         );
       case forgotPassword:
         return MaterialPageRoute(
@@ -86,11 +91,12 @@ abstract class AppRouter {
           },
         );
       case root:
-        return MaterialPageRoute(
+        return TransitionPageRoute(
           settings: settings,
           builder: (_) {
             return const RootPage();
           },
+          type: PageTransitionType.fade,
         );
       case donationRequest:
         return MaterialPageRoute(
@@ -114,11 +120,12 @@ abstract class AppRouter {
           },
         );
       case myInformation:
-        return MaterialPageRoute(
+        return TransitionPageRoute(
           settings: settings,
           builder: (_) {
             return const MyInformationPage();
           },
+          type: PageTransitionType.fade,
         );
 
       case myForm:

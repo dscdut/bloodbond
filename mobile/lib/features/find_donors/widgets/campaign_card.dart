@@ -11,7 +11,7 @@ class CampaignCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
+      padding: const EdgeInsets.fromLTRB(10, 10, 10, 10),
       child: Container(
         width: 336,
         height: 172,
@@ -24,7 +24,15 @@ class CampaignCard extends StatelessWidget {
             const SizedBox(
               height: 3,
             ),
-            Image.asset(campaignImage),
+            Padding(
+              padding: const EdgeInsets.fromLTRB(5, 2, 5, 0),
+              child: Image.asset(
+                campaignImage,
+                height: 125,
+                width: double.infinity,
+                fit: BoxFit.fill,
+              ),
+            ),
             const SizedBox(
               height: 4.5,
             ),
@@ -48,7 +56,7 @@ class CampaignCard extends StatelessWidget {
                 textAlign: TextAlign.left,
                 style: TextStyle(
                   color: Color(0xFF272A2F),
-                  fontSize: 13,
+                  fontSize: 16,
                   fontFamily: 'BeVietNamPro',
                   fontWeight: FontWeight.w600,
                 ),

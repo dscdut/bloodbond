@@ -44,4 +44,5 @@ abstract class ColorStyles {
   static const Color cultured = Color(0xFFF5F5F5);
   static const Color concrete = Color(0xFFF2F2F2);
   static const Color silver = Color(0xFFBEBEBE);
+  static const Color boldGray = Color(0xFF7E7E7E);
 }
