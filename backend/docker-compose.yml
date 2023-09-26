@@ -1,4 +1,9 @@
 version: '3.3'
+
+networks:
+  app-network:
+    driver: bridge
+
 services:
   app:
     restart: on-failure
@@ -10,3 +15,88 @@ services:
       - '3000'
     env_file:
       - .env
+
+  base:
+    build:
+      dockerfile: base.Dockerfile
+    image: base
+    env_file:
+      - .env
+    environment:
+      - TYPEORM_HOST=postgis-extension
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bloodbond
+    depends_on:
+      - postgis
+    networks:
+      - app-network
+
+  db:
+    container_name: postgres-db
+    image: postgres:16-alpine3.18
+    # image: postgres:16
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bloodbond
+    env_file:
+      - .env
+    ports:
+      - '5432:5432'
+    networks:
+      - app-network
+
+  postgis:
+    container_name: postgis-extension
+    image: postgis/postgis:16-3.4-alpine
+    # image: postgis/postgis:16
+    restart: always
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bloodbond
+    env_file:
+      - .env
+    ports:
+      - '5432:5432'
+    networks:
+      - app-network
+
+  init_db:
+    image: base
+    command: sh -c "npm run typeorm:run-migration && npm run seed:run"
+    env_file:
+      - .env
+    environment:
+      - TYPEORM_HOST=postgis-extension
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bloodbond
+    depends_on:
+      - postgis
+      - base
+    networks:
+      - app-network
+
+  api:
+    image: base
+    command: sh -c "npm run start:dev"
+    env_file:
+      - .env
+    environment:
+      - TYPEORM_HOST=postgis-extension
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=bloodbond
+    ports:
+      - '3000:3000'
+    expose:
+      - '3000'
+    depends_on:
+      - postgis
+      - base
+      - init_db
+    networks:
+      - app-network

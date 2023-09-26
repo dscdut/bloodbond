@@ -27,7 +27,7 @@ $ docker-compose up
 
 ```bash
 # run migrations
-$ npm run typeorm:run-migrations
+$ npm run typeorm:run-migration
 
 # generate migrations
 $ npm run typeorm:generate-migration --name=some-name
