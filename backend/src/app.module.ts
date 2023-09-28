@@ -12,6 +12,7 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { ApiConfigService } from '@shared/services/api-config.service';
 import { SharedModule } from '@shared/services/shared.module';
 import { MediaModule } from './modules/media/media.module';
+import { DonorsFindingModule } from './modules/donors-finding/donors-finding.module';
 
 @Module({
   imports: [
@@ -28,6 +29,7 @@ import { MediaModule } from './modules/media/media.module';
         configService.postgresConfig,
       inject: [ApiConfigService, ConfigService],
     }),
+    DonorsFindingModule,
   ],
   controllers: [AppController, AuthController],
   providers: [AppService],
