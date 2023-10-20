@@ -16,3 +16,16 @@ services:
       - '27017:27017'
     networks:
       - notification-network
+
+  mongo-express:
+    image: mongo-express:1.0.0-18-alpine3.18
+    container_name: mongo-express
+    environment:
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=admin
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=admin
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_MONGODB_PORT=27017
+    ports:
+      - '8081:8081'
+    networks:
+      - notification-network
