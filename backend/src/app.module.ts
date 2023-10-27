@@ -13,12 +13,14 @@ import { ApiConfigService } from '@shared/services/api-config.service';
 import { SharedModule } from '@shared/services/shared.module';
 import { MediaModule } from './modules/media/media.module';
 import { DonorsFindingModule } from './modules/donors-finding/donors-finding.module';
+import { UserDeviceModule } from './modules/user-device/user-device.module';
 
 @Module({
   imports: [
     AuthModule,
     MediaModule,
     UserModule,
+    UserDeviceModule,
     ConfigModule.forRoot({
       isGlobal: true,
       envFilePath: '.env',

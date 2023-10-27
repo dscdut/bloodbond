@@ -64,6 +64,18 @@ services:
     networks:
       - app-network
 
+  rabbitmq:
+    image: rabbitmq:3-management
+    container_name: rabbitmq
+    hostname: rabbitmq
+    ports:
+      - '5672:5672'
+      - '15672:15672'
+    env_file:
+      - ./rabbitmq.env
+    networks:
+      - app-network
+
   init_db:
     image: base
     command: sh -c "npm run typeorm:run-migration && npm run seed:run"
