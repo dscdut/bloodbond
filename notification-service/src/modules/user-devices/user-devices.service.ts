@@ -4,6 +4,7 @@ import { UserDevice, UserDeviceDocument } from './user-device.schema';
 import { Model } from 'mongoose';
 import UserDeviceDto from './dto/user-device.dto';
 import UpdateDeviceTokenDto from './dto/update-device-token.dto';
+import { RpcException } from '@nestjs/microservices';
 
 @Injectable()
 export class UserDevicesService {
@@ -13,11 +14,17 @@ export class UserDevicesService {
   ) {}
 
   async getAll() {
-    return this.userDeviceModel.find().exec();
+    return this.userDeviceModel.find().lean();
   }
 
   async getByUserId(userId: string) {
-    return this.userDeviceModel.find({ userId }).exec();
+    const deviceToken = await this.userDeviceModel.findOne({ userId }).lean();
+
+    if (!deviceToken) {
+      throw new RpcException('User device not found');
+    }
+
+    return deviceToken;
   }
 
   async create(userDeviceDto: UserDeviceDto) {
@@ -25,16 +32,31 @@ export class UserDevicesService {
     return createdUserDevice.save();
   }
 
-  async update(userId: string, updateDeviceTokenDto: UpdateDeviceTokenDto) {
-    return this.userDeviceModel.findOneAndUpdate(
-      { userId },
-      updateDeviceTokenDto,
-      { new: true }, // This option will return the updated record
-    );
+  async update(updateDeviceTokenDto: UpdateDeviceTokenDto) {
+    const { userId, ...payload } = updateDeviceTokenDto;
+
+    // find user device by userId and update deviceToken
+
+    const updatedDevice = await this.userDeviceModel
+      .findOneAndUpdate({ userId }, payload, { new: true })
+      .lean();
+
+    if (!updatedDevice) {
+      throw new RpcException('User device not found');
+    }
+
+    return updatedDevice;
   }
 
   async deleteByDeviceToken(deviceToken: string) {
-    await this.userDeviceModel.deleteOne({ deviceToken }).exec();
+    const deletedDevice = await this.userDeviceModel
+      .findOneAndDelete({ deviceToken })
+      .exec();
+
+    if (!deletedDevice) {
+      throw new RpcException('User device not found');
+    }
+
     return { message: 'User device deleted successfully' };
   }
 }

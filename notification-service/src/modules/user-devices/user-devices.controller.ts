@@ -1,49 +1,38 @@
-import {
-  Body,
-  Controller,
-  Delete,
-  Get,
-  Param,
-  Patch,
-  Post,
-  UseInterceptors,
-} from '@nestjs/common';
+import { Controller, UseInterceptors } from '@nestjs/common';
 import MongooseClassSerializerInterceptor from 'src/utils/mongooseClassSerializer.interceptor';
 import { UserDevice as UserDeviceModel } from './user-device.schema';
 import { UserDevicesService } from './user-devices.service';
 import UserDeviceDto from './dto/user-device.dto';
 import UpdateDeviceTokenDto from './dto/update-device-token.dto';
+import { MessagePattern } from '@nestjs/microservices';
 
 @Controller('user-devices')
 @UseInterceptors(MongooseClassSerializerInterceptor(UserDeviceModel))
 export class UserDevicesController {
   constructor(private readonly userDevicesService: UserDevicesService) {}
 
-  @Get()
+  @MessagePattern({ cmd: 'get-all-user-devices' })
   async getAll() {
     return this.userDevicesService.getAll();
   }
 
-  @Get(':userId')
-  async getByUserId(@Param('userId') userId: string) {
+  @MessagePattern({ cmd: 'get-device-by-user-id' })
+  async getByUserId(userId: string) {
     return this.userDevicesService.getByUserId(userId);
   }
 
-  @Post()
-  async create(@Body() userDeviceDto: UserDeviceDto) {
+  @MessagePattern({ cmd: 'create-user-device' })
+  async create(userDeviceDto: UserDeviceDto) {
     return this.userDevicesService.create(userDeviceDto);
   }
 
-  @Patch(':userId')
-  async update(
-    @Param('userId') userId: string,
-    @Body() updateDeviceTokenDto: UpdateDeviceTokenDto,
-  ) {
-    return this.userDevicesService.update(userId, updateDeviceTokenDto);
+  @MessagePattern({ cmd: 'update-user-device' })
+  async update(updateDeviceTokenDto: UpdateDeviceTokenDto) {
+    return this.userDevicesService.update(updateDeviceTokenDto);
   }
 
-  @Delete(':deviceToken')
-  async deleteByDeviceToken(@Param('deviceToken') deviceToken: string) {
+  @MessagePattern({ cmd: 'delete-user-device' })
+  async deleteByDeviceToken(deviceToken: string) {
     return this.userDevicesService.deleteByDeviceToken(deviceToken);
   }
 }
