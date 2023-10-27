@@ -6,6 +6,7 @@ import {
   ExpressAdapter,
 } from '@nestjs/platform-express';
 import { ConfigService } from '@nestjs/config';
+import { MicroserviceOptions, Transport } from '@nestjs/microservices';
 
 async function bootstrap(): Promise<NestExpressApplication> {
   const app = await NestFactory.create<NestExpressApplication>(
@@ -33,9 +34,23 @@ async function bootstrap(): Promise<NestExpressApplication> {
 
   const config = app.get<ConfigService>(ConfigService);
 
-  await app.listen(config.get('PORT'), async () => {
-    console.log(`Application is running on: ${await app.getUrl()}`);
+  const user = config.get('RABBITMQ_USER');
+  const password = config.get('RABBITMQ_PASSWORD');
+  const host = config.get('RABBITMQ_HOST');
+  const queueName = config.get('RABBITMQ_QUEUE_NAME');
+
+  await app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.RMQ,
+    options: {
+      urls: [`amqp://${user}:${password}@${host}`],
+      queue: queueName,
+      queueOptions: {
+        durable: true,
+      },
+    },
   });
+
+  app.startAllMicroservices();
 
   return app;
 }
