@@ -6,7 +6,6 @@ module.exports = {
       validator: {
         $jsonSchema: {
           bsonType: 'object',
-          required: ['user_id', 'device_token', 'settings'],
           properties: {
             device_token: {
               bsonType: 'string',
