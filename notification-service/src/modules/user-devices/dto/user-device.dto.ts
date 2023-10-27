@@ -11,7 +11,7 @@ export class UserDeviceDto {
 
   @IsObject()
   @IsOptional()
-  settings: Record<string, unknown>;
+  settings?: Record<string, unknown>;
 }
 
 export default UserDeviceDto;
