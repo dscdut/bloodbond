@@ -14,6 +14,7 @@ import { SharedModule } from '@shared/services/shared.module';
 import { MediaModule } from './modules/media/media.module';
 import { DonorsFindingModule } from './modules/donors-finding/donors-finding.module';
 import { UserDeviceModule } from './modules/user-device/user-device.module';
+import { CampaignModule } from './modules/campaign/campaign.module';
 
 @Module({
   imports: [
@@ -32,6 +33,7 @@ import { UserDeviceModule } from './modules/user-device/user-device.module';
       inject: [ApiConfigService, ConfigService],
     }),
     DonorsFindingModule,
+    CampaignModule,
   ],
   controllers: [AppController, AuthController],
   providers: [AppService],
