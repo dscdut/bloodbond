@@ -1,0 +1,7 @@
+{
+  "BLOOD_DONATION_IN_NEED": "There is a person in need of blood donation",
+  "BLOOD_DONATION_ACCEPT": "A person has accepted your blood donation request",
+  "BLOOD_DONATION_SEARCHING_END": "The search for blood donation has ended",
+  "CAMPAIGN_CREATED": "There is a new campaign name {campaignName} that you may be interested in",
+  "CAMPAIGN_UPDATED": "The {campaignName} campaign has some updates"
+}
