@@ -22,7 +22,7 @@ import { CurrentUser } from '@shared/decorator/user.decorator';
 @UseInterceptors(ClassSerializerInterceptor)
 export class UserDeviceController {
   constructor(
-    @Inject('USER_DEVICE_SERVICE') private userDeviceService: ClientProxy,
+    @Inject('USER_DEVICES_SERVICE') private userDeviceService: ClientProxy,
   ) {}
 
   @Post()
