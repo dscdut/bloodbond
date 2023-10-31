@@ -1,15 +1,28 @@
 import { User } from '@database/entities';
-import { BadRequestException, Injectable } from '@nestjs/common';
+import {
+  BadRequestException,
+  HttpException,
+  HttpStatus,
+  Inject,
+  Injectable,
+} from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import type { FindDonorsResponse } from './response/find-donors.response';
 import type { GetDonorInfoResponse } from './response/get-donor-info.response';
+import { ClientProxy } from '@nestjs/microservices';
+import { catchError, map } from 'rxjs';
+import { UserDevice } from '@shared/types/user-device-type';
+import { NotificationTemplateService } from '@modules/notification-template/notification-template.service';
 
 @Injectable()
 export class DonorsFindingService {
   constructor(
     @InjectRepository(User)
     private userRepository: Repository<User>,
+    @Inject('USER_DEVICES_SERVICE') private userDeviceService: ClientProxy,
+    @Inject('NOTIFICATION_SERVICE') private notificationService: ClientProxy,
+    private readonly notificationTemplateSerivice: NotificationTemplateService,
   ) {}
 
   async findDonors(
@@ -19,7 +32,10 @@ export class DonorsFindingService {
     currentLng: number,
   ): Promise<FindDonorsResponse[]> {
     try {
-      const donors = this.userRepository
+      const notificationContent =
+        this.notificationTemplateSerivice.sendBloodDonationRequestNotification();
+
+      const donors = await this.userRepository
         .createQueryBuilder('user')
         .innerJoinAndSelect('user.bloodType', 'blood_types')
         .select([
@@ -44,6 +60,44 @@ export class DonorsFindingService {
           radius: radius,
         })
         .getMany();
+
+      const donorIds = donors.map((each) => each.id.toString());
+
+      this.userDeviceService
+        .send({ cmd: 'get-many-devices-by-user-ids' }, donorIds)
+        .pipe(
+          map((data) => {
+            const deviceTokenForPushNotification = data.reduce(
+              (acc: string[], each: UserDevice) => {
+                const { notification } = each.settings;
+                if (notification.push) {
+                  acc.push(each.deviceToken);
+                }
+                return acc;
+              },
+              [],
+            );
+
+            return deviceTokenForPushNotification;
+          }),
+        )
+        .subscribe((deviceTokenForPushNotification) => {
+          this.notificationService
+            .send(
+              { cmd: 'send-notification' },
+              {
+                deviceTokens: deviceTokenForPushNotification,
+                title: notificationContent.title,
+                body: notificationContent.body,
+              },
+            )
+            .pipe(
+              catchError((error) => {
+                throw new HttpException(error, HttpStatus.BAD_REQUEST);
+              }),
+            )
+            .subscribe();
+        });
 
       return donors;
     } catch (error) {
