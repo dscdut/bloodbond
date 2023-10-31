@@ -8,12 +8,12 @@ import { ClientProxyFactory, Transport } from '@nestjs/microservices';
   controllers: [UserDeviceController],
   providers: [
     {
-      provide: 'USER_DEVICE_SERVICE',
+      provide: 'USER_DEVICES_SERVICE',
       useFactory: (configService: ConfigService) => {
         const user = configService.get('RABBITMQ_USER');
         const password = configService.get('RABBITMQ_PASSWORD');
         const host = configService.get('RABBITMQ_HOST');
-        const queueName = configService.get('RABBITMQ_QUEUE_NAME');
+        const queueName = configService.get('USER_DEVICES_QUEUE');
 
         return ClientProxyFactory.create({
           transport: Transport.RMQ,

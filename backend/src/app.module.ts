@@ -14,6 +14,10 @@ import { SharedModule } from '@shared/services/shared.module';
 import { MediaModule } from './modules/media/media.module';
 import { DonorsFindingModule } from './modules/donors-finding/donors-finding.module';
 import { UserDeviceModule } from './modules/user-device/user-device.module';
+import { CampaignModule } from './modules/campaign/campaign.module';
+import { NotificationTemplateModule } from './modules/notification-template/notification-template.module';
+import { I18nModule } from 'nestjs-i18n';
+import * as path from 'path';
 
 @Module({
   imports: [
@@ -32,6 +36,15 @@ import { UserDeviceModule } from './modules/user-device/user-device.module';
       inject: [ApiConfigService, ConfigService],
     }),
     DonorsFindingModule,
+    CampaignModule,
+    I18nModule.forRoot({
+      fallbackLanguage: 'en',
+      loaderOptions: {
+        path: path.join(__dirname, '/i18n/'),
+        watch: true,
+      },
+    }),
+    NotificationTemplateModule,
   ],
   controllers: [AppController, AuthController],
   providers: [AppService],
