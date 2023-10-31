@@ -48,6 +48,8 @@
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "dotenv": "^16.3.1",
+    "firebase": "^10.5.2",
+    "firebase-admin": "^11.11.0",
     "lodash": "^4.17.21",
     "logform": "^2.4.2",
     "migrate-mongo": "^11.0.0",
