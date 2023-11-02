@@ -27,16 +27,26 @@ export class UserDevicesService {
     return deviceToken;
   }
 
+  async getManyByUserIds(userIds: string[]) {
+    return this.userDeviceModel.find({ userId: { $in: userIds } }).lean();
+  }
+
   async create(userDeviceDto: UserDeviceDto) {
+    // check if user id already exists
+    const userDevice = await this.userDeviceModel
+      .findOne({ userId: userDeviceDto.userId })
+      .lean();
+
+    if (userDevice) {
+      throw new RpcException('User device already exists');
+    }
+
     const createdUserDevice = new this.userDeviceModel(userDeviceDto);
     return createdUserDevice.save();
   }
 
   async update(updateDeviceTokenDto: UpdateDeviceTokenDto) {
     const { userId, ...payload } = updateDeviceTokenDto;
-
-    // find user device by userId and update deviceToken
-
     const updatedDevice = await this.userDeviceModel
       .findOneAndUpdate({ userId }, payload, { new: true })
       .lean();
@@ -58,5 +68,17 @@ export class UserDevicesService {
     }
 
     return { message: 'User device deleted successfully' };
+  }
+
+  async deleteByDeviceTokens(deviceTokens: string[]) {
+    const deletedDevices = await this.userDeviceModel
+      .deleteMany({ deviceToken: { $in: deviceTokens } })
+      .exec();
+
+    if (!deletedDevices) {
+      throw new RpcException('User devices not found');
+    }
+
+    return { message: 'User devices deleted successfully' };
   }
 }

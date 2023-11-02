@@ -1,7 +1,10 @@
+import { BullModule } from '@nestjs/bull';
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { UserDevicesModule } from './modules/user-devices/user-devices.module';
+import { FirebaseAdminService } from './modules/firebase-admin/firebase-admin.service';
+import { FcmModule } from './modules/fcm/fcm.module';
 
 @Module({
   imports: [
@@ -24,9 +27,20 @@ import { UserDevicesModule } from './modules/user-devices/user-devices.module';
       },
       inject: [ConfigService],
     }),
+    BullModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        redis: {
+          host: configService.get<string>('REDIS_HOST'),
+          port: configService.get<number>('REDIS_PORT'),
+        },
+      }),
+      inject: [ConfigService],
+    }),
     UserDevicesModule,
+    FcmModule,
   ],
   controllers: [],
-  providers: [],
+  providers: [FirebaseAdminService],
 })
 export class AppModule {}

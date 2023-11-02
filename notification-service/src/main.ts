@@ -34,15 +34,18 @@ async function bootstrap(): Promise<NestExpressApplication> {
 
   const config = app.get<ConfigService>(ConfigService);
 
-  const user = config.get('RABBITMQ_USER');
-  const password = config.get('RABBITMQ_PASSWORD');
-  const host = config.get('RABBITMQ_HOST');
-  const queueName = config.get('RABBITMQ_QUEUE_NAME');
+  // user devices service
+  const userDevicesServiceUser = config.get('RABBITMQ_USER');
+  const userDevicesServicePassword = config.get('RABBITMQ_PASSWORD');
+  const userDevicesServiceHost = config.get('RABBITMQ_HOST');
+  const queueName = config.get('USER_DEVICES_QUEUE');
 
-  await app.connectMicroservice<MicroserviceOptions>({
+  app.connectMicroservice<MicroserviceOptions>({
     transport: Transport.RMQ,
     options: {
-      urls: [`amqp://${user}:${password}@${host}`],
+      urls: [
+        `amqp://${userDevicesServiceUser}:${userDevicesServicePassword}@${userDevicesServiceHost}`,
+      ],
       queue: queueName,
       queueOptions: {
         durable: true,
@@ -50,8 +53,28 @@ async function bootstrap(): Promise<NestExpressApplication> {
     },
   });
 
-  app.startAllMicroservices();
+  // notification service
+  const notificationServiceUser = config.get('RABBITMQ_USER');
+  const notificationServicePassword = config.get('RABBITMQ_PASSWORD');
+  const notificationServiceHost = config.get('RABBITMQ_HOST');
+  const notificationServiceQueueName = config.get('NOTIFICATION_QUEUE');
 
+  app.connectMicroservice<MicroserviceOptions>({
+    transport: Transport.RMQ,
+    options: {
+      urls: [
+        `amqp://${notificationServiceUser}:${notificationServicePassword}@${notificationServiceHost}`,
+      ],
+      queue: notificationServiceQueueName,
+      queueOptions: {
+        durable: true,
+      },
+    },
+  });
+
+  app.startAllMicroservices();
+  app.init();
   return app;
 }
+
 bootstrap();
