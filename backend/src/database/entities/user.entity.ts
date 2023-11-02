@@ -14,6 +14,7 @@ import { DonationInfo } from './donation_info.entity';
 import { SocialLink } from './social_link.entity';
 import { BloodType } from './blood_type.entity';
 import * as argon2 from 'argon2';
+import { NotificationRecipient } from './notification_recipient.entity';
 
 @Index('users_citizenship_number_key', ['citizenshipNumber'], { unique: true })
 @Index('users_email_key', ['email'], { unique: true })
@@ -101,6 +102,12 @@ export class User {
   @ManyToOne(() => BloodType, (bloodType) => bloodType.users)
   @JoinColumn([{ name: 'blood_type_id', referencedColumnName: 'id' }])
   bloodType: BloodType;
+
+  @OneToMany(
+    () => NotificationRecipient,
+    (notificationRecipient) => notificationRecipient.recipient,
+  )
+  notificationRecipients: NotificationRecipient[];
 
   @BeforeInsert()
   async hashPassword() {
