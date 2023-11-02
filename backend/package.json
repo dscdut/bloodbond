@@ -27,6 +27,7 @@
     "gen-entity-local": "npx typeorm-model-generator -h localhost -d bloodbond -u postgres -x postgres -e postgres -o src/database/entities  --skipTables=migrations,spatial_ref_sys --noConfig --cf=none --namingStrategy=./src/config/namingStrategy"
   },
   "dependencies": {
+    "@nestjs/bull": "^10.0.1",
     "@nestjs/common": "^9.2.0",
     "@nestjs/config": "^2.2.0",
     "@nestjs/core": "^9.2.0",
@@ -44,6 +45,7 @@
     "amqp-connection-manager": "^4.1.14",
     "amqplib": "^0.10.3",
     "argon2": "^0.31.1",
+    "bull": "^4.11.4",
     "class-transformer": "^0.5.1",
     "class-validator": "^0.13.2",
     "cloudinary": "^1.37.2",
