@@ -14,7 +14,21 @@ export class UserDevice {
   deviceToken: string;
 
   @Prop({ type: Object, default: {} })
-  settings: Record<string, unknown>;
+  @Prop({
+    type: Object,
+    default: {
+      notification: {
+        push: true,
+        email: false,
+      },
+    },
+  })
+  settings: {
+    notification: {
+      push: boolean;
+      email: boolean;
+    };
+  };
 }
 
 export const UserDeviceSchema = SchemaFactory.createForClass(UserDevice);
