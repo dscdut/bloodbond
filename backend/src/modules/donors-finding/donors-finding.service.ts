@@ -84,7 +84,7 @@ export class DonorsFindingService {
         .subscribe((deviceTokenForPushNotification) => {
           this.notificationService
             .send(
-              { cmd: 'send-notification' },
+              { cmd: 'send-batch-notification' },
               {
                 deviceTokens: deviceTokenForPushNotification,
                 title: notificationContent.title,
