@@ -21,6 +21,13 @@ export class UserDevicesController {
     return this.userDevicesService.getByUserId(userId);
   }
 
+  @MessagePattern({
+    cmd: 'get-many-devices-by-user-ids',
+  })
+  async getManyByUserIds(userIds: string[]) {
+    return this.userDevicesService.getManyByUserIds(userIds);
+  }
+
   @MessagePattern({ cmd: 'create-user-device' })
   async create(userDeviceDto: UserDeviceDto) {
     return this.userDevicesService.create(userDeviceDto);
@@ -34,5 +41,10 @@ export class UserDevicesController {
   @MessagePattern({ cmd: 'delete-user-device' })
   async deleteByDeviceToken(deviceToken: string) {
     return this.userDevicesService.deleteByDeviceToken(deviceToken);
+  }
+
+  @MessagePattern({ cmd: 'delete-user-devices' })
+  async deleteManyByDeviceTokens(deviceTokens: string[]) {
+    return this.userDevicesService.deleteByDeviceTokens(deviceTokens);
   }
 }
