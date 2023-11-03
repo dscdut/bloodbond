@@ -4,7 +4,7 @@ import { UserDevice as UserDeviceModel } from './user-device.schema';
 import { UserDevicesService } from './user-devices.service';
 import UserDeviceDto from './dto/user-device.dto';
 import UpdateDeviceTokenDto from './dto/update-device-token.dto';
-import { MessagePattern } from '@nestjs/microservices';
+import { EventPattern, MessagePattern } from '@nestjs/microservices';
 
 @Controller('user-devices')
 @UseInterceptors(MongooseClassSerializerInterceptor(UserDeviceModel))
@@ -46,5 +46,12 @@ export class UserDevicesController {
   @MessagePattern({ cmd: 'delete-user-devices' })
   async deleteManyByDeviceTokens(deviceTokens: string[]) {
     return this.userDevicesService.deleteByDeviceTokens(deviceTokens);
+  }
+
+  @EventPattern({ cmd: 'send-notification-recipient-to-queue' })
+  async sendNotificationRecipientToQueue(notificationId: number) {
+    return this.userDevicesService.sendNotificationRecipientToQueue(
+      notificationId,
+    );
   }
 }

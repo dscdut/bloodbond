@@ -5,12 +5,15 @@ import { Model } from 'mongoose';
 import UserDeviceDto from './dto/user-device.dto';
 import UpdateDeviceTokenDto from './dto/update-device-token.dto';
 import { RpcException } from '@nestjs/microservices';
+import { InjectQueue } from '@nestjs/bull';
+import { Queue } from 'bull';
 
 @Injectable()
 export class UserDevicesService {
   constructor(
     @InjectModel(UserDevice.name)
     private userDeviceModel: Model<UserDeviceDocument>,
+    @InjectQueue('userId') private userIdsQueue: Queue,
   ) {}
 
   async getAll() {
@@ -80,5 +83,38 @@ export class UserDevicesService {
     }
 
     return { message: 'User devices deleted successfully' };
+  }
+
+  async sendNotificationRecipientToQueue(notificationId: number) {
+    const userDevices = await this.userDeviceModel.find().lean();
+    const userIds = userDevices.reduce((acc: string[], each: UserDevice) => {
+      const { notification } = each.settings;
+      if (notification.push) {
+        acc.push(each.userId);
+      }
+      return acc;
+    }, []);
+
+    const batchSize = 500;
+    const totalBatches = Math.ceil(userIds.length / batchSize);
+
+    for (let i = 0; i < totalBatches; i++) {
+      const start = i * batchSize;
+      const end = (i + 1) * batchSize;
+      const batchUserIds = userIds.slice(start, end);
+
+      const message = {
+        notificationId,
+        userIds: batchUserIds,
+      };
+
+      try {
+        await this.userIdsQueue.add('batch-insert', message);
+      } catch (error) {
+        throw new RpcException(error);
+      }
+    }
+
+    return { notificationId, userIds };
   }
 }
