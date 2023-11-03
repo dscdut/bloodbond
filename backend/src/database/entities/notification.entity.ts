@@ -1,4 +1,5 @@
 import {
+  BaseEntity,
   Column,
   Entity,
   Index,
@@ -12,7 +13,7 @@ import { Event } from './event.entity';
 
 @Index('notifications_pkey', ['id'], { unique: true })
 @Entity('notifications', { schema: 'public' })
-export class Notification {
+export class Notification extends BaseEntity {
   @PrimaryGeneratedColumn({ type: 'integer', name: 'id' })
   id: number;
 
