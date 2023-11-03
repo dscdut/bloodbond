@@ -18,6 +18,8 @@ import { CampaignModule } from './modules/campaign/campaign.module';
 import { NotificationTemplateModule } from './modules/notification-template/notification-template.module';
 import { I18nModule } from 'nestjs-i18n';
 import * as path from 'path';
+import { BullModule } from '@nestjs/bull';
+import { NotificationRecipientsModule } from './modules/notification-recipients/notification-recipients.module';
 
 @Module({
   imports: [
@@ -45,6 +47,17 @@ import * as path from 'path';
       },
     }),
     NotificationTemplateModule,
+    BullModule.forRootAsync({
+      imports: [ConfigModule],
+      useFactory: async (configService: ConfigService) => ({
+        redis: {
+          host: configService.get<string>('REDIS_HOST'),
+          port: configService.get<number>('REDIS_PORT'),
+        },
+      }),
+      inject: [ConfigService],
+    }),
+    NotificationRecipientsModule,
   ],
   controllers: [AppController, AuthController],
   providers: [AppService],
