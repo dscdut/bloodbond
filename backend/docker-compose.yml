@@ -1,4 +1,4 @@
-version: '3.3'
+version: '3.8'
 
 networks:
   app-network:
@@ -8,7 +8,13 @@ services:
   app:
     restart: on-failure
     container_name: bloodbond
-    image: high10hunter/node:latest
+    # image: high10hunter/node:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    environment:
+      - NODE_ENV=production
     ports:
       - '3000:3000'
     expose:
