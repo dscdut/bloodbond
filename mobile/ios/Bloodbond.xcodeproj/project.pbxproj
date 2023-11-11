@@ -10,7 +10,7 @@
 		0CAD3332B1CAB89343463436 /* stagingDebug.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 79EA1DBC80E0A336B7F12764 /* stagingDebug.xcconfig */; };
 		0F3CC8F862577E15B503081B /* devLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 450DEC4DD4C668C07EF9D831 /* devLaunchScreen.storyboard */; };
 		1498D2341E8E89220040F4C2 /* GeneratedPluginRegistrant.m in Sources */ = {isa = PBXBuildFile; fileRef = 1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */; };
-		18FCFEA89010AD2F9713CB36 /* Pods_Runner.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D34D9016CECF4B696F49EC /* Pods_Runner.framework */; };
+		18FCFEA89010AD2F9713CB36 /* Pods_Bloodbond.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 26D34D9016CECF4B696F49EC /* Pods_Bloodbond.framework */; };
 		1B82BA6A582AC84708C22E99 /* qaRelease.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = 57B27A842579F4A50E4CE025 /* qaRelease.xcconfig */; };
 		1C9E44607444F13B8A065CD2 /* devProfile.xcconfig in Resources */ = {isa = PBXBuildFile; fileRef = C7C6F75CB60A2DA5392502F2 /* devProfile.xcconfig */; };
 		2979C65E4181A0A4A6AD11A0 /* qaLaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A557E43EA9C08CAE06695D78 /* qaLaunchScreen.storyboard */; };
@@ -42,44 +42,44 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		061C8AEC72EA9471A07AA696 /* Pods-Runner.profile-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-dev.xcconfig"; sourceTree = "<group>"; };
+		061C8AEC72EA9471A07AA696 /* Pods-Bloodbond.profile-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.profile-dev.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.profile-dev.xcconfig"; sourceTree = "<group>"; };
 		08A6C75546A4CE5A09576016 /* devRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = devRelease.xcconfig; path = Flutter/devRelease.xcconfig; sourceTree = "<group>"; };
 		1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GeneratedPluginRegistrant.h; sourceTree = "<group>"; };
 		1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratedPluginRegistrant.m; sourceTree = "<group>"; };
-		26D34D9016CECF4B696F49EC /* Pods_Runner.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Runner.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		2CFC673E25FDB19EA99D6F05 /* Pods-Runner.debug-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-staging.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-staging.xcconfig"; sourceTree = "<group>"; };
-		2F73E330168EEDF03F576E9F /* Pods-Runner.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile.xcconfig"; sourceTree = "<group>"; };
-		343C848BFD1E5ADD86459183 /* Pods-Runner.profile-qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-qa.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-qa.xcconfig"; sourceTree = "<group>"; };
-		3AB19B34EADF73E48F9435AB /* Pods-Runner.debug-qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-qa.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-qa.xcconfig"; sourceTree = "<group>"; };
+		1C1F98B22AFF728800C82156 /* Bloodbond-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bloodbond-Bridging-Header.h"; sourceTree = "<group>"; };
+		26D34D9016CECF4B696F49EC /* Pods_Bloodbond.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bloodbond.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CFC673E25FDB19EA99D6F05 /* Pods-Bloodbond.debug-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.debug-staging.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.debug-staging.xcconfig"; sourceTree = "<group>"; };
+		2F73E330168EEDF03F576E9F /* Pods-Bloodbond.profile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.profile.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.profile.xcconfig"; sourceTree = "<group>"; };
+		343C848BFD1E5ADD86459183 /* Pods-Bloodbond.profile-qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.profile-qa.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.profile-qa.xcconfig"; sourceTree = "<group>"; };
+		3AB19B34EADF73E48F9435AB /* Pods-Bloodbond.debug-qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.debug-qa.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.debug-qa.xcconfig"; sourceTree = "<group>"; };
 		3B3967151E833CAA004F5970 /* AppFrameworkInfo.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = AppFrameworkInfo.plist; path = Flutter/AppFrameworkInfo.plist; sourceTree = "<group>"; };
-		401D4D52D17CA71BB6C92ADC /* Pods-Runner.release-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-dev.xcconfig"; sourceTree = "<group>"; };
-		450DEC4DD4C668C07EF9D831 /* devLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = devLaunchScreen.storyboard; path = Runner/devLaunchScreen.storyboard; sourceTree = "<group>"; };
+		401D4D52D17CA71BB6C92ADC /* Pods-Bloodbond.release-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.release-dev.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.release-dev.xcconfig"; sourceTree = "<group>"; };
+		450DEC4DD4C668C07EF9D831 /* devLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = devLaunchScreen.storyboard; path = Bloodbond/devLaunchScreen.storyboard; sourceTree = "<group>"; };
 		57B27A842579F4A50E4CE025 /* qaRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = qaRelease.xcconfig; path = Flutter/qaRelease.xcconfig; sourceTree = "<group>"; };
-		74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Runner-Bridging-Header.h"; sourceTree = "<group>"; };
 		74858FAE1ED2DC5600515810 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		79EA1DBC80E0A336B7F12764 /* stagingDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = stagingDebug.xcconfig; path = Flutter/stagingDebug.xcconfig; sourceTree = "<group>"; };
 		7AFA3C8E1D35360C0083082E /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; name = Release.xcconfig; path = Flutter/Release.xcconfig; sourceTree = "<group>"; };
-		7D9B75A8BEED99101E05A33B /* Pods-Runner.release-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-staging.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-staging.xcconfig"; sourceTree = "<group>"; };
+		7D9B75A8BEED99101E05A33B /* Pods-Bloodbond.release-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.release-staging.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.release-staging.xcconfig"; sourceTree = "<group>"; };
 		8616CF1F3096DDCA11827AFD /* qaDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = qaDebug.xcconfig; path = Flutter/qaDebug.xcconfig; sourceTree = "<group>"; };
-		90D0F084F997647D58978047 /* Pods-Runner.release-qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release-qa.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release-qa.xcconfig"; sourceTree = "<group>"; };
+		90D0F084F997647D58978047 /* Pods-Bloodbond.release-qa.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.release-qa.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.release-qa.xcconfig"; sourceTree = "<group>"; };
 		938EEC5516A2786D307B9D19 /* qaProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = qaProfile.xcconfig; path = Flutter/qaProfile.xcconfig; sourceTree = "<group>"; };
 		9740EEB21CF90195004384FC /* Debug.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Debug.xcconfig; path = Flutter/Debug.xcconfig; sourceTree = "<group>"; };
 		9740EEB31CF90195004384FC /* Generated.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; name = Generated.xcconfig; path = Flutter/Generated.xcconfig; sourceTree = "<group>"; };
-		97C146EE1CF9000F007C117D /* Runner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Runner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		97C146EE1CF9000F007C117D /* Bloodbond.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Bloodbond.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97C146FB1CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97C146FD1CF9000F007C117D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97C147001CF9000F007C117D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97C147021CF9000F007C117D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		984BF1C4628D867670EC0831 /* stagingProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = stagingProfile.xcconfig; path = Flutter/stagingProfile.xcconfig; sourceTree = "<group>"; };
-		A557E43EA9C08CAE06695D78 /* qaLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = qaLaunchScreen.storyboard; path = Runner/qaLaunchScreen.storyboard; sourceTree = "<group>"; };
-		A6D223C62BD1F866CC8A7043 /* Pods-Runner.profile-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.profile-staging.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.profile-staging.xcconfig"; sourceTree = "<group>"; };
-		C4BC919A0064FC4C1FD896E5 /* stagingLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = stagingLaunchScreen.storyboard; path = Runner/stagingLaunchScreen.storyboard; sourceTree = "<group>"; };
+		A557E43EA9C08CAE06695D78 /* qaLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = qaLaunchScreen.storyboard; path = Bloodbond/qaLaunchScreen.storyboard; sourceTree = "<group>"; };
+		A6D223C62BD1F866CC8A7043 /* Pods-Bloodbond.profile-staging.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.profile-staging.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.profile-staging.xcconfig"; sourceTree = "<group>"; };
+		C4BC919A0064FC4C1FD896E5 /* stagingLaunchScreen.storyboard */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = file.storyboard; name = stagingLaunchScreen.storyboard; path = Bloodbond/stagingLaunchScreen.storyboard; sourceTree = "<group>"; };
 		C7C6F75CB60A2DA5392502F2 /* devProfile.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = devProfile.xcconfig; path = Flutter/devProfile.xcconfig; sourceTree = "<group>"; };
-		D3503A3C9B5DCB044637D3B8 /* Pods-Runner.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug.xcconfig"; sourceTree = "<group>"; };
+		D3503A3C9B5DCB044637D3B8 /* Pods-Bloodbond.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.debug.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.debug.xcconfig"; sourceTree = "<group>"; };
 		DDA9087FD564713D4808ED04 /* stagingRelease.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = stagingRelease.xcconfig; path = Flutter/stagingRelease.xcconfig; sourceTree = "<group>"; };
 		DE0B7E3CE0FDC3193C1F943F /* devDebug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = devDebug.xcconfig; path = Flutter/devDebug.xcconfig; sourceTree = "<group>"; };
-		EE6C1AAC5FB5A7AC1B2696CC /* Pods-Runner.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.release.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.release.xcconfig"; sourceTree = "<group>"; };
-		F471CB267BE29564F4CBD934 /* Pods-Runner.debug-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Runner.debug-dev.xcconfig"; path = "Target Support Files/Pods-Runner/Pods-Runner.debug-dev.xcconfig"; sourceTree = "<group>"; };
+		EE6C1AAC5FB5A7AC1B2696CC /* Pods-Bloodbond.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.release.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.release.xcconfig"; sourceTree = "<group>"; };
+		F471CB267BE29564F4CBD934 /* Pods-Bloodbond.debug-dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bloodbond.debug-dev.xcconfig"; path = "Target Support Files/Pods-Bloodbond/Pods-Bloodbond.debug-dev.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18FCFEA89010AD2F9713CB36 /* Pods_Runner.framework in Frameworks */,
+				18FCFEA89010AD2F9713CB36 /* Pods_Bloodbond.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -118,7 +118,7 @@
 			isa = PBXGroup;
 			children = (
 				9740EEB11CF90186004384FC /* Flutter */,
-				97C146F01CF9000F007C117D /* Runner */,
+				97C146F01CF9000F007C117D /* Bloodbond */,
 				97C146EF1CF9000F007C117D /* Products */,
 				450DEC4DD4C668C07EF9D831 /* devLaunchScreen.storyboard */,
 				A557E43EA9C08CAE06695D78 /* qaLaunchScreen.storyboard */,
@@ -131,12 +131,12 @@
 		97C146EF1CF9000F007C117D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				97C146EE1CF9000F007C117D /* Runner.app */,
+				97C146EE1CF9000F007C117D /* Bloodbond.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		97C146F01CF9000F007C117D /* Runner */ = {
+		97C146F01CF9000F007C117D /* Bloodbond */ = {
 			isa = PBXGroup;
 			children = (
 				97C146FA1CF9000F007C117D /* Main.storyboard */,
@@ -146,26 +146,26 @@
 				1498D2321E8E86230040F4C2 /* GeneratedPluginRegistrant.h */,
 				1498D2331E8E89220040F4C2 /* GeneratedPluginRegistrant.m */,
 				74858FAE1ED2DC5600515810 /* AppDelegate.swift */,
-				74858FAD1ED2DC5600515810 /* Runner-Bridging-Header.h */,
+				1C1F98B22AFF728800C82156 /* Bloodbond-Bridging-Header.h */,
 			);
-			path = Runner;
+			path = Bloodbond;
 			sourceTree = "<group>";
 		};
 		A55771310497E60DC85E5C9C /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				D3503A3C9B5DCB044637D3B8 /* Pods-Runner.debug.xcconfig */,
-				EE6C1AAC5FB5A7AC1B2696CC /* Pods-Runner.release.xcconfig */,
-				2F73E330168EEDF03F576E9F /* Pods-Runner.profile.xcconfig */,
-				F471CB267BE29564F4CBD934 /* Pods-Runner.debug-dev.xcconfig */,
-				061C8AEC72EA9471A07AA696 /* Pods-Runner.profile-dev.xcconfig */,
-				401D4D52D17CA71BB6C92ADC /* Pods-Runner.release-dev.xcconfig */,
-				3AB19B34EADF73E48F9435AB /* Pods-Runner.debug-qa.xcconfig */,
-				343C848BFD1E5ADD86459183 /* Pods-Runner.profile-qa.xcconfig */,
-				90D0F084F997647D58978047 /* Pods-Runner.release-qa.xcconfig */,
-				2CFC673E25FDB19EA99D6F05 /* Pods-Runner.debug-staging.xcconfig */,
-				A6D223C62BD1F866CC8A7043 /* Pods-Runner.profile-staging.xcconfig */,
-				7D9B75A8BEED99101E05A33B /* Pods-Runner.release-staging.xcconfig */,
+				D3503A3C9B5DCB044637D3B8 /* Pods-Bloodbond.debug.xcconfig */,
+				EE6C1AAC5FB5A7AC1B2696CC /* Pods-Bloodbond.release.xcconfig */,
+				2F73E330168EEDF03F576E9F /* Pods-Bloodbond.profile.xcconfig */,
+				F471CB267BE29564F4CBD934 /* Pods-Bloodbond.debug-dev.xcconfig */,
+				061C8AEC72EA9471A07AA696 /* Pods-Bloodbond.profile-dev.xcconfig */,
+				401D4D52D17CA71BB6C92ADC /* Pods-Bloodbond.release-dev.xcconfig */,
+				3AB19B34EADF73E48F9435AB /* Pods-Bloodbond.debug-qa.xcconfig */,
+				343C848BFD1E5ADD86459183 /* Pods-Bloodbond.profile-qa.xcconfig */,
+				90D0F084F997647D58978047 /* Pods-Bloodbond.release-qa.xcconfig */,
+				2CFC673E25FDB19EA99D6F05 /* Pods-Bloodbond.debug-staging.xcconfig */,
+				A6D223C62BD1F866CC8A7043 /* Pods-Bloodbond.profile-staging.xcconfig */,
+				7D9B75A8BEED99101E05A33B /* Pods-Bloodbond.release-staging.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -173,7 +173,7 @@
 		A7492BE3523AB7B4FFFB0E89 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				26D34D9016CECF4B696F49EC /* Pods_Runner.framework */,
+				26D34D9016CECF4B696F49EC /* Pods_Bloodbond.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -181,9 +181,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		97C146ED1CF9000F007C117D /* Runner */ = {
+		97C146ED1CF9000F007C117D /* Bloodbond */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */;
+			buildConfigurationList = 97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Bloodbond" */;
 			buildPhases = (
 				B8D492A1E2E94776982D4093 /* [CP] Check Pods Manifest.lock */,
 				9740EEB61CF901F6004384FC /* Run Script */,
@@ -199,9 +199,9 @@
 			);
 			dependencies = (
 			);
-			name = Runner;
-			productName = Runner;
-			productReference = 97C146EE1CF9000F007C117D /* Runner.app */;
+			name = Bloodbond;
+			productName = Bloodbond;
+			productReference = 97C146EE1CF9000F007C117D /* Bloodbond.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -219,7 +219,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */;
+			buildConfigurationList = 97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Bloodbond" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -232,7 +232,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				97C146ED1CF9000F007C117D /* Runner */,
+				97C146ED1CF9000F007C117D /* Bloodbond */,
 			);
 		};
 /* End PBXProject section */
@@ -270,15 +270,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Bloodbond/Pods-Bloodbond-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Bloodbond/Pods-Bloodbond-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bloodbond/Pods-Bloodbond-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3B06AD1E1E4923F5004D2608 /* Thin Binary */ = {
@@ -318,15 +318,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Bloodbond/Pods-Bloodbond-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Bloodbond/Pods-Bloodbond-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Runner/Pods-Runner-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bloodbond/Pods-Bloodbond-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		B8D492A1E2E94776982D4093 /* [CP] Check Pods Manifest.lock */ = {
@@ -344,7 +344,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Runner-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Bloodbond-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -432,7 +432,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -447,7 +447,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -457,94 +457,94 @@
 		};
 		22B47C58298E024700709AA7 /* Debug-dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F471CB267BE29564F4CBD934 /* Pods-Runner.debug-dev.xcconfig */;
+			baseConfigurationReference = F471CB267BE29564F4CBD934 /* Pods-Bloodbond.debug-dev.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = "Debug-dev";
 		};
 		22B47C59298E024700709AA7 /* Profile-dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 061C8AEC72EA9471A07AA696 /* Pods-Runner.profile-dev.xcconfig */;
+			baseConfigurationReference = 061C8AEC72EA9471A07AA696 /* Pods-Bloodbond.profile-dev.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = "Profile-dev";
 		};
 		22B47C5A298E024700709AA7 /* Release-dev */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 401D4D52D17CA71BB6C92ADC /* Pods-Runner.release-dev.xcconfig */;
+			baseConfigurationReference = 401D4D52D17CA71BB6C92ADC /* Pods-Bloodbond.release-dev.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = "Release-dev";
 		};
 		22B47C5B298E024700709AA7 /* Debug-qa */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3AB19B34EADF73E48F9435AB /* Pods-Runner.debug-qa.xcconfig */;
+			baseConfigurationReference = 3AB19B34EADF73E48F9435AB /* Pods-Bloodbond.debug-qa.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 			};
 			name = "Debug-qa";
 		};
 		22B47C5C298E024700709AA7 /* Profile-qa */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 343C848BFD1E5ADD86459183 /* Pods-Runner.profile-qa.xcconfig */;
+			baseConfigurationReference = 343C848BFD1E5ADD86459183 /* Pods-Bloodbond.profile-qa.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 			};
 			name = "Profile-qa";
 		};
 		22B47C5D298E024700709AA7 /* Release-qa */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 90D0F084F997647D58978047 /* Pods-Runner.release-qa.xcconfig */;
+			baseConfigurationReference = 90D0F084F997647D58978047 /* Pods-Bloodbond.release-qa.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 			};
 			name = "Release-qa";
 		};
 		22B47C5E298E024700709AA7 /* Debug-staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 2CFC673E25FDB19EA99D6F05 /* Pods-Runner.debug-staging.xcconfig */;
+			baseConfigurationReference = 2CFC673E25FDB19EA99D6F05 /* Pods-Bloodbond.debug-staging.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.devprofilemode;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 			};
 			name = "Debug-staging";
 		};
 		22B47C5F298E024700709AA7 /* Profile-staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = A6D223C62BD1F866CC8A7043 /* Pods-Runner.profile-staging.xcconfig */;
+			baseConfigurationReference = A6D223C62BD1F866CC8A7043 /* Pods-Bloodbond.profile-staging.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.devprofilemode;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 			};
 			name = "Profile-staging";
 		};
 		22B47C60298E024700709AA7 /* Release-staging */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7D9B75A8BEED99101E05A33B /* Pods-Runner.release-staging.xcconfig */;
+			baseConfigurationReference = 7D9B75A8BEED99101E05A33B /* Pods-Bloodbond.release-staging.xcconfig */;
 			buildSettings = {
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.devprofilemode;
-				PRODUCT_NAME = Runner;
+				PRODUCT_NAME = Bloodbond;
 			};
 			name = "Release-staging";
 		};
@@ -595,7 +595,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -609,7 +609,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.BloodBond;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -677,7 +677,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -685,7 +685,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterTemplatew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -738,7 +738,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -752,7 +752,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.dev;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -806,7 +806,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -821,7 +821,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -882,7 +882,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -896,7 +896,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.gdscdut.BloodBond;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1020,7 +1020,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1028,7 +1028,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterTemplatew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1046,7 +1046,7 @@
 				CURRENT_PROJECT_VERSION = "$(FLUTTER_BUILD_NUMBER)";
 				DEVELOPMENT_TEAM = 9YN9674B5Y;
 				ENABLE_BITCODE = NO;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1054,7 +1054,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.example.flutterTemplatew;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
@@ -1113,7 +1113,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1127,7 +1127,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.dev;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1186,7 +1186,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1200,7 +1200,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.qa;
 				SDKROOT = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1253,7 +1253,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1267,7 +1267,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.BloodBond.qa;
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
@@ -1321,7 +1321,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = Runner/Info.plist;
+				INFOPLIST_FILE = Bloodbond/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1336,7 +1336,7 @@
 				SDKROOT = iphoneos;
 				SUPPORTED_PLATFORMS = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OBJC_BRIDGING_HEADER = "Runner/Runner-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Bloodbond/Bloodbond-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1347,7 +1347,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Runner" */ = {
+		97C146E91CF9000F007C117D /* Build configuration list for PBXProject "Bloodbond" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97C147031CF9000F007C117D /* Debug */,
@@ -1366,7 +1366,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Runner" */ = {
+		97C147051CF9000F007C117D /* Build configuration list for PBXNativeTarget "Bloodbond" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				97C147061CF9000F007C117D /* Debug */,
