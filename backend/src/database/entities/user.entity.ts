@@ -70,6 +70,12 @@ export class User {
   })
   geom: { type: string; coordinates: [number, number] } | null;
 
+  @Column({
+    name: 'h3_index',
+    nullable: true,
+  })
+  h3Index: string | null;
+
   @Column('text', { name: 'refresh_token', nullable: true, array: true })
   refreshToken: string[] | null;
 
