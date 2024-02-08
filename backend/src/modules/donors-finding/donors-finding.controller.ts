@@ -4,6 +4,7 @@ import {
   HttpCode,
   HttpStatus,
   Param,
+  Post,
   Query,
 } from '@nestjs/common';
 import { DonorsFindingService } from './donors-finding.service';
@@ -45,6 +46,36 @@ export class DonorsFindingController {
     );
   }
 
+  @Get('/h3-index')
+  @AuthenticateGuard()
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({
+    tags: ['donors-finding'],
+    operationId: 'findDonorsH3Index',
+    summary:
+      'Find donors that match with blood type and available in radius using H3 index',
+    description:
+      'Find donors that match with blood type and available in radius using H3 index',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Successful',
+    type: [FindDonorsResponse],
+  })
+  async findDonorsWithH3Index(
+    @Query('bloodTypeId') bloodTypeId: number,
+    @Query('radius') radius: number,
+    @Query('currentLat') currentLat: number,
+    @Query('currentLng') currentLng: number,
+  ): Promise<FindDonorsResponse[]> {
+    return this.donorsFindingService.findDonorsWithH3Index(
+      bloodTypeId,
+      radius,
+      currentLat,
+      currentLng,
+    );
+  }
+
   @Get(':donorId')
   @AuthenticateGuard()
   @HttpCode(HttpStatus.OK)
@@ -69,5 +100,21 @@ export class DonorsFindingController {
       currentLat,
       currentLng,
     );
+  }
+
+  @Post('index-h3-geo-location')
+  @HttpCode(HttpStatus.OK)
+  @ApiOperation({
+    tags: ['donors-finding'],
+    operationId: 'indexH3GeoLocation',
+    summary: 'Index h3 geo location',
+    description: 'Index h3 geo location',
+  })
+  @ApiResponse({
+    status: HttpStatus.OK,
+    description: 'Successful',
+  })
+  async indexH3GeoLocation(): Promise<void> {
+    return this.donorsFindingService.indexH3GeoLocation();
   }
 }
