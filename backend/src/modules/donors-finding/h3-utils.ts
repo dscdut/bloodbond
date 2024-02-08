@@ -25,7 +25,6 @@ export function indexGeoLocationByUserId(
       h3IndexMap[each.userId] = h3Index;
     }
   });
-
   return h3IndexMap;
 }
 
@@ -51,15 +50,12 @@ export function indexGeoLocation(geoLocationInput: GeoLocationInputH3Arr) {
 }
 
 export async function kRingIndexesArea(
-  geoLocationInput: GeoLocationInputH3,
+  lat: number,
+  lng: number,
   searchRadiusMeter: number,
 ) {
   const resolution = DEFAULT_H3_RESOLUTION;
-  const origin = latLngToCell(
-    geoLocationInput.lat,
-    geoLocationInput.lng,
-    resolution,
-  );
+  const origin = latLngToCell(lat, lng, resolution);
   const originArea = cellArea(origin, UNITS.m2);
   const searchArea = Math.PI * searchRadiusMeter * searchRadiusMeter;
 
